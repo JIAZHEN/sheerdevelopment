@@ -2,7 +2,7 @@
 
 /* mixins, variables, etc. */
 
-$lightGray: #999;
+$lightyan: #a3b4bc;
 
 /* universal */
 
@@ -41,10 +41,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4.5em;
+  font-size: 4em;
   letter-spacing: 1px;
   margin-bottom: 30px;
   text-align: center;
+  font-weight: normal;
 }
 
 h2 {
@@ -53,7 +54,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $lightGray;
+  color: $lightyan;
 }
 
 p {
@@ -74,12 +75,10 @@ p {
   	font-weight: bold;
   	line-height: 2;
   	a:hover {
-  		background: #5d8969;
+  		background: $lightyan;
   	}
   }
 }
-
-
 
 .navbar-inner {
   text-align: center;
