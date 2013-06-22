@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :posts
+
   root  :to => 'static_pages#home'
 
   match '/about' => 'static_pages#about'

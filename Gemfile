@@ -21,6 +21,7 @@ end
 group :test do
   gem 'sqlite3'
   gem 'capybara', '1.1.2'
+  gem 'factory_girl_rails'
 end
 
 group :test, :development do
