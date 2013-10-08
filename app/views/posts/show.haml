@@ -1,4 +1,4 @@
 %h3= @post.title
 %p= @post.content
 %span.badge.badge-success
-  Posted #{@post.updated_at}
+  Posted #{@post.updated_at.to_date}

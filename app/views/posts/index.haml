@@ -2,4 +2,4 @@
 	- @posts.each do |post|
 		%li
 			= link_to post.title, post
-			%span.muted.pull-right= post.updated_at
+			%span.muted.pull-right= post.updated_at.to_date
