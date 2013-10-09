@@ -1,4 +1,4 @@
 %h3= @post.title
-%p= @post.content
+%p= markdown.render(@post.content).html_safe
 %span.badge.badge-success
   Posted #{@post.updated_at.to_date}
