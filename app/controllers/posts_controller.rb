@@ -18,6 +18,6 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.all
+  	@posts = Post.find(:all, order: "created_at DESC")
   end
 end
