@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :signed_in_admin, only: [:new, :create]
 
   def new
   	@post = Post.new

@@ -1,11 +1,14 @@
 require 'spec_helper'
 
 describe "PostPages" do
-
+  let(:admin) { create(:admin) }
   subject { page }
 
   describe "Create new post page" do
-  	before { visit new_post_path }
+  	before(:each) do
+      sign_in admin
+      visit new_post_path
+    end
   	let(:submit) { "Create post" }
 
   	it { should have_selector('title', :text => full_title('Create post')) }
@@ -29,7 +32,7 @@ describe "PostPages" do
   end
 
   describe "show post page" do
-  	let(:post) { FactoryGirl.create(:post) }
+  	let(:post) { create(:post) }
   	before { visit post_path(post) }
 
   	it { should have_content(post.title) }
@@ -38,8 +41,8 @@ describe "PostPages" do
 
   describe "index" do
   	before do
-      FactoryGirl.create(:post, title: "Phd will be success", content: "OK WE WILL SUCCESS")
-      FactoryGirl.create(:post, title: "Career will be success", content: "GOOD WE WILL SUCCESS")
+      create(:post, title: "Phd will be success", content: "OK WE WILL SUCCESS")
+      create(:post, title: "Career will be success", content: "GOOD WE WILL SUCCESS")
       visit posts_path
     end
 
