@@ -1,11 +1,5 @@
 - provide(:title, 'Create post')
 .span6
 	= form_for(@post) do |f|
-		= render 'shared/error_messages', object: f.object
-		= f.label :title
-		= f.text_field :title, class: "span8"
-
-		= f.label :content
-		= f.text_area :content, :size => "20x25", class: "span8"
-
+		= render 'fields', f: f
 		= f.submit "Create post", class: "btn btn-medium btn-primary"

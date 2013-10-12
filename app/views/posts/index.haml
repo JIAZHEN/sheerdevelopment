@@ -1,8 +1,13 @@
 - if signed_in? && current_user.admin?
-  = link_to "create", new_post_path
+  = link_to "create", new_post_path, class: "btn btn-medium btn-primary"
 
+= will_paginate @posts
 %ul.posts
   - @posts.each do |post|
     %li
       = link_to post.title, post
+      - if signed_in? && current_user.admin?
+        = link_to raw('<i class="icon-pencil"></i>'), edit_post_path(post)
+        = link_to raw('<i class="icon-remove"></i>'), post, method: :delete, data: { confirm: "You sure?" }
       %span.muted.pull-right= post.updated_at.to_date
+= will_paginate @posts

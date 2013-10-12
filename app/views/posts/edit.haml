@@ -1,0 +1,5 @@
+- provide(:title, 'Edit post')
+.span6
+  = form_for(@post) do |f|
+    = render 'fields', f: f
+    = f.submit "Edit post", class: "btn btn-medium btn-primary"
