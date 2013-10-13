@@ -69,6 +69,8 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  margin-top: 0em;
+  margin-bottom: 1.5em;
 }
 
 /* navbar */
@@ -137,4 +139,9 @@ input {
       border-bottom: 1px solid $lightyan;
     }
   }
+}
+
+.img_margin {
+  margin-bottom: 10px;
+  margin-left: 30px;
 }
