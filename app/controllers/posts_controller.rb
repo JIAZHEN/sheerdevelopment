@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def show
-  	@post = Post.find_by_title(params[:id].tr("_", " "))
+  	@post = a_post_by_url
   end
 
   def index
@@ -23,11 +23,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = a_post_by_url
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = a_post_by_url
     if @post.update_attributes(params[:post])
       flash[:success] = "Profile updated"
       redirect_to @post
@@ -37,8 +37,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy
+    a_post_by_url.destroy
     flash[:success] = "Post destroyed."
     redirect_to posts_path
+  end
+
+  def a_post_by_url
+    Post.find_by_title(params[:id].tr("_", " "))
   end
 end

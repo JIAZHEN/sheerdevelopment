@@ -3,3 +3,5 @@
 %p= markdown.render(@post.content).html_safe
 %span.badge.badge-success
   Posted #{@post.updated_at.to_date}
+- if signed_in? && current_user.admin?
+  = link_to raw('<i class="icon-pencil"></i>'), edit_post_path(@post)
