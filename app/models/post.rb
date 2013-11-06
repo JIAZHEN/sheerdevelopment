@@ -16,4 +16,8 @@ class Post < ActiveRecord::Base
   					  	        :length   => { :minimum => 5 }
   validates :title,		  :presence => true,
   						          :length	  => { :minimum => 5 }
+
+  def to_param
+    title.tr(" ", "_")
+  end
 end
