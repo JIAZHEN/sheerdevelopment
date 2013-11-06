@@ -18,6 +18,6 @@ class Post < ActiveRecord::Base
   						          :length	  => { :minimum => 5 }
 
   def to_param
-    title.tr(" ", "_")
+    title
   end
 end
