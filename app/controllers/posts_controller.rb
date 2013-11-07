@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   before_filter :signed_in_admin, only: [:new, :create, :update, :edit, :destroy]
-  before_filter :a_post_by_url, only: [:new, :create, :show, :update, :edit, :destroy]
+  before_filter :a_post_by_url, only: [:show, :update, :edit, :destroy]
 
   def new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(params[:post])
   	if @post.save
   		redirect_to @post
   	else
@@ -38,6 +40,6 @@ class PostsController < ApplicationController
   end
 
   def a_post_by_url
-    @post = Post.find_by_title(params[:id])
+    @post = Post.find(params[:id])
   end
 end

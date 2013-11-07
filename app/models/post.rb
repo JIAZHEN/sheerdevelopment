@@ -10,14 +10,14 @@
 #
 
 class Post < ActiveRecord::Base
+  extend FriendlyId
   attr_accessible :content, :title
+
+  friendly_id :title, use: :slugged
 
   validates :content, 	:presence => true,
   					  	        :length   => { :minimum => 5 }
   validates :title,		  :presence => true,
   						          :length	  => { :minimum => 5 }
 
-  def to_param
-    title
-  end
 end
