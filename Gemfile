@@ -5,11 +5,11 @@ gem 'bootstrap-sass'
 gem 'haml'
 gem 'redcarpet'
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'debugger'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'friendly_id', '~> 4.0.10'
+gem 'rb-readline', '~> 0.5.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -37,7 +37,7 @@ group :test, :development do
 end
 
 group :production, :development do
-  gem 'pg'
+  gem 'pg', '0.15.1'
 end
 
 group :development do

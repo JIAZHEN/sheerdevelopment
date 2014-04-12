@@ -46,10 +46,21 @@ describe "PostPages" do
       visit posts_path
     end
 
+    it { should_not have_link('create') }
+
     it "should list each post" do
       Post.all.each do |post|
         page.should have_selector('li', text: post.title)
       end
+    end
+
+    describe "when sign in as admin" do
+      before(:each) do
+        sign_in admin
+        visit posts_path
+      end
+
+      it { should have_link('create') }
     end
   end
 end

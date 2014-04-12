@@ -36,7 +36,7 @@ describe "AuthenticationPages" do
 
       describe "followed by signout" do
         before { click_link "Sign out" }
-        it { should have_selector('title', :text => full_title("Sign in") ) }
+        it { should have_selector('title', :text => full_title("") ) }
       end
     end
   end
