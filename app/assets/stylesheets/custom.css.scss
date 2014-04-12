@@ -121,11 +121,6 @@ input {
   }
 }
 
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
-}
-
 /* users index */
 
 .posts {
