@@ -13,7 +13,7 @@ describe "AuthenticationPages" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Sign in" }
+      before { click_button "Sign In" }
 
       it { should have_selector('title', :text => full_title("Sign in") ) }
       it { should have_selector('div.alert.alert-danger', text: "Invalid") }
@@ -27,9 +27,9 @@ describe "AuthenticationPages" do
     describe "with valid information" do
       let(:admin) { create(:admin) }
       before do
-        fill_in "Email",    with: admin.email.upcase
-        fill_in "Password", with: admin.password
-        click_button "Sign in"
+        fill_in "session[email]",    with: admin.email.upcase
+        fill_in "session[password]", with: admin.password
+        click_button "Sign In"
       end
       it { should have_link("Sign out",    href: signout_path) }
       it { should_not have_link("Sign in", href: signin_path) }

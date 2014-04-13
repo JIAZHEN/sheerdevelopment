@@ -1,8 +1,9 @@
 - if signed_in? && current_user.admin?
   = link_to "create", new_post_path, class: "btn btn-medium btn-primary"
+  %br
 
 = will_paginate @posts
-%ul.posts
+%ul.posts{style: "padding:0;"}
   - @posts.each do |post|
     %li
       = link_to post.title, post
