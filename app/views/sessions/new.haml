@@ -1,9 +1,14 @@
 - provide(:title, "Sign in")
 .row
-  .span6.offset1
-    = form_for(:session, url: sessions_path) do |f|
-      = f.label :email
-      = f.text_field :email
-      = f.label :password
-      = f.password_field :password
-      = f.submit "Sign in", class: "btn btn-large btn-primary"
+  .col-md-12
+    .pr-wrap
+      .pass-reset
+        %label
+          Enter the email you signed up with
+        %input{placeholder: "Email", type: "email"}/
+        %input.pass-reset-submit.btn.btn-success.btn-sm{type: "submit", value: "Submit"}/
+    .wrap
+      %form.login{"accept-charset" => "UTF-8", action: "/sessions", method: "post"}
+        %input#session_email{placeholder: "Email", name: "session[email]", size: "30", type: "text"}/
+        %input#session_password{placeholder: "Password", name: "session[password]", size: "30", type: "password"}/
+        %input.btn.btn-success.btn-sm{type: "submit", value: "Sign In"}/
