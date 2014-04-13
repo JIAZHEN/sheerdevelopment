@@ -186,3 +186,15 @@
             right: auto;
         }
 }
+
+/* pagination */
+
+.pagination > .active > a, .pagination > .active > a:hover{
+    color: white;
+    background-color: rgb(237, 126, 53);
+    border-color: rgb(237, 126, 53);
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: rgb(237, 126, 53);
+}

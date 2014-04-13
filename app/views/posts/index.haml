@@ -1,39 +1,31 @@
 - if signed_in? && current_user.admin?
-  = link_to "create", new_post_path, class: "btn btn-medium btn-primary"
+  = link_to raw('<i class="glyphicon glyphicon-plus"></i> create'), new_post_path, class: "btn btn-medium btn-warning"
   %br
-
-/ = link_to raw('<i class="icon-pencil"></i>'), edit_post_path(post)
-/ = link_to raw('<i class="icon-remove"></i>'), post, method: :delete, data: { confirm: "You sure?" }
 
 
 = will_paginate @posts
 .page-header
   %h1#timeline Blogs
 %ul.timeline
-  - @posts.in_groups_of(2) do |group|
-    %li
-      .timeline-badge
-        %i.glyphicon.glyphicon-check
+  - @posts.each_with_index do |post, index|
+    %li{class: ("timeline-inverted" if index % 2 == 1)}
+      .timeline-badge{class: ('warning' if index % 2 == 1)}
+        %i.glyphicon{class: (index % 2 == 1 ? 'glyphicon-check' : 'glyphicon-credit-card')}
       .timeline-panel
         .timeline-heading
-          %h4.timeline-title= group[0].title
+          %h4.timeline-title= post.title
           %p
             %small.text-muted
               %i.glyphicon.glyphicon-time
-              = time_ago_in_words(group[0].created_at)
+              = time_ago_in_words(post.created_at)
+              - if signed_in? && current_user.admin?
+                = link_to raw('<i class="glyphicon glyphicon-pencil"></i>'), edit_post_path(post)
+                = link_to raw('<i class="glyphicon glyphicon-remove"></i>'), post, method: :delete, data: { confirm: "You sure?" }
         .timeline-body
-          %p= group[0].content
-    - if group[1]
-      %li.timeline-inverted
-        .timeline-badge.warning
-          %i.glyphicon.glyphicon-credit-card
-        .timeline-panel
-          .timeline-heading
-            %h4.timeline-title= group[1].title
-            %p
-              %small.text-muted
-                %i.glyphicon.glyphicon-time
-                = time_ago_in_words(group[1].created_at)
-          .timeline-body
-            %p= group[1].content
+          %p
+            - if post.content.split.size > 15
+              = summarise(post.content)
+            - else
+              = post.content
+          %p.muted.pull-right= link_to raw('<i class="glyphicon glyphicon-paperclip"></i> View full'), post
 = will_paginate @posts
