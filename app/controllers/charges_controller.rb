@@ -1,7 +1,5 @@
 class ChargesController < ApplicationController
-  def new
-  end
-
+  
   def create
     # Amount in cents
     @amount = 500
@@ -17,9 +15,8 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+    flash[:success] = "Successfully completed payment with amount #{@amount}"
 
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to contact_path
   end
 end

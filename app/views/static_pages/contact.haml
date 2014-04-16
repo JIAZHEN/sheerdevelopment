@@ -19,3 +19,9 @@
   %br/
   United Kingdom
   %br/
+
+- if signed_in? && current_user.admin?
+  %p.lead Donate
+
+  = form_tag charges_path, style: 'margin-left: 0px;margin-right: 0px;' do
+    %script.stripe-button{"data-amount" => "500", "data-description" => "A month's subscription", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
