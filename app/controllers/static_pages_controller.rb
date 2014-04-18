@@ -6,6 +6,8 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
-  	
+  end
+
+  def sitemap
   end
 end

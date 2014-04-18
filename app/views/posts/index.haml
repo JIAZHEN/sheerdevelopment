@@ -1,3 +1,4 @@
+- provide(:title, 'Blogs')
 - if signed_in? && current_user.admin?
   = link_to raw('<i class="glyphicon glyphicon-plus"></i> create'), new_post_path, class: "btn btn-medium btn-warning"
   %br
