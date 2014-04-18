@@ -9,5 +9,6 @@ class StaticPagesController < ApplicationController
   end
 
   def sitemap
+    render :layout => false
   end
 end
