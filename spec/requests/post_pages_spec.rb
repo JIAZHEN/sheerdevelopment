@@ -4,7 +4,7 @@ describe "PostPages" do
   let(:admin) { create(:admin) }
   subject { page }
 
-  describe "Create new post page" do
+  describe "create new post page" do
   	before(:each) do
       sign_in admin
       visit new_post_path
@@ -49,9 +49,7 @@ describe "PostPages" do
     it { should_not have_link('create') }
 
     it "should list each post" do
-      Post.all.each do |post|
-        page.should have_selector('li', text: post.title)
-      end
+      Post.all.each { |post| page.should have_selector('li', text: post.title) }
     end
 
     describe "when sign in as admin" do
@@ -61,6 +59,14 @@ describe "PostPages" do
       end
 
       it { should have_link('create') }
+
+      it "should have edit icon" do
+        page.should have_css('i.glyphicon.glyphicon-pencil')
+      end
+
+      it "should have delete icon" do
+        page.should have_css('i.glyphicon.glyphicon-remove')
+      end
     end
   end
 end
