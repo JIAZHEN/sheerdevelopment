@@ -1,24 +1,26 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-gem 'bootstrap-sass', '~> 3.1.1.0'
-gem 'haml'
-gem 'redcarpet'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'faker'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
-gem 'friendly_id', '~> 4.0.10'
+gem 'rails', '4.1.0'
+gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'haml', '~> 4.0.5'
+gem 'turbolinks', '~> 2.2.2'
+gem 'jbuilder', '~> 2.0.6'
+gem 'redcarpet', '~> 3.1.1'
+gem 'bcrypt-ruby', '~> 3.1.5'
+gem 'faker', '~> 1.3.0'
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'friendly_id', '~> 5.0.3'
 gem 'rb-readline', '~> 0.5.1'
-gem 'jquery-rails'
-gem 'sass-rails',   '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
+gem 'jquery-rails', '~> 3.1.0'
+gem 'coffee-rails', '~> 4.0.1'
+gem 'uglifier', '~> 2.5.0'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :test do
   gem 'sqlite3'
-  gem 'capybara', '1.1.2'
+  gem 'capybara'
   gem 'factory_girl_rails'
 end
 
@@ -27,7 +29,7 @@ group :test, :development do
 end
 
 group :production, :development do
-  gem 'pg', '0.15.1'
+  gem 'pg'
 end
 
 group :development do
