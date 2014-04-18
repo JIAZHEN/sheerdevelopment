@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :signed_in_admin, only: [:new, :create, :update, :edit, :destroy]
-  before_filter :a_post_by_url, only: [:show, :update, :edit, :destroy]
+  before_action :signed_in_admin, only: [:new, :create, :update, :edit, :destroy]
+  before_action :a_post_by_url, only: [:show, :update, :edit, :destroy]
 
   def new
     @post = Post.new
