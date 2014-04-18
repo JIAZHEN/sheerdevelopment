@@ -6,17 +6,17 @@ describe "StaticPages" do
   
 	describe "Home page" do
 		before { visit root_path }
-		it { should have_selector('title', :text => full_title('') ) }
+		it { should have_title(full_title('') ) }
 	end
 
 	describe "About page" do
 		before { visit about_path }
-		it { should have_selector('title', :text => full_title('About Me')) }
+		it { should have_title(full_title('About Me')) }
 	end
 
 	describe "Contact page" do
 		before { visit contact_path }
-		it { should have_selector('title', :text => full_title('Contact')) }
+		it { should have_title(full_title('Contact')) }
 	end
 
 end

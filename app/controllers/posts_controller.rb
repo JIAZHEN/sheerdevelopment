@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
   	if @post.save
   		redirect_to @post
   	else
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params)
       flash[:success] = "Profile updated"
       redirect_to @post
     else
@@ -35,11 +35,17 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    Post.friendly.find(params[:id]).destroy
     flash[:success] = "Post destroyed."
     redirect_to posts_path
   end
 
   def a_post_by_url
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
+
+  private
+    def post_params
+      params.require(:post).permit(:content, :title)
+    end
 end
