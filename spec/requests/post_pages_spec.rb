@@ -11,7 +11,7 @@ describe "PostPages" do
     end
   	let(:submit) { "Create post" }
 
-  	it { should have_selector('title', :text => full_title('Create post')) }
+  	it { should have_title(full_title('Create post')) }
 
   	describe "with invalid inforamtion" do
   		it "should not create a post" do

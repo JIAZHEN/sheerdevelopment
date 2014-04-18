@@ -12,7 +12,7 @@
 require 'spec_helper'
 
 describe Post do
-  before { @post = Post.create(:title   => 'my title', :content => 'Wish my career the best') }
+  before { @post = Post.new(title: 'my title', content: 'Wish my career the best') }
   subject { @post }
 
   it { should respond_to(:title) }

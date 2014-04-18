@@ -16,12 +16,20 @@ gem 'rb-readline', '~> 0.5.1'
 gem 'jquery-rails', '~> 3.1.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'uglifier', '~> 2.5.0'
+gem 'paper_trail', '~> 3.0.1'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+gem 'protected_attributes'
+gem 'actionpack-action_caching'
+gem 'activerecord-session_store'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
 
 group :test do
   gem 'sqlite3'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
 end
 
 group :test, :development do

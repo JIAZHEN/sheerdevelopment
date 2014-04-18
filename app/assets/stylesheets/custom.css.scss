@@ -87,7 +87,7 @@ p {
   li {
     a {
       color: $lightyan;
-      &hover {
+      :hover {
         background: $lightyan;
       }
     }
