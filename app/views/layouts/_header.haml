@@ -5,5 +5,5 @@
       %li= link_to 'Blogs', posts_path
       %li= link_to 'About me', about_path
       %li= link_to 'Contact', contact_path
-      - if signed_in? && current_user.admin?
-        %li= link_to "Sign out", signout_path, method: "delete"
+      - if user_signed_in?
+        %li= link_to "Sign out", destroy_user_session_path, method: "delete"

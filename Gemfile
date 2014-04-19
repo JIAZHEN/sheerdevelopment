@@ -20,7 +20,6 @@ gem 'paper_trail', '~> 3.0.1'
 gem 'devise', '~> 3.2.4'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-gem 'protected_attributes'
 gem 'actionpack-action_caching'
 gem 'activerecord-session_store'
 gem 'rails-observers'
