@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
   resources :charges
@@ -9,7 +8,6 @@ Rails.application.routes.draw do
   match '/about'    => 'static_pages#about',    via: 'get'
   match '/contact'  => 'static_pages#contact',  via: 'get'
   match '/sitemap'  => 'static_pages#sitemap',  via: 'get'
-  match '/signup'   => 'users#new',             via: 'get'
   match '/signin'   => 'sessions#new',          via: 'get'
   match '/signout'  => 'sessions#destroy',      via: 'delete'
   
