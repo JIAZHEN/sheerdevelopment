@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :posts
-  resources :sessions, only: [:new, :create, :destroy]
   resources :charges
 
   root  :to => 'static_pages#home'
@@ -8,8 +7,6 @@ Rails.application.routes.draw do
   match '/about'    => 'static_pages#about',    via: 'get'
   match '/contact'  => 'static_pages#contact',  via: 'get'
   match '/sitemap'  => 'static_pages#sitemap',  via: 'get'
-  match '/signin'   => 'sessions#new',          via: 'get'
-  match '/signout'  => 'sessions#destroy',      via: 'delete'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
