@@ -20,7 +20,7 @@
   United Kingdom
   %br/
 
-- if signed_in? && current_user.admin?
+- if user_signed_in?
   %p.lead Donate
 
   = form_tag charges_path, style: 'margin-left: 0px;margin-right: 0px;' do

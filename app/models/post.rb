@@ -11,7 +11,6 @@
 
 class Post < ActiveRecord::Base
   extend FriendlyId
-  attr_accessible :content, :title
 
   friendly_id :title, use: :slugged
 
