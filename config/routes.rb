@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :user, path: '', 
-                    path_names: { sign_in: "signin", sign_out: "signout", sign_up: "signup" },
-                    only: :sessions
+  devise_for :users, path: '', 
+                     path_names: { sign_in: "signin", sign_out: "signout", sign_up: "signup" },
+                     only: :sessions
 
   resources :posts
   resources :charges
