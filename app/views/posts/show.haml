@@ -4,5 +4,5 @@
 %p= markdown.render(@post.content).html_safe
 %code.bg-warning.text-warning
   Posted #{time_ago_in_words(@post.created_at) + ' ago'}
-- if signed_in? && current_user.admin?
+- if user_signed_in?
   = link_to raw('<i class="glyphicon glyphicon-pencil"></i>'), edit_post_path(@post)
