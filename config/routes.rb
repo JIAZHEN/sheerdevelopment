@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
+  devise_for :user, path: '', 
+                    path_names: { sign_in: "signin", sign_out: "signout", sign_up: "signup" },
+                    only: :sessions
+
   resources :posts
   resources :charges
 
-  root  :to => 'static_pages#home'
+  root  to: 'static_pages#home'
 
   match '/about'    => 'static_pages#about',    via: 'get'
   match '/contact'  => 'static_pages#contact',  via: 'get'
