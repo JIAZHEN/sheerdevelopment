@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe "PostPages" do
-  let(:admin) { create(:admin) }
+  let(:user) { create(:user) }
   subject { page }
 
   describe "create new post page" do
   	before(:each) do
-      sign_in admin
+      sign_in user
       visit new_post_path
     end
   	let(:submit) { "Create post" }
@@ -52,20 +52,18 @@ describe "PostPages" do
       Post.all.each { |post| page.should have_selector('li', text: post.title) }
     end
 
-    describe "when sign in as admin" do
+    describe "when sign in as user" do
       before(:each) do
-        sign_in admin
+        sign_in user
         visit posts_path
       end
 
       it { should have_link('create') }
+      it { should have_link('edit') }
+      it { should have_link('delete') }
 
-      it "should have edit icon" do
-        page.should have_css('i.glyphicon.glyphicon-pencil')
-      end
-
-      it "should have delete icon" do
-        page.should have_css('i.glyphicon.glyphicon-remove')
+      it "should be able to delete another user" do
+        expect{ click_link('delete', match: :first) }.to change(Post, :count).by(-1)
       end
     end
   end

@@ -5,15 +5,15 @@ describe "AuthenticationPages" do
   subject { page }
 
   describe "signin page" do
-    before { visit signin_path }
+    before { visit new_user_session_path }
     it { should have_title(full_title("Sign in") ) }
   end
 
   describe "signin" do
-    before { visit signin_path }
+    before { visit new_user_session_path }
 
     describe "with invalid information" do
-      before { click_button "Sign In" }
+      before { click_button "Sign in" }
 
       it { should have_title(full_title("Sign in") ) }
       it { should have_selector('div.alert.alert-danger', text: "Invalid") }
@@ -25,14 +25,21 @@ describe "AuthenticationPages" do
     end
 
     describe "with valid information" do
-      let(:admin) { create(:admin) }
+      let(:user) { create(:user) }
       before do
-        fill_in "session[email]",    with: admin.email.upcase
-        fill_in "session[password]", with: admin.password
-        click_button "Sign In"
+        fill_in "user[email]",    with: user.email.upcase
+        fill_in "user[password]", with: user.password
+        click_button "Sign in"
       end
-      it { should have_link("Sign out",    href: signout_path) }
-      it { should_not have_link("Sign in", href: signin_path) }
+      it { should have_link("Sign out",    href: destroy_user_session_path) }
+      it { should_not have_link("Sign in", href: new_user_session_path) }
+
+      describe "visit sign in" do
+        before { visit new_user_session_path }
+        it "should redirect to home path" do
+          expect(page.current_path).to eql "/"
+        end
+      end
 
       describe "followed by signout" do
         before { click_link "Sign out" }
