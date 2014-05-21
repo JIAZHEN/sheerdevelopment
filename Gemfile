@@ -18,13 +18,15 @@ gem 'coffee-rails', '~> 4.0.1'
 gem 'uglifier', '~> 2.5.0'
 gem 'paper_trail', '~> 3.0.1'
 gem 'devise', '~> 3.2.4'
-gem 'font-awesome-rails', '~> 4.0.3'
+gem 'font-awesome-rails', '~> 4.1.0.0'
+gem "animate-rails"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'actionpack-action_caching'
 gem 'activerecord-session_store'
 gem 'rails-observers'
 gem 'actionpack-page_caching'
+gem 'google-webfonts'
 
 group :test do
   gem 'sqlite3'

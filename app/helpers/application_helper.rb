@@ -14,6 +14,6 @@ module ApplicationHelper
   end
 
   def summarise(content)
-    content.split[0..15].join(' ') + '.....'
+    content.split[0..50].join(' ') + '.....'
   end
 end

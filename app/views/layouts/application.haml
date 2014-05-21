@@ -1,18 +1,36 @@
 !!!
 %html
   %head
-    %title= full_title(yield(:title))
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = google_webfonts_link_tag "Open Sans"
+    = google_webfonts_link_tag "Lobster"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = render 'layouts/shim'
+    %script{:src => "http://guidobouman.github.io/jquery-panelsnap/jquery.panelSnap.js"}
+    :javascript
+      jQuery(function($) {
+        var options = {
+          $menu: $('.nav'),
+          onActivate: function(){
+            if ($("#contact").hasClass("active")) {
+              $("#contact .col-xs-12.col-sm-4").addClass("animated fadeInLeft delay-3");
+              $("#contact .col-xs-12.col-sm-6").addClass("animated fadeInUp delay-4");
+              $("#contact .col-xs-12.col-sm-2").addClass("animated fadeInRight delay-5");
+            }
+            if ($("#about").hasClass("active")) {
+              $("#about p.p1").addClass("animated fadeInRight delay-1");
+              $("#about p.p2").addClass("animated fadeInRight delay-3");
+              $("#about p.p3").addClass("animated fadeInRight delay-5");
+              $("#about p.p4").addClass("animated fadeInRight delay-7");
+              $("#about p.p5").addClass("animated fadeInRight delay-9");
+              $("#about .col-xs-12.col-sm-4").addClass("animated fadeInRight delay-3");
+            }
+          }
+        };
+
+        $('body').panelSnap(options);
+      });
   %body
     = render 'layouts/header'
-    .container
-      = render 'layouts/title'
-      - flash.each do |key, value|
-        - key = 'success' if key == 'notice'
-        - key = 'danger' if key == 'alert'
-        %div{class: "alert alert-#{key}"}= value
-      = yield
-      = render 'layouts/footer'
+    = yield
