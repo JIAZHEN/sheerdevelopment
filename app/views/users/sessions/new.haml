@@ -1,18 +1,19 @@
 - provide(:title, 'Sign in')
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .input-group
-    %span.input-group-addon
-      %i.fa.fa-user
-    %input#user_email.form-control{autofocus: "autofocus", name: "user[email]", placeholder: "email address", type: "email", value: ""}/
-  %br
-  .input-group
-    %span.input-group-addon
-      %i.fa.fa-lock
-    %input#user_password.form-control{autocomplete: "off", name: "user[password]", placeholder: "Password", type: "password"}/
-  - if devise_mapping.rememberable?
-    %label.checkbox
-      %input{name: "user[remember_me]", type: "hidden", value: "0"}/
-      %input#user_remember_me{name: "user[remember_me]", type: "checkbox", value: "1"}/
-      Remember Me
-  %div= f.submit "Sign in", class: 'btn btn-success'
-= render "users/shared/links"
+
+#signin.container
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .input-group
+      %span.input-group-addon
+        %i.fa.fa-user
+      %input#user_email.form-control{autofocus: "autofocus", name: "user[email]", placeholder: "email address", type: "email", value: ""}/
+    %br
+    .input-group
+      %span.input-group-addon
+        %i.fa.fa-lock
+      %input#user_password.form-control{autocomplete: "off", name: "user[password]", placeholder: "Password", type: "password"}/
+    - if devise_mapping.rememberable?
+      %label.checkbox
+        %input{name: "user[remember_me]", type: "hidden", value: "0"}/
+        %input#user_remember_me{name: "user[remember_me]", type: "checkbox", value: "1"}/
+        Remember Me
+    %div= f.submit "Sign in", class: 'btn btn-success'

@@ -1,32 +1,33 @@
 - provide(:title, 'Blogs')
-- if user_signed_in?
-  = link_to raw('<i class="glyphicon glyphicon-plus"></i> create'), new_post_path, class: "btn btn-medium btn-warning"
-  %br
 
-
-= will_paginate @posts
-.page-header
-  %h1#timeline Blogs
-%ul.timeline
-  - @posts.each_with_index do |post, index|
-    %li{class: ("timeline-inverted" if index % 2 == 1)}
-      .timeline-badge{class: ('warning' if index % 2 == 1)}
-        %i.glyphicon{class: (index % 2 == 1 ? 'glyphicon-check' : 'glyphicon-credit-card')}
-      .timeline-panel
-        .timeline-heading
-          %h4.timeline-title= post.title
-          %p
-            %small.text-muted
-              %i.glyphicon.glyphicon-time
-              = time_ago_in_words(post.created_at) + ' ago'
-              - if user_signed_in?
-                = link_to raw('<i class="glyphicon glyphicon-pencil"></i>edit'), edit_post_path(post)
-                = link_to raw('<i class="glyphicon glyphicon-remove"></i>delete'), post, method: :delete, data: { confirm: "You sure?" }
-        .timeline-body
-          %p
-            - if post.content.split.size > 15
-              = summarise(post.content)
-            - else
-              = post.content
-          %p.muted.pull-right= link_to raw('<i class="glyphicon glyphicon-paperclip"></i> View full'), post
-= will_paginate @posts
+#post-index.container
+  = will_paginate @posts
+  .row
+    .col-md-9
+      - @posts.each_with_index do |post, index|
+        .row
+          .col-md-12.post
+            .row
+              .col-md-12
+                %h4
+                  %strong
+                    %a.post-title{:href => post_path(post)}= post.title
+            .row
+              .col-md-12.post-header-line
+                = succeed "#{post.created_at.to_formatted_s(:long_ordinal)}" do
+                  %span.glyphicon.glyphicon-calendar
+                - if user_signed_in?
+                  |
+                  %span= link_to raw('<i class="glyphicon glyphicon-pencil"></i>edit'), edit_post_path(post)
+                  |
+                  %span= link_to raw('<i class="glyphicon glyphicon-remove"></i>delete'), post, method: :delete, data: { confirm: "You sure?" }
+            .row.post-content
+              .col-md-3
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "", :src => "http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png"}/
+              .col-md-9
+                %p= summarise(post.content)
+                %p
+                  %a.btn.btn-read-more{:href => "http://www.jquery2dotnet.com/2013/12/cool-share-button-effects-styles.html"} Read more
+  = will_paginate @posts
+     

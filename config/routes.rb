@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   root  to: 'static_pages#home'
 
-  match '/about'    => 'static_pages#about',    via: 'get'
-  match '/contact'  => 'static_pages#contact',  via: 'get'
   match '/sitemap'  => 'static_pages#sitemap',  via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.

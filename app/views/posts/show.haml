@@ -1,8 +1,22 @@
 - provide(:title, @post.title)
-%h1= @post.title
-%hr
-%p= markdown.render(@post.content).html_safe
-%code.bg-warning.text-warning
-  Posted #{time_ago_in_words(@post.created_at) + ' ago'}
-- if user_signed_in?
-  = link_to raw('<i class="glyphicon glyphicon-pencil"></i>'), edit_post_path(@post)
+
+.container
+  .row
+    #blog-content.col-lg-8
+      / the actual blog post: title/author/date/content
+      %h1
+        %a{:href => ""}= @post.title
+      %hr
+        %p
+          %i.fa.fa-calendar
+          Posted on 
+          = @post.created_at.to_formatted_s(:long_ordinal)
+        - if user_signed_in?
+          %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
+
+        %hr
+          %img.img-responsive{:src => @post.url}
+            %hr
+              %p.lead Welcome to Bootstrap Blog Template! This is a blog template example, built with Bootstrap. Contains "tools" that would be needed in a post.
+              %p= markdown.render(@post.content).html_safe
+    = render 'side'
