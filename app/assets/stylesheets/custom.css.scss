@@ -193,6 +193,18 @@ section {
   }
 }
 
+.btn-theme {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  margin-right: 15px;
+  &:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
+
 /* Carousel Styles */
 .carousel-indicators .active {
   background-color: #2980b9;

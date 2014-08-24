@@ -16,6 +16,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    response = HTTParty.get("https://hn.algolia.com/api/v1/search_by_date?tags=show_hn&hitsPerPage=5")
+    @hn_news = JSON.parse(response.body)["hits"]
   end
 
   def index

@@ -10,7 +10,7 @@
     .carousel-inner
       - @posts.each_with_index do |post, index|
         .item{class: ("active" if index == 0)}
-          %img{:alt => "#{index} slide", :src => post.url}/
+          %img{:src => post.url}/
           / Static Header
           .header-text.hidden-xs
             .col-md-12.text-center
@@ -25,5 +25,8 @@
                     = link_to 'more', posts_path
                   - else
                     = post.content
+              %br/
+              %div
+                %a.btn.btn-theme.btn-sm.btn-min-block{:href => "#"} READ MORE
         / /header-text
   / /carousel

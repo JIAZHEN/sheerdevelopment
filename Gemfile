@@ -19,6 +19,7 @@ gem 'paper_trail', '~> 3.0.1'
 gem 'devise', '~> 3.2.4'
 gem 'font-awesome-rails', '~> 4.1.0.0'
 gem "animate-rails"
+gem "httparty"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'actionpack-action_caching'
