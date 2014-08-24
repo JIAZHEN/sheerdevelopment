@@ -15,7 +15,8 @@
           .header-text.hidden-xs
             .col-md-12.text-center
               %h2
-                %span= post.title
+                %span
+                  = link_to post.title, post_path(post)
               %br/
               %h3
                 %span

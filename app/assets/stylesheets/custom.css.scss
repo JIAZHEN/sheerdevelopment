@@ -211,8 +211,11 @@ section {
   h2 {
     font-size: 40px;
     span {
-      font-family: 'Lobster';
       padding: 10px;
+      a {
+        font-family: 'Lobster';
+        color: #fff;
+      }
     }
   }
   h3 {

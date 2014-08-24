@@ -24,10 +24,9 @@
             .row.post-content
               .col-md-3
                 %a{:href => "#"}
-                  %img.img-responsive{:alt => "", :src => "http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png"}/
+                  %img.img-responsive{:src => post.url}/
               .col-md-9
                 %p= summarise(post.content)
-                %p
-                  %a.btn.btn-read-more{:href => "http://www.jquery2dotnet.com/2013/12/cool-share-button-effects-styles.html"} Read more
+                %p= link_to 'Read more', post_path(post), class: "btn btn-read-more"
   = will_paginate @posts
      
