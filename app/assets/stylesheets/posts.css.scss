@@ -14,6 +14,9 @@ body {
   i, a {
     color: #fff;
   }
+  p {
+    font-size: smaller;
+  }
 }
 
 a:hover {
@@ -73,10 +76,10 @@ a:hover {
 
 /* pagination */
 .pagination {
-  background: #C7C7C7;
+  background: rgba(199, 199, 199, 0.25);
   border: 1px solid #e5e5e5;
+  font-size: smaller;
   text-align: center;
-  padding: 0.5%;
   margin-bottom: 5%;
   cursor: default;
   a, span {
@@ -88,7 +91,7 @@ a:hover {
   .current {
     font-style: normal;
     font-weight: bold;
-    background-color: #bebebe;
+    background-color: rgb(34, 48, 41);
     display: inline-block;
     width: 1.4em;
     height: 1.4em;

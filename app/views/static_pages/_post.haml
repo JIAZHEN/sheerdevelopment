@@ -21,10 +21,9 @@
               %h3
                 %span
                   - if post.content.split.size > 15
-                    = summarise(post.content)
-                    = link_to 'more', posts_path
+                    = markdown.render(summarise(post.content)).html_safe
                   - else
-                    = post.content
+                    = markdown.render(post.content).html_safe
               %br/
               %div
                 %a.btn.btn-theme.btn-sm.btn-min-block{:href => posts_path} READ MORE

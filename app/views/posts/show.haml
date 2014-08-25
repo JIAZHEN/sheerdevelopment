@@ -16,6 +16,5 @@
         %hr
           %img.img-responsive{:src => @post.url}
             %hr
-              %p.lead Welcome to Bootstrap Blog Template! This is a blog template example, built with Bootstrap. Contains "tools" that would be needed in a post.
               %p= markdown.render(@post.content).html_safe
     = render 'side'
