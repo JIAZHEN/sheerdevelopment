@@ -1,5 +1,5 @@
 - provide(:title, 'Create post')
-.span6
+.container
 	= form_for(@post) do |f|
 		= render 'fields', f: f
 		= f.submit "Create post", class: "btn btn-medium btn-primary"

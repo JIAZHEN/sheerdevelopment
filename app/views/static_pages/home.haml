@@ -1,11 +1,33 @@
-.alert.alert-warning
-	Hi, a warm welcome to you to visit my personal website!
-%p
-	I am a skilled professional in the IT sector as a dynamic and results oriented problem solver. Current working as a developer in QA in Global Personals Development Team, which is a team of web professionals building online dating websites and tools as part of Global Personals in the UK.
-%p
-	With my solid skills in programming,  system design and application development, I have worked with Google APIs, developing software tools using a variety of technologies, but mainly focussing on: Ruby on Rails, Ruby, Java, MySQL, Postgres, Git and SQL. 
-%p
-	As a Ruby developer, I love new techniques and would like to discuss complexity of algoirthms/problems. If you have any interesting questions, please do not hesitate to contact me. We will keep learning together and never stop. I love the words 
-	%code.bg-warning.text-warning Work seriously, the simple life.
-%hr
-%em updated on 13th April, 2014
+%section#welcome{"data-panel" => "welcome"}
+  = render 'welcome'
+%section#post{"data-panel" => "post"}
+  = render 'post'
+%section#about{"data-panel" => "about"}
+  = render 'about'
+%section#contact{"data-panel" => "contact"}
+  = render 'contact'
+
+:javascript
+  jQuery(function($) {
+    var options = {
+      $menu: $('.nav'),
+      onActivate: function(){
+        if ($("#contact").hasClass("active")) {
+          $("#contact .col-xs-12.col-sm-4").addClass("animated fadeInLeft delay-3");
+          $("#contact .col-xs-12.col-sm-6").addClass("animated fadeInUp delay-4");
+          $("#contact .col-xs-12.col-sm-2").addClass("animated fadeInRight delay-5");
+        }
+        if ($("#about").hasClass("active")) {
+          $("#about p.p1").addClass("animated fadeInRight delay-1");
+          $("#about p.p2").addClass("animated fadeInRight delay-3");
+          $("#about p.p3").addClass("animated fadeInRight delay-5");
+          $("#about p.p4").addClass("animated fadeInRight delay-7");
+          $("#about p.p5").addClass("animated fadeInRight delay-9");
+          $("#about .col-xs-12.col-sm-4").addClass("animated fadeInRight delay-3");
+        }
+      }
+    };
+
+    $('body').panelSnap(options);
+    $("a[data-panel='#{@a}']").click();
+  });

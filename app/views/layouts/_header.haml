@@ -1,9 +1,12 @@
-%header.navbar.navbar-default.navbar-fixed-top.navbar-inverse{role: "navigation"}
-  .navbar-inner
-    %ul.nav
-      %li= link_to 'Home', root_path
-      %li= link_to 'Blogs', posts_path
-      %li= link_to 'About me', about_path
-      %li= link_to 'Contact', contact_path
-      - if user_signed_in?
-        %li= link_to "Sign out", destroy_user_session_path, method: "delete"
+.nav
+  %a{"data-panel" => "welcome", :href => yield(:title).nil? ? "" : root_path(a: "welcome")}
+    %i.fa.fa-home.fa
+  %a{"data-panel" => "post", :href => yield(:title).nil? ? "" : posts_path}
+    %i.fa.fa-book.fa
+  %a{"data-panel" => "about", :href => yield(:title).nil? ? "" : root_path(a: "about")}
+    %i.fa.fa-briefcase.fa
+  %a{"data-panel" => "contact", :href => yield(:title).nil? ? "" : root_path(a: "contact")}
+    %i.fa.fa-envelope.fa
+  - if user_signed_in?
+    %a{"data-method" => "delete", href: "/signout", rel: "nofollow"}
+      %i.fa.fa-sign-out.fa

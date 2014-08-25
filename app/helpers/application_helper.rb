@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def full_title(page_title)
-		base_title = 'Jiazhen Xie | Ruby Dev'
+		base_title = 'Jiazhen Xie | Dev in Test'
 		if page_title.empty?
 			base_title
 		else
@@ -14,6 +14,6 @@ module ApplicationHelper
   end
 
   def summarise(content)
-    content.split[0..15].join(' ') + '.....'
+    content.split[0..50].join(' ') + '.....'
   end
 end
