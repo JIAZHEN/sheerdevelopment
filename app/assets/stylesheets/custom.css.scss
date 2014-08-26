@@ -191,6 +191,13 @@ section {
   .carousel {
     position: inherit;
   }
+  .carousel-inner {
+    .item {
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .btn-theme {

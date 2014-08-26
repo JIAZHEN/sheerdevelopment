@@ -15,7 +15,14 @@ body {
     color: #fff;
   }
   p {
-    font-size: smaller;
+    font-size: 16px;
+    margin: 30px 0px;
+  }
+
+  /* typography */
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
   }
 }
 
