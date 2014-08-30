@@ -15,7 +15,7 @@ gem 'rb-readline', '~> 0.5.1'
 gem 'jquery-rails', '~> 3.1.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'uglifier', '~> 2.5.0'
-gem 'paper_trail', '~> 3.0.1'
+gem 'paper_trail', '~> 3.0.5'
 gem 'devise', '~> 3.2.4'
 gem 'font-awesome-rails', '~> 4.1.0.0'
 gem "animate-rails"
