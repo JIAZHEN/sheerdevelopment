@@ -40,11 +40,7 @@ group :test, :development do
 end
 
 group :production, :development do
-  gem 'pg'
-end
-
-group :production do
-  gem 'rails_12factor', '0.0.2'
+  gem 'mysql2', '~> 0.3.16'
 end
 
 group :development do
