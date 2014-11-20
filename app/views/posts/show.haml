@@ -19,7 +19,5 @@
         %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
 
       %hr
-        %img.img-responsive{:src => @post.url}
-          %hr
-            %p= markdown.render(@post.content).html_safe
+        %p= markdown.render(@post.content).html_safe
     = render 'side'

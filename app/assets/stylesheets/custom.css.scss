@@ -35,10 +35,10 @@ input {
 
 $i: 0;
 @while $i <= 10 {
-  .delay-#{$i} { 
+  .delay-#{$i} {
     animation-delay: 500ms * $i;
     -moz-animation-delay: 500ms * $i;
-    -webkit-animation-delay: 500ms * $i; 
+    -webkit-animation-delay: 500ms * $i;
   }
   $i: $i + 1;
 }
@@ -150,7 +150,7 @@ section {
 
 #title {
   text-align: center;
-  
+
   h1 {
     letter-spacing: 1px;
     margin: 0 auto;
@@ -187,16 +187,54 @@ section {
 
 /* post */
 #post {
+  background: #1E212F;
   padding: 0px;
   .carousel {
     position: inherit;
   }
-  .carousel-inner {
-    .item {
-      img {
-        width: 100%;
+}
+
+.post-preview > {
+  a {
+    color: #ffffff;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: #0085a1;
+    }
+    > {
+      .post-title {
+        font-weight: bold;
+        font-size: 36px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      .post-subtitle {
+        color: #D5D5D5;
+        margin: 0;
+        font-weight: 300;
+        margin-bottom: 10px;
       }
     }
+  }
+  .post-meta {
+    color: #808080;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    > a {
+      text-decoration: none;
+      color: #D2D2D2;
+      &:hover, &:focus {
+        color: #0085a1;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .post-preview > a > .post-title {
+    font-size: 36px;
   }
 }
 
@@ -205,6 +243,7 @@ section {
   background-color: transparent;
   border: 2px solid #fff;
   margin-right: 15px;
+  margin-top: 10%;
   &:hover {
     color: #000;
     background-color: #fff;
@@ -213,37 +252,17 @@ section {
 }
 
 /* Carousel Styles */
-.carousel-indicators .active {
-  background-color: #2980b9;
-}
-
-/* Carousel Header Styles */
-
-.header-text {
-  position: absolute;
-  top: 15%;
-  left: 1.8%;
-  right: auto;
-  width: 96.66666666666666%;
-  color: #fff;
-
-  h2 {
-    font-size: 40px;
-    span {
-      padding: 10px;
-      a {
-        font-family: 'Lobster';
-        color: #fff;
-      }
-    }
-  }
-  h3 {
-    width: 90.66666666666666%;
-    span {
-      padding: 15px;
-    }
+.carousel-indicators {
+  top: 150%;
+  .active {
+    background-color: #2980b9;
   }
 }
+
+.carousel-inner {
+  margin-top: 15%;
+}
+
 
 /* signin */
 #signin {
