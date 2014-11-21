@@ -5,19 +5,24 @@
     padding: 30px;
   }
 
-.container.markdown-body
+.container
   .row
-    #blog-content.col-lg-8
-      %h1
-        %a{:href => ""}= @post.title
+    #blog-content
+      %header.intro-header
+        .row
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+            .post-heading
+              %h1= @post.title
+              %h2.subheading Problems look mighty small from 150 miles up
+              %span.meta
+                Posted by
+                %a{:href => "#"} Jiazhen Xie
+                on
+                = @post.created_at.to_formatted_s(:long_ordinal)
+      %article.markdown-body
+        .row
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+            = markdown.render(@post.content).html_safe
 
-      %p
-        %i.fa.fa-calendar
-        Posted on
-        = @post.created_at.to_formatted_s(:long_ordinal)
-      - if user_signed_in?
-        %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
-
-      %hr
-        %p= markdown.render(@post.content).html_safe
-    = render 'side'
+      / - if user_signed_in?
+      /   %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
