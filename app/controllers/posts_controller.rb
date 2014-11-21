@@ -16,8 +16,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    response = HTTParty.get("https://hn.algolia.com/api/v1/search_by_date?tags=show_hn&hitsPerPage=5")
-    @hn_news = JSON.parse(response.body)["hits"]
   end
 
   def index
@@ -47,7 +45,8 @@ class PostsController < ApplicationController
   end
 
   private
-    def post_params
-      params.require(:post).permit(:content, :title, :url)
-    end
+
+  def post_params
+    params.require(:post).permit(:content, :title, :url)
+  end
 end

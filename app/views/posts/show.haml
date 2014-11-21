@@ -17,10 +17,13 @@
               %span.meta
                 Posted by
                 %a{:href => "#"} Jiazhen Xie
+                •
                 = time_ago_in_words(@post.created_at) + " ago"
                 - if user_signed_in?
                   %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
       %article.markdown-body
         .row
           .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+            %br/
+            %br/
             = markdown.render(@post.content).html_safe
