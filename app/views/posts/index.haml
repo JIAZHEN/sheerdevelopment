@@ -1,32 +1,45 @@
 - provide(:title, 'Blogs')
 
 #post-index.container
-  = will_paginate @posts
-  .row
-    .col-md-9
-      - @posts.each_with_index do |post, index|
-        .row
-          .col-md-12.post
-            .row
-              .col-md-12
-                %h4
-                  %strong
-                    %a.post-title{:href => post_path(post)}= post.title
-            .row
-              .col-md-12.post-header-line
-                = succeed "#{post.created_at.to_formatted_s(:long_ordinal)}" do
-                  %span.glyphicon.glyphicon-calendar
-                - if user_signed_in?
-                  |
-                  %span= link_to raw('<i class="glyphicon glyphicon-pencil"></i>edit'), edit_post_path(post)
-                  |
-                  %span= link_to raw('<i class="glyphicon glyphicon-remove"></i>delete'), post, method: :delete, data: { confirm: "You sure?" }
-            .row.post-content
-              .col-md-3
-                %a{:href => "#"}
-                  %img.img-responsive{:src => post.url}/
-              .col-md-9
-                %p= markdown.render(summarise(post.content)).html_safe
-                %p= link_to 'Read more', post_path(post), class: "btn btn-read-more"
-  = will_paginate @posts
-     
+  %header.intro-header
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+        .post-heading
+          %h1 Stories
+          %h2.subheading Tech blog posts and interesting things
+
+  %br/
+  %br/
+  %br/
+
+  .container
+    - @posts.each do |post|
+      .row
+        %br/
+        .col-md-2.col-sm-3.text-center
+          %a.story-title{:href => "#"}
+            %img.img-circle{:alt => "", :src => post.avatar_url, :style => "width:100px;height:100px"}/
+        .col-md-10.col-sm-9
+          %a{:href => post_path(post)}
+            %h3= post.title
+          .row
+            .col-xs-9
+              %h4
+                %span.label.label-default Tech post
+              %h4
+                %small.text-muted{:style => "font-family:courier,'new courier';"}
+                  = time_ago_in_words(post.created_at) + " ago"
+                  •
+                  %a.text-muted{:href => post_path(post)} Read More
+                  - if user_signed_in?
+                    •
+                    %span= link_to raw('<i class="glyphicon glyphicon-pencil"></i>edit'), edit_post_path(post)
+                    •
+                    %span= link_to raw('<i class="glyphicon glyphicon-remove"></i>delete'), post, method: :delete, data: { confirm: "You sure?" }
+            .col-xs-3
+        %br/
+        %br/
+        %br/
+      %hr/
+
+    = will_paginate @posts

@@ -19,8 +19,8 @@ gem 'paper_trail', '~> 3.0.5'
 gem 'devise', '~> 3.2.4'
 gem 'font-awesome-rails', '~> 4.1.0.0'
 gem "animate-rails"
-gem "httparty"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem "image_suckr"
 
 gem 'actionpack-action_caching'
 gem 'activerecord-session_store'
