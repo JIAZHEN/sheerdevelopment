@@ -28,7 +28,7 @@
                 %span.label.label-default Tech post
               %h4
                 %small.text-muted{:style => "font-family:courier,'new courier';"}
-                  = time_ago_in_words(post.created_at)
+                  = time_ago_in_words(post.created_at) + " ago"
                   •
                   %a.text-muted{:href => post_path(post)} Read More
             .col-xs-3
