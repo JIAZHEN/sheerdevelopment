@@ -4,6 +4,12 @@ body {
   background-repeat: no-repeat;
 }
 
+#post-index {
+  h3 {
+    color: #646464;
+  }
+}
+
 /* post show */
 .intro-header {
   background-color: #808080;
@@ -140,13 +146,14 @@ a:hover {
 /* pagination */
 .pagination {
   background: rgba(199, 199, 199, 0.25);
-  border: 1px solid #e5e5e5;
+  border: 1px solid #000000;
   font-size: smaller;
   text-align: center;
   margin-bottom: 5%;
   cursor: default;
   a, span {
     padding: 0.2em 0.3em;
+    color: #000000;
   }
   .disabled {
     color: #aaaaaa;

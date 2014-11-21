@@ -19,10 +19,9 @@
                 %a{:href => "#"} Jiazhen Xie
                 on
                 = @post.created_at.to_formatted_s(:long_ordinal)
+                - if user_signed_in?
+                  %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
       %article.markdown-body
         .row
           .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
             = markdown.render(@post.content).html_safe
-
-      / - if user_signed_in?
-      /   %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
