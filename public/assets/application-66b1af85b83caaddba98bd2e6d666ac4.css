@@ -9656,7 +9656,7 @@ section:nth-child(2n) {
 }
 /* line 95, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 .nav a {
-  color: #fff;
+  color: #000;
   display: block;
   width: 14px;
   height: 14px;
@@ -9680,15 +9680,15 @@ section:nth-child(2n) {
 }
 /* line 118, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 .nav i {
-  color: #fff;
+  color: #000;
   padding: 5px 5px;
   display: inline-block;
   -moz-border-radius: 100px;
   -webkit-border-radius: 100px;
   border-radius: 100px;
-  -moz-box-shadow: 0px 0px 2px #fff;
-  -webkit-box-shadow: 0px 0px 2px #fff;
-  box-shadow: 0px 0px 2px #fff;
+  -moz-box-shadow: 0px 0px 2px #000;
+  -webkit-box-shadow: 0px 0px 2px #000;
+  box-shadow: 0px 0px 2px #000;
 }
 
 /* line 131, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
@@ -9755,25 +9755,70 @@ section:nth-child(2n) {
 /* post */
 /* line 189, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 #post {
+  background: #2C3944;
   padding: 0px;
 }
-/* line 191, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+/* line 192, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 #post .carousel {
   position: inherit;
 }
-/* line 196, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-#post .carousel-inner .item img {
-  width: 100%;
+
+/* line 198, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > a {
+  color: #ffffff;
+}
+/* line 200, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > a:hover, .post-preview > a:focus {
+  text-decoration: none;
+  color: #0085a1;
+}
+/* line 205, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > a > .post-title {
+  font-weight: bold;
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+/* line 211, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > a > .post-subtitle {
+  color: #D5D5D5;
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+/* line 219, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > .post-meta {
+  color: #808080;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+/* line 224, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > .post-meta > a {
+  text-decoration: none;
+  color: #D2D2D2;
+}
+/* line 227, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.post-preview > .post-meta > a:hover, .post-preview > .post-meta > a:focus {
+  color: #0085a1;
+  text-decoration: underline;
 }
 
-/* line 203, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+@media only screen and (min-width: 768px) {
+  /* line 236, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+  .post-preview > a > .post-title {
+    font-size: 36px;
+  }
+}
+/* line 241, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 .btn-theme {
   color: #fff;
   background-color: transparent;
   border: 2px solid #fff;
   margin-right: 15px;
+  margin-top: 10%;
 }
-/* line 208, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+/* line 247, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 .btn-theme:hover {
   color: #000;
   background-color: #fff;
@@ -9781,54 +9826,31 @@ section:nth-child(2n) {
 }
 
 /* Carousel Styles */
-/* line 216, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+/* line 255, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.carousel-indicators {
+  top: 150%;
+}
+/* line 257, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 .carousel-indicators .active {
   background-color: #2980b9;
 }
 
-/* Carousel Header Styles */
-/* line 222, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-.header-text {
-  position: absolute;
-  top: 15%;
-  left: 1.8%;
-  right: auto;
-  width: 96.66666666666666%;
-  color: #fff;
-}
-/* line 230, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-.header-text h2 {
-  font-size: 40px;
-}
-/* line 232, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-.header-text h2 span {
-  padding: 10px;
-}
-/* line 234, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-.header-text h2 span a {
-  font-family: 'Lobster';
-  color: #fff;
-}
-/* line 240, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-.header-text h3 {
-  width: 90.66666666666666%;
-}
-/* line 242, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
-.header-text h3 span {
-  padding: 15px;
+/* line 262, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+.carousel-inner {
+  margin-top: 15%;
 }
 
 /* signin */
-/* line 249, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+/* line 268, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 #signin {
   margin-top: 10%;
   width: 30%;
 }
-/* line 253, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+/* line 272, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 #signin #user_remember_me {
   width: 7%;
 }
-/* line 257, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
+/* line 276, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/custom.css.scss */
 #signin .checkbox {
   display: block;
   min-height: 20px;
@@ -10654,43 +10676,107 @@ section:nth-child(2n) {
 }
 /* line 1, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 body {
-  background: url(blog-background.jpg) repeat 0 0;
+  background-image: url(post-bg.png);
+  background-size: 1900px 600px;
+  background-repeat: no-repeat;
 }
 
-/* line 5, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-#blog-side {
-  color: #223029;
-}
-/* line 7, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-#blog-side i, #blog-side a {
-  color: #223029;
+/* line 8, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+#post-index h3 {
+  color: #646464;
 }
 
-/* line 12, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-#blog-content {
-  color: #fff;
-  /* typography */
-}
+/* post show */
 /* line 14, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-#blog-content i, #blog-content a {
-  color: #fff;
+.intro-header {
+  background-color: #808080;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 50px;
 }
-/* line 17, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-#blog-content p {
-  font-size: 16px;
-  margin: 30px 0px;
+/* line 23, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .site-heading, .intro-header .post-heading, .intro-header .page-heading {
+  padding: 100px 0 50px;
+  color: white;
 }
-/* line 24, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-#blog-content h1, #blog-content h2, #blog-content h3, #blog-content h4, #blog-content h5, #blog-content h6 {
-  line-height: 1;
+/* line 27, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .site-heading, .intro-header .page-heading {
+  text-align: center;
+}
+/* line 30, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .site-heading h1, .intro-header .page-heading h1 {
+  margin-top: 0;
+  font-size: 50px;
+}
+/* line 34, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .site-heading .subheading, .intro-header .page-heading .subheading {
+  font-size: 24px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+/* line 43, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .post-heading h1 {
+  font-size: 35px;
+}
+/* line 46, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .post-heading .subheading, .intro-header .post-heading .meta {
+  line-height: 1.1;
+  display: block;
+}
+/* line 50, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .post-heading .subheading {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin: 10px 0 30px;
+  font-weight: 600;
+}
+/* line 56, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .post-heading .meta {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+}
+/* line 61, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+.intro-header .post-heading .meta a {
+  color: white;
 }
 
-/* line 29, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+@media only screen and (min-width: 768px) {
+  /* line 70, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+  .intro-header .site-heading, .intro-header .post-heading, .intro-header .page-heading {
+    padding: 150px 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 78, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+  .intro-header .site-heading h1, .intro-header .page-heading h1 {
+    font-size: 80px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 86, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+  .intro-header .post-heading h1 {
+    font-size: 55px;
+  }
+  /* line 89, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+  .intro-header .post-heading .subheading {
+    font-size: 30px;
+  }
+}
+/* line 95, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 33, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 99, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .btn {
   transition: all .2s linear;
   -webkit-transition: all .2s linear;
@@ -10698,7 +10784,7 @@ a:hover {
   -o-transition: all .2s linear;
 }
 
-/* line 40, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 106, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .btn-read-more {
   padding: 5px;
   text-align: center;
@@ -10711,32 +10797,27 @@ a:hover {
   font-size: 12px;
   color: #662D91;
 }
-/* line 51, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 117, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .btn-read-more:hover {
   color: #FFF;
   background: #223029;
 }
 
-/* line 57, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 123, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .post {
   border-bottom: 1px solid #DDD;
 }
-/* line 59, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 125, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .post a {
   color: #fff;
 }
 
-/* line 64, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
-.post-title {
-  color: #662D91;
-}
-
-/* line 68, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 130, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .post .glyphicon {
   margin-right: 5px;
 }
 
-/* line 72, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 134, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .post-header-line {
   border-top: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
@@ -10744,31 +10825,32 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 79, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 141, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .post-content {
   padding-bottom: 15px;
   padding-top: 15px;
 }
 
 /* pagination */
-/* line 85, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 147, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .pagination {
   background: rgba(199, 199, 199, 0.25);
-  border: 1px solid #e5e5e5;
+  border: 1px solid #000000;
   font-size: smaller;
   text-align: center;
   margin-bottom: 5%;
   cursor: default;
 }
-/* line 92, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 154, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .pagination a, .pagination span {
   padding: 0.2em 0.3em;
+  color: #000000;
 }
-/* line 95, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 158, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .pagination .disabled {
   color: #aaaaaa;
 }
-/* line 98, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 161, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .pagination .current {
   font-style: normal;
   font-weight: bold;
@@ -10782,18 +10864,18 @@ a:hover {
   border-radius: 1em;
   text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
 }
-/* line 111, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 174, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .pagination a {
   text-decoration: none;
   color: black;
 }
-/* line 114, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 177, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .pagination a:hover, .pagination a:focus {
   text-decoration: underline;
 }
 
 /* post */
-/* line 121, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
+/* line 184, /Users/jiazhenxie/Documents/webdesign/blog/app/assets/stylesheets/posts.css.scss */
 .well {
   background-color: rgba(245, 245, 245, 0.21);
 }
