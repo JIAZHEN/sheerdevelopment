@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121221318) do
+ActiveRecord::Schema.define(version: 20141121230720) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141121221318) do
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "avatar_url"
+    t.string   "subtitle"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug"

@@ -19,6 +19,7 @@ describe Post do
   it { should respond_to(:title) }
   it { should respond_to(:content) }
   it { should respond_to(:avatar_url) }
+  it { should respond_to(:subtitle) }
   it { should be_valid }
 
   describe "when avatar_url is not present" do
@@ -51,7 +52,6 @@ describe Post do
       end
 
       it "is set by random image after update" do
-        p Post.last.avatar_url
         expect(post.avatar_url).to eq(avatar_url)
       end
     end
