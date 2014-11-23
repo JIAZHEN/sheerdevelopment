@@ -27,7 +27,7 @@ describe Post do
     let(:avatar_url)  { "new_url" }
     before do
       allow_any_instance_of(ImageSuckr::GoogleSuckr).to receive(:get_image_url).
-        with("q" => "日本动漫头像", "imgsz" => "small|medium").
+        with("q" => "日本动漫头像 #{@post.avatar_url}".strip, "imgsz" => "small|medium").
         and_return(avatar_url)
     end
 
@@ -38,20 +38,6 @@ describe Post do
       end
 
       it "is set by random image after save" do
-        expect(post.avatar_url).to eq(avatar_url)
-      end
-    end
-
-    context "after update" do
-      let(:old_url) { "unknown" }
-
-      before do
-        @post.avatar_url = old_url
-        @post.save
-        @post.update_attributes(avatar_url: "")
-      end
-
-      it "is set by random image after update" do
         expect(post.avatar_url).to eq(avatar_url)
       end
     end
