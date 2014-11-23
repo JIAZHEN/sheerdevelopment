@@ -27,7 +27,7 @@ class Post < ActiveRecord::Base
   def random_avatar
     if self.avatar_url.nil? || self.avatar_url.empty?
       suckr = ImageSuckr::GoogleSuckr.new
-      self.avatar_url = suckr.get_image_url("q" => "animation image")
+      self.avatar_url = suckr.get_image_url("q" => "日本动漫头像", "imgsz" => "small|medium")
     end
   end
 end

@@ -27,7 +27,7 @@ describe Post do
     let(:avatar_url)  { "new_url" }
     before do
       allow_any_instance_of(ImageSuckr::GoogleSuckr).to receive(:get_image_url).
-        with("q" => "animation image").
+        with("q" => "日本动漫头像", "imgsz" => "small|medium").
         and_return(avatar_url)
     end
 
