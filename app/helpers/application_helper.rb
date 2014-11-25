@@ -13,7 +13,4 @@ module ApplicationHelper
     parser ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true, autolink: true)
   end
 
-  def summarise(content)
-    content.split[0..50].join(' ') + '.....'
-  end
 end

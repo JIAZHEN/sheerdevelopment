@@ -10,7 +10,7 @@
     #blog-content
       %header.intro-header
         .row
-          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+          .col-lg-12.col-lg-offset-2.col-md-12.col-md-offset-1
             .post-heading
               %h1= @post.title
               %h2.subheading= @post.subtitle
@@ -21,6 +21,8 @@
                 = time_ago_in_words(@post.created_at) + " ago"
                 - if user_signed_in?
                   %p= link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
+        %br/
+        %br/
       %article.markdown-body
         .row
           .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1

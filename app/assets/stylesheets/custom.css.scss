@@ -253,7 +253,8 @@ section {
 
 /* Carousel Styles */
 .carousel-indicators {
-  top: 150%;
+  top: 120%;
+  margin-left: -45%;
   .active {
     background-color: #2980b9;
   }
