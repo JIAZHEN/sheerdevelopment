@@ -13,4 +13,8 @@ class StaticPagesController < ApplicationController
   def sitemap
     render :layout => false
   end
+
+  def new_home
+    render :layout => false
+  end
 end
