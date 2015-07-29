@@ -12,5 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require owl.carousel.min
+//= require bootstrap.min
