@@ -10,7 +10,7 @@
  *
  *= require font-awesome
  *= require animate
- *= require_self
- *= require_tree .
+ *= require owl.carousel.min
+ *= require owl.theme.default.min
  *= require font-awesome
  */
