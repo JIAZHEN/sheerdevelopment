@@ -9,6 +9,25 @@
     = render 'layouts/shim'
 
   %body
+    %nav.navbar.navbar-default.transparent.navbar-fixed-top{:role => "banner"}
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "/"} Bootply
+      %nav.collapse.navbar-collapse{:role => "navigation"}
+        %ul.nav.navbar-nav
+          %li
+            %a{:href => "#sec"} Get Started
+          %li
+            %a{:href => "#sec"} Edit
+          %li
+            %a{:href => "#sec"} Visualize
+          %li
+            %a{:href => "#sec"} Prototype
+
     #mainContainer.container
       %section#Welcome.sec.pull-center
         %h1 Welcome
@@ -38,6 +57,14 @@
       $(document).ready(function(){
         $('.awesome-tooltip').tooltip({
           placement: 'left'
+        });
+
+        $(window).scroll(function() {
+          if($(this).scrollTop() > 100) {
+            $('.navbar').addClass('opaque'); // adding the opaque class
+          } else {
+            $('.navbar').removeClass('opaque'); // removing the opaque class
+          }
         });
 
         $(window).bind('scroll',function(e){
