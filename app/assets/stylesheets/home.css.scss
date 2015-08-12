@@ -1,124 +1,42 @@
-/* changing the navbar to transparent */
-.navbar {
-  background-color: transparent;
-  background: transparent;
-  border: none;
-  color: white;
-  z-index: 100;
-  margin-bottom: 0;
-  border-radius: 0;
-}
+html,body{height:100%;}
+section{min-height:100%;}
 
-/* Adjusting the brand and link colors */
+#mainContainer {height:100%;}
 
-.navbar-default .navbar-brand {
-  color: white;
-  font-weight: 500;
-}
-.navbar-default .navbar-brand:hover {
-  color: white;
-}
-.navbar-default .navbar-nav > li > a {
-  color: white;
-  font-weight: 500;
-  font-size: 1em;
-  text-transform: lowercase;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active {
-  color: white;
-  text-decoration: underline;
-}
-.navbar-default .navbar-nav > li > a:visited, .navbar-default .navbar-nav > li > a:focus {
-  color: white;
-  text-decoration: none;
-}
-/* opaque class which will be attached on scroll */
-
-.navbar.opaque {
-  background-color: white;
-  background: white;
-  transition: background-color 1s ease 0s; /* Transition effect to make it fade in (optional) */
-  box-shadow: 0px 0px 4px #969696;
-}
-.navbar.opaque .navbar-brand {
-  color: #969696;
-  transition: color 1s ease 0s;
-}
-.navbar.opaque .navbar-nav > li > a {
-  color: #969696;
-  transition: color 1s ease 0s;
-}
-.navbar.opaque .navbar-nav > li > a:active {
-  text-decoration: underline;
-}
-
-.menu {
-  position: absolute;
-  left: 50%;
-  display: block;
-  text-align: center;
-}
-
-
-body {
-  background: #f0f0f0;
-}
-body, html {
-    height: 100%;
-}
-#main {
-    height: 100%;
-}
-section {
-    padding: 13% 0;
-  height: 100%;
-}
-#dot-nav{
-  right: 10px;
+#dotNav {
   top: 50%;
-  margin-top: -50px;
-  height: 100px;
-  z-index: 999;
+  z-index: 5;
+  right: 7%;
+  padding: 7px;
+  padding-top: 12px;
 }
-
-#dot-nav ul {
+#dotNav ul {
   list-style: none;
   margin:0;
-  padding: 0;
 }
-#dot-nav li {
+#dotNav li {
   position: relative;
-  background-color: #bdc3c7;
-  border:3px solid #bdc3c7;
+  background: none repeat scroll 0 0 #cccccc;
+  border:1px solid #aaaaaa;
   border-radius: 15px 15px 15px 15px;
   cursor: pointer;
-  padding: 5px;
-  height: 10px;
+  height: 12px;
   margin: 10px 10px 0px 0px;
-  width: 10px;
+  width: 12px;
   vertical-align:bottom;
 }
-#dot-nav li.active, #dot-nav li:hover {
-  background-color: #8e44ad;
+#dotNav li.active {
+  background-color: #ffffff;
+  background-image: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
+  background-repeat: repeat-x;
 }
-
-#dot-nav a {
+#dotNav li:hover {
+  background: none repeat scroll 0 0 #EEEEEE;
+}
+#dotNav a {
   outline: 0;
   vertical-align:top;
   margin: 0px 0px 0px 25px;
   position: relative;
   top:-5px;
-}
-.awesome-tooltip + .tooltip > .tooltip-inner {
-    background-color: #8e44ad;
-    color: #f5f5f5;
-    border: 1px solid #8e44ad;
-}
-.awesome-tooltip + .tooltip.left > .tooltip-arrow{
-    top:50%;
-    right:0;
-    margin-top:-5px;
-    border-top:5px solid transparent;
-    border-bottom:5px solid transparent;
-    border-left:5px solid #8e44ad;
 }
