@@ -15,43 +15,34 @@
           %span.sr-only Toggle navigation
           %span.icon-bar
           %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => "/"} Bootply
+
+        %a.navbar-brand{:href => "/"}
+          = image_tag "logo.png"
       %nav.collapse.navbar-collapse{:role => "navigation"}
         %ul.nav.navbar-nav
+          %li.active
+            %a{:href => "#sec"} Blog
           %li
-            %a{:href => "#sec"} Get Started
+            %a{:href => "#sec"} About
           %li
-            %a{:href => "#sec"} Edit
-          %li
-            %a{:href => "#sec"} Visualize
-          %li
-            %a{:href => "#sec"} Prototype
+            %a{:href => "#sec"} Contact
 
     #mainContainer.container
-      %section#Welcome.sec.pull-center
-        %h1 Welcome
-      %section#Features.sec.pull-center
-        %h1 Features
-      %section#Fame.sec.pull-center
-        %h1 Fame
-      %section#Fortune.sec.pull-center
-        %h1 Fortune
+      %section#Blog.sec.pull-center
+        %h1 Blog
       %section#About.sec.pull-center
         %h1 About
+      %section#Contact.sec.pull-center
+        %h1 Contact
 
     #dotNav.pull-right{"data-spy" => "affix"}
       %ul
-        %li.awesome-tooltip.active{:title => "Welcome"}
-          %a{:href => "#Welcome"}
-        %li.awesome-tooltip{:title => "Features"}
-          %a{:href => "#Features"}
-        %li.awesome-tooltip{:title => "Fame"}
-          %a{:href => "#Fame"}
-        %li.awesome-tooltip{:title => "Fortune"}
-          %a{:href => "#Fortune"}
+        %li.awesome-tooltip.active{:title => "Blog"}
+          %a{:href => "#Blog"}
         %li.awesome-tooltip{:title => "About"}
           %a{:href => "#About"}
+        %li.awesome-tooltip{:title => "Contact"}
+          %a{:href => "#Contact"}
 
     :javascript
       $(document).ready(function(){

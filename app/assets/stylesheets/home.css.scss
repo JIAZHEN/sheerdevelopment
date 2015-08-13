@@ -14,7 +14,7 @@ section {
 #dotNav {
   top: 50%;
   z-index: 5;
-  right: 7%;
+  right: 2%;
   padding: 7px;
   padding-top: 12px;
 
@@ -56,6 +56,8 @@ section {
 
 /* changing the navbar to transparent */
 .navbar {
+  color: #6E6E6E;
+  text-transform: uppercase;
   transition: background-color 1s ease 0s;
   background-color: transparent;
   background: transparent;
@@ -67,8 +69,54 @@ section {
 }
 
 .navbar.opaque {
-  background-color: white;
-  background: white;
+  background-color: #FAF5ED;
+  background: #FAF5ED;
   transition: background-color 1s ease 0s; /* Transition effect to make it fade in (optional) */
   box-shadow: 0px 0px 4px #969696;
 }
+
+ul {
+  &.nav {
+    margin-left: 35%;
+  }
+}
+
+/* Navbar hover and highlight */
+
+@mixin nav-background {
+  background-color: transparent;
+  background: transparent;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navbar-default .navbar-nav li {
+  a {
+    font-weight: bolder;
+    color: #23175D;
+
+    &:hover, &:focus {
+      border-bottom: 0.4em solid;
+      color: #F16828;
+      @include nav-background;
+    }
+  }
+
+  &.active a {
+    color: #23175D;
+    border-bottom: 0.4em solid;
+    @include nav-background;
+
+    &:hover, &:focus {
+      border-bottom: 0.4em solid;
+      color: #F16828;
+      @include nav-background;
+    }
+  }
+
+
+}
+
