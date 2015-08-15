@@ -15,21 +15,16 @@
           %span.sr-only Toggle navigation
           %span.icon-bar
           %span.icon-bar
-          %span.icon-bar
 
       %nav.collapse.navbar-collapse{:role => "navigation"}
         %ul.nav.navbar-nav
           %li.active
-            %a{:href => "#sec"} Home
+            %a{:href => root_path} Home
           %li
             %a{:href => "#sec"} Blog
-          %li
-            %a{:href => "#sec"} About
-          %li
-            %a{:href => "#sec"} Contact
 
     #mainContainer
-      %section#Home.content-section.video-section
+      %section#home.content-section.video-section
         .pattern-overlay
           %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=Q11218Qp4kI',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}"} bg
           .container
@@ -37,23 +32,66 @@
               .col-lg-12
                 %h1 Jiazhen Xie
                 %h3 Software Engineer / Tech Enthusiasm
-      %section#Blog
-        %h1 Blog
-      %section#About
-        %h1 About
-      %section#Contact
-        %h1 Contact
+      %section#about
+        .row
+          .col-md-4
+            = image_tag("personal_img.jpg", alt: "Jiazhen Xie")
+          .desc.col-md-7
+            %h2 ABOUT ME
+            %p
+              After finished BM in Information Management and Information System from
+              #{link_to 'Northwest A & F University', 'http://www.nwsuaf.edu.cn/', alt: "Top 20 Universities in China"}
+              in July 2010, I decided to get further education in
+              #{link_to 'The University of Birmingham', 'http://www.birmingham.ac.uk/‎'},
+              United Kingdom. I obained my MSc with Distinction in Computer Science in Oct 2011.
+            %p
+              Over the last five years of academic education and research, I've gained a strong understanding of several areas of computer science, but with particular expertise in areas of software engineering and database management.
+            %p
+              I started my internship in
+              %abbr{title: "The Supplies Guys"} TSG
+              in November 2011 then became a full-time employee after three months. My main resposibilities are designing and implementing softwares, maintaining research database and integrating Google
+              %abbr{title: "Paid Per Click"} PPC
+              data into the database. I am also involved in system architecture designs and implementations.
+            %p
+              Currently I am a Software Engineer in #{link_to 'Venntro', 'http://www.venntro.com/'}. I am passionate about Ruby and QA automation, hence regularly on the lookout for ways to improve QA automation.
+            %p
+              I like reading, traveling and animation. Please feel free to get in touch!
+      %section#contact
+        .container
+          .row
+            .col-md-12
+              %h1 CONTACT ME
+          .media-container
+            .row
+              .col-md-4
+                %a.btn.btn-default{:href => "mailto:jiazhenxie515@gmail.com", :role => "button"}
+                  %i.fa.fa-envelope.fa-inverse.fa-3x
+              .col-md-4
+                %a.btn.btn-default{:href => "http://uk.linkedin.com/pub/jiazhen-xie/63/637/256", :role => "button"}
+                  %i.fa.fa-linkedin.fa-inverse.fa-3x
+              .col-md-4
+                %a.btn.btn-default{:href => "#jiazhenjoe", :role => "button"}
+                  %i.fa.fa-weixin.fa-inverse.fa-3x
+            .row
+              .col-md-4
+                %a.btn.btn-default{:href => "#lucky_mily", :role => "button"}
+                  %i.fa.fa-skype.fa-inverse.fa-3x
+              .col-md-4
+                %a.btn.btn-default{:href => "#jiazhenxie", :role => "button"}
+                  %i.fa.fa-twitter.fa-inverse.fa-3x
+      %footer
+        .row
+          .col-md-12
+            %h4 Copyright 2015 - Jiazhen Xie
 
     #dotNav.pull-right{"data-spy" => "affix"}
       %ul
         %li.awesome-tooltip.active{:title => "Home"}
-          %a{:href => "#Home"}
-        %li.awesome-tooltip{:title => "Blog"}
-          %a{:href => "#Blog"}
+          %a{:href => "#home"}
         %li.awesome-tooltip{:title => "About"}
-          %a{:href => "#About"}
+          %a{:href => "#about"}
         %li.awesome-tooltip{:title => "Contact"}
-          %a{:href => "#Contact"}
+          %a{:href => "#contact"}
 
     :javascript
       $(document).ready(function(){
