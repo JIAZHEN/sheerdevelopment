@@ -193,7 +193,10 @@ $font_1: serif;
 #about {
   background: #FAF5ED;
   color: #23175D;
-  @include vendor-config(2s);
+
+  .about-image, .about-text {
+    @include vendor-config(2s);
+  }
 
   h2 {
     margin-bottom: 5%;

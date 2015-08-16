@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :posts
   resources :charges
 
-  root  to: "static_pages#home"
+  root  to: "static_pages#blog"
 
   match "/sitemap"  => "static_pages#sitemap",  via: "get"
-  match "/new_home"  => "static_pages#new_home",  via: "get"
+  match "/about"  => "static_pages#home",  via: "get"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

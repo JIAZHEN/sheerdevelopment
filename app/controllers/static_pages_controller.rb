@@ -1,20 +1,13 @@
 class StaticPagesController < ApplicationController
   def home
     @posts = Post.order("created_at DESC").take(3)
-    @a = params[:a]
   end
 
-  def about
-  end
-
-  def contact
+  def blog
+    @posts = Post.order("created_at DESC").take(10)
   end
 
   def sitemap
-    render :layout => false
-  end
-
-  def new_home
     render :layout => false
   end
 end

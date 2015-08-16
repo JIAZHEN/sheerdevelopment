@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default.transparent.navbar-fixed-top{:role => "banner"}
+  .navbar-header
+    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+
+  %nav.collapse.navbar-collapse{:role => "navigation"}
+    %ul.nav.navbar-nav
+      %li{:class => action_name == "blog" ? "active" : "" }
+        %a{:href => root_path} Blog
+      %li{:class => action_name == "home" ? "active" : "" }
+        %a{:href => about_path} About

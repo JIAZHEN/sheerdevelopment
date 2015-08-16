@@ -1,0 +1,15 @@
+#mainContainer
+  %section
+    .grid
+      - @posts.each do |post|
+        .grid-item
+          %img.img-circle{:alt => "", :src => post.avatar_url}/
+          = post.title
+
+:javascript
+  $(document).ready(function(){
+    $('.grid').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: 200
+    });
+  });

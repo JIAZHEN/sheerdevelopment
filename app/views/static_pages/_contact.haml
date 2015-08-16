@@ -1,35 +1,32 @@
-.container
-  .col-xs-12.col-sm-4
-    %p
-      I can be reached by email:
-      %a{href: "mailto:jiazhenxie515@gmail.com"} jiazhenxie515@gmail.com
-    %h3 Social Media
-    %p
-      %i.fa.fa-linkedin-square
-        %a{href: "http://uk.linkedin.com/pub/jiazhen-xie/63/637/256"}
-          %img{alt: "View Jiazhen Xie's profile on LinkedIn", border: "0", height: "15", src: "http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png", width: "80"}/
-    %p
-      %i.fa.fa-weixin
-        Wechat - jiazhenjoe
-    %p
-      %i.fa.fa-skype
-        Skype - lucky_mily
-    %p
-      %i.fa.fa-twitter
-        Twitter - #jiazhenxie
-  .col-xs-12.col-sm-6.img-container
-    %img.phone{:src => "http://thisisembark.com/showcase-1-1/img/iphone-2.png"}/
-  .col-xs-12.col-sm-2
-    %p
-      Windsor
-      %br/
-      London
-      %br/
-      SL4
-      %br/
-      United Kingdom
-      %br/
-    - if user_signed_in?
-      %p.lead Donate
-      = form_tag charges_path, style: 'margin-left: 0px;margin-right: 0px;' do
-        %script.stripe-button{"data-amount" => "500", "data-description" => "A month's subscription", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
+%section#contact
+  .container
+    .row
+      .col-md-12
+        %h1 CONTACT ME
+    .row
+      .col-md-3.col-md-offset-5
+        %h2 SOCIAL MEDIA
+    .row
+      .cartable.col-md-3.animated.infinite.bounce
+        = image_tag("cartable-2.png", size: "303x219", alt: "Edit Entry")
+      .col-md-6
+        .media-container
+          .row
+            .col-md-4
+              %a.btn.btn-default{:href => "mailto:jiazhenxie515@gmail.com", :role => "button"}
+                %i.fa.fa-envelope.fa-inverse.fa-3x
+            .col-md-4
+              %a.btn.btn-default{:href => "http://uk.linkedin.com/pub/jiazhen-xie/63/637/256", :role => "button"}
+                %i.fa.fa-linkedin.fa-inverse.fa-3x
+            .col-md-4
+              %a.btn.btn-default{:href => "#jiazhenjoe", :role => "button"}
+                %i.fa.fa-weixin.fa-inverse.fa-3x
+          .row
+            .col-md-4
+              %a.btn.btn-default{:href => "#lucky_mily", :role => "button"}
+                %i.fa.fa-skype.fa-inverse.fa-3x
+            .col-md-4
+              %a.btn.btn-default{:href => "#jiazhenxie", :role => "button"}
+                %i.fa.fa-twitter.fa-inverse.fa-3x
+      .cartable.col-md-3.animated.infinite.swing
+        = image_tag("cartable.png", size: "300", alt: "Edit Entry")
