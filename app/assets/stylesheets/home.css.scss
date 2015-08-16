@@ -6,6 +6,17 @@ html, body {
   height:100%;
 }
 
+@mixin vendor-config($inset: 5s) {
+  -webkit-animation-duration: $inset;
+  -webkit-animation-delay: 0s;
+  -moz-animation-duration: $inset;
+  -moz-animation-delay: 0s;
+  -o-animation-duration: $inset;
+  -o-animation-delay: 0s;
+  -ms-animation-duration: $inset;
+  -ms-animation-delay: 0s;
+}
+
 section {
   min-height:100%;
 }
@@ -182,6 +193,7 @@ $font_1: serif;
 #about {
   background: #FAF5ED;
   color: #23175D;
+  @include vendor-config(2s);
 
   h2 {
     margin-bottom: 5%;
@@ -210,12 +222,15 @@ $contact: #23175D;
     margin-bottom: 10%;
   }
 
+  h2 {
+    color: #23175D;
+  }
+
   .media-container {
     margin: 0 auto;
     padding: 1%;
     text-align: center;
     z-index: 99;
-    width: 50%;
     border-top: 5px solid $contact;
     border-bottom: 5px solid $contact;
 
@@ -237,6 +252,10 @@ $contact: #23175D;
         background: $contact;
       }
     }
+  }
+
+  .cartable {
+    @include vendor-config;
   }
 }
 
