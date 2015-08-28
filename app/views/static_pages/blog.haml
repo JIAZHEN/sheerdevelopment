@@ -1,15 +1,29 @@
 #mainContainer
-  %section
-    .grid
-      - @posts.each do |post|
-        .grid-item
-          %img.img-circle{:alt => "", :src => post.avatar_url}/
-          = post.title
+  %section.blog-wrap
+    .container
+      .row
+        .blog-container.grid
+          - @posts.each do |post|
+            .items.grid-item.col-xs-5.col-sm-5.col-md-4.col-lg-4
+              .btn-group{"data-toggle" => "buttons"}
+                %label.btn.btn-default
+                  %img{:alt => "", :src => post.avatar_url}/
+                  %h4= post.title
+                  .text-wrap= post.content
+                  .info-stats-warp
+                    .row
+                      .cell.col-lg-6
+                        %i.fa.fa-clock-o.fa-inverse
+                        = time_ago_in_words(post.created_at)
+                        ago
+                      .cell.col-lg-6
+                        %i.fa.fa-share.fa-inverse
+                        share
+
 
 :javascript
   $(document).ready(function(){
     $('.grid').masonry({
-      itemSelector: '.grid-item',
-      columnWidth: 200
+      itemSelector: '.grid-item'
     });
   });

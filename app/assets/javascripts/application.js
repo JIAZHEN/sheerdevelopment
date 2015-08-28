@@ -16,3 +16,4 @@
 //= require jquery.mb.YTPlayer.min
 //= require wow.min
 //= require masonry.pkgd.min
+//= require home

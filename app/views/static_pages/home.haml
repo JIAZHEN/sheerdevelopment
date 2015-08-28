@@ -26,14 +26,6 @@
 
     $(".player").mb_YTPlayer();
 
-    $(window).scroll(function() {
-      if($(this).scrollTop() > 100) {
-        $('.navbar').addClass('opaque'); // adding the opaque class
-      } else {
-        $('.navbar').removeClass('opaque'); // removing the opaque class
-      }
-    });
-
     $(window).bind('scroll',function(e){
       redrawDotNav();
     });
