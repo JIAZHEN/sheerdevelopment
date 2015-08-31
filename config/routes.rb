@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :charges
 
-  root  to: "static_pages#blog"
+  root  to: "posts#index"
 
   match "/sitemap"  => "static_pages#sitemap",  via: "get"
   match "/about"  => "static_pages#home",  via: "get"
