@@ -1,7 +1,15 @@
 //colors
 $white: #fff;
 $gallery: #efefef;
-$color_celeste_approx: #000000;
+$color_celeste_approx: #989898;
+
+@mixin transition-affect {
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
 @mixin radius-bottom {
   -webkit-border-radius: 0 0 6px 6px;
@@ -12,7 +20,7 @@ $color_celeste_approx: #000000;
 }
 
 .blog-wrap {
-  background-image: url(grey_wash_wall.png);
+  background-color: #E5DFDB;
   padding-top: 5%;
 }
 
@@ -31,7 +39,16 @@ $color_celeste_approx: #000000;
     @include radius-bottom;
 
     img {
-      min-width: 95%;
+      min-width: 100%;
+    }
+
+    a {
+      color: #23175D;
+      &:hover {
+        text-decoration: none;
+        color: #F16828;
+        @include transition-affect;
+      }
     }
 
     &.btn-default {

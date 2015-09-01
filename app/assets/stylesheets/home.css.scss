@@ -1,3 +1,7 @@
+* {
+  font-family: Inconsolata;
+}
+
 html, body {
   height:100%;
 }
@@ -107,7 +111,7 @@ ul {
     margin-left: 37%;
   }
   li a {
-    font-size: larger;
+    font-size: x-large;
   }
 }
 
@@ -129,7 +133,7 @@ ul {
     color: #23175D;
 
     &:hover, &:focus {
-      border-bottom: 0.4em solid;
+      border-bottom: 0.2em solid;
       color: #F16828;
       @include transparent-bg;
     }
