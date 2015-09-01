@@ -3,7 +3,7 @@ Rails.application.routes.draw do
                      path_names: { sign_in: "signin", sign_out: "signout", sign_up: "signup" },
                      only: :sessions
 
-  resources :posts
+  resources :posts, :except => [:index]
   resources :charges
 
   root  to: "posts#index"
