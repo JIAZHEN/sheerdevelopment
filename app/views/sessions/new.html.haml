@@ -1,0 +1,16 @@
+- provide(:title, "Signup")
+
+#mainContainer
+  %section.blog-wrap
+    .loginmodal-container
+      %h1 Login to Your Account
+      %br/
+      = render "shared/flash_messages"
+      = form_for(:session, url: sessions_path) do |f|
+        %input{:name => "session[email]", :placeholder => "Username", :type => "text"}/
+        %input{:name => "session[password]", :placeholder => "Password", :type => "password"}/
+        %input.login.loginmodal-submit{:name => "login", :type => "submit", :value => "Login"}/
+      .login-help
+        %a{:href => "#"} Register
+        \-
+        %a{:href => "#"} Forgot Password

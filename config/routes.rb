@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :posts, :except => [:index]
+  resources :posts
   resources :charges
+  resources :sessions
 
   root  to: "posts#index"
 
-  match "/sitemap"  => "static_pages#sitemap",  via: "get"
-  match "/about"  => "static_pages#home",  via: "get"
+  match "/sitemap" => "static_pages#sitemap", via: "get"
+  match "/about" => "static_pages#home", via: "get"
+
+  match "/signin" => "sessions#new", via: "get"
+  match "/signout" => "sessions#destroy", via: "delete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
