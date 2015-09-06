@@ -11,7 +11,8 @@
                 %a{:href => post_path(post)}
                   %img{:alt => "", :src => post.avatar_url}/
                   %h4= post.title
-                .text-wrap= post.content
+                .text-wrap
+                  %a{:href => post_path(post)}= post.content
                 .info-stats-warp
                   .row
                     .cell.col-lg-6

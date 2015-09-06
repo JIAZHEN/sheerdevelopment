@@ -12,4 +12,6 @@
       %li{:class => action_name == "home" ? "active" : "" }
         %a{:href => about_path} About
       - if signed_in? && current_user.admin?
+        %li{:class => action_name == "new" ? "active" : "" }
+          %a{:href => new_post_path} New post
         %li= link_to "Sign out", signout_path, method: "delete"

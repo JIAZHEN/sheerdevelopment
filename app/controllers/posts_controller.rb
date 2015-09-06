@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :signed_in_admin, only: [:new, :create, :update, :edit, :destroy]
   before_action :a_post_by_url, only: [:show, :update, :edit, :destroy]
 
   def new
