@@ -4,12 +4,12 @@ namespace :db do
     User.create!(username: "jiazhen",
                  email: "jxie@example.com",
                  password: "password",
-                 password_confirmation: "password")
+                 password_confirmation: "password",
+                 admin: true)
 
     100.times do
       Post.create!(title: Faker::Name.title,
-                   content: Faker::Lorem.paragraph(10),
-                   avatar_url: "http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-7.jpg")
+                   content: Faker::Lorem.paragraph(10))
     end
   end
 end

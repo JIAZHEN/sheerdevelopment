@@ -18,7 +18,7 @@ gem "paper_trail",          "~> 3.0.5"
 gem "font-awesome-rails",   "~> 4.1.0.0"
 gem "animate-rails"
 gem "stripe",         :git => "https://github.com/stripe/stripe-ruby"
-gem "image_suckr",          "~> 0.2.0"
+gem "paperclip"
 
 gem "actionpack-action_caching",    "~> 1.1.1"
 gem "activerecord-session_store",   "~> 0.1.0"

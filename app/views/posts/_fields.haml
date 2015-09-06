@@ -2,7 +2,7 @@
   .row
     .col-md-6.col-md-offset-3
       .well.well-sm
-        = form_for(@post, :html => {:class => "form-area form-horizontal"}) do |f|
+        = form_for(@post, :html => {:class => "form-area form-horizontal", :multipart => true}) do |f|
           %fieldset
             = render "shared/error_messages", object: f.object
 
@@ -17,9 +17,9 @@
                 %input#subtitle.form-control{:name => "post[subtitle]", :placeholder => "Summary", :type => "text", :value => @post.subtitle}/
 
             .form-group
-              %label.col-md-3.control-label{:for => "avatar_url"} AvatarURL
+              %label.col-md-3.control-label{:for => "image"} Image
               .col-md-9
-                %input#avatar_url.form-control{:name => "post[avatar_url]", :placeholder => "AvatarURL", :type => "text", :value => @post.avatar_url}/
+                %input#post_image{:name => "post[image]", :type => "file"}/
 
             .form-group
               %label.col-md-3.control-label{:for => "content"} Content

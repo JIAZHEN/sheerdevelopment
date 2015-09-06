@@ -1,7 +1,7 @@
 - provide(:title, @post.title)
 
 #post-cotainer
-  %header
+  %header{:style => "background-image: url(#{@post.image.url});"}
   %section
     .container
       .row
