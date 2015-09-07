@@ -1,17 +1,8 @@
-.container
-  .col-xs-12.col-sm-6.img-container.animated.fadeIn.delay-2
-    =image_tag("welcome.jpg", class: "phone img-thumbnail", alt: "Jiazhen Xie")
-  .col-xs-12.col-sm-6
-    #title.animated.fadeInDown.delay-1
-      %h1 Mr. Jiazhen Xie
-      %h2 Ruby Developer
-      %hr
-    %p.animated.fadeInDown.delay-3
-      I am a skilled professional in the IT sector as a dynamic and results oriented problem solver. Current working as a Ruby developer at Global Personals Development Team, which is a team of web professionals building online dating websites and tools as part of Global Personals in the UK.
-    %p.animated.fadeInDown.delay-4
-      With my solid skills in programming,  system design and application development, I have worked with Google APIs, developing software tools using a variety of technologies, but mainly focussing on: Ruby on Rails, Ruby, Java, MySQL, Postgres, Git and SQL.
-    %p.animated.fadeInDown.delay-5
-      As a developer, I am passionate about ruby and new techniques, would like to bring anything new to automations. Therefore I'm proactively learning and attending meetups in london. Just as the words
-      %code.bg-warning.text-warning Work seriously, the simple life.
-    %p.animated.fadeInDown.delay-6
-      FIGHTING!
+%section#home.content-section.video-section
+  .pattern-overlay
+    %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=Q11218Qp4kI',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}"} bg
+    .container
+      .row
+        .col-lg-12
+          %h1 Jiazhen Xie
+          %h3 Software Engineer / Tech Enthusiasm

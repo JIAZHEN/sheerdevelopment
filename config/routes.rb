@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', 
-                     path_names: { sign_in: "signin", sign_out: "signout", sign_up: "signup" },
-                     only: :sessions
 
   resources :posts
   resources :charges
+  resources :sessions
 
-  root  to: 'static_pages#home'
+  root  to: "posts#index"
 
-  match '/sitemap'  => 'static_pages#sitemap',  via: 'get'
-  
+  match "/sitemap" => "static_pages#sitemap", via: "get"
+  match "/about" => "static_pages#home", via: "get"
+
+  match "/signin" => "sessions#new", via: "get"
+  match "/signout" => "sessions#destroy", via: "delete"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

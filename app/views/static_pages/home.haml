@@ -1,33 +1,76 @@
-%section#welcome{"data-panel" => "welcome"}
-  = render 'welcome'
-%section#post{"data-panel" => "post"}
-  = render 'post'
-%section#about{"data-panel" => "about"}
-  = render 'about'
-%section#contact{"data-panel" => "contact"}
-  = render 'contact'
+#mainContainer
+  = render "welcome"
+  = render "about"
+  = render "contact"
+  %footer
+    .row
+      .col-md-12
+        %h4 Copyright 2015 - Jiazhen Xie
+
+#dotNav.pull-right{"data-spy" => "affix"}
+  %ul
+    %li.awesome-tooltip.active{:title => "Home"}
+      %a{:href => "#home"}
+    %li.awesome-tooltip{:title => "About"}
+      %a{:href => "#about"}
+    %li.awesome-tooltip{:title => "Contact"}
+      %a{:href => "#contact"}
 
 :javascript
-  jQuery(function($) {
-    var options = {
-      $menu: $('.nav'),
-      onActivate: function(){
-        if ($("#contact").hasClass("active")) {
-          $("#contact .col-xs-12.col-sm-4").addClass("animated fadeInLeft delay-3");
-          $("#contact .col-xs-12.col-sm-6").addClass("animated fadeInUp delay-4");
-          $("#contact .col-xs-12.col-sm-2").addClass("animated fadeInRight delay-5");
-        }
-        if ($("#about").hasClass("active")) {
-          $("#about p.p1").addClass("animated fadeInRight delay-1");
-          $("#about p.p2").addClass("animated fadeInRight delay-3");
-          $("#about p.p3").addClass("animated fadeInRight delay-5");
-          $("#about p.p4").addClass("animated fadeInRight delay-7");
-          $("#about p.p5").addClass("animated fadeInRight delay-9");
-          $("#about .col-xs-12.col-sm-4").addClass("animated fadeInRight delay-3");
-        }
-      }
-    };
+  $(document).ready(function(){
+    new WOW().init();
 
-    $('body').panelSnap(options);
-    $("a[data-panel='#{@a}']").click();
+    $('.awesome-tooltip').tooltip({
+      placement: 'left'
+    });
+
+    $(".player").mb_YTPlayer();
+
+    $(window).bind('scroll',function(e){
+      redrawDotNav();
+    });
+
+    function redrawDotNav(){
+
+      var topNavHeight = 50;
+      var numDivs = $('section').length;
+
+      $('#dotNav li a').removeClass('active').parent('li').removeClass('active');
+      $('section').each(function(i,item){
+        var ele = $(item), nextTop;
+
+        if (typeof ele.next().offset() != "undefined") {
+          nextTop = ele.next().offset().top;
+        } else {
+          nextTop = $(document).height();
+        }
+
+        if (ele.offset() !== null) {
+          thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numDivs);
+        } else {
+          thisTop = 0;
+        }
+
+        var docTop = $(document).scrollTop()+topNavHeight;
+
+        if(docTop >= thisTop && (docTop < nextTop)){
+          $('#dotNav li').eq(i).addClass('active');
+        }
+      });
+    }
+
+    $('#dotNav li').click(function(){
+      var id = $(this).find('a').attr("href"),
+      posi,
+      ele,
+      padding = $('.navbar-fixed-top').height();
+
+      ele = $(id);
+      posi = ($(ele).offset()||0).top - padding;
+
+      $('html, body').animate({scrollTop:posi}, 'slow');
+
+      return false;
+    });
+
   });

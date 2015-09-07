@@ -13,8 +13,6 @@
 class Post < ActiveRecord::Base
   extend FriendlyId
 
-  before_save :random_avatar
-
   friendly_id :title, use: :slugged
 
   validates :content, 	:presence => true,
@@ -22,12 +20,8 @@ class Post < ActiveRecord::Base
   validates :title,		  :presence => true,
   						          :length	  => { :minimum => 5 }
 
-  private
-
-  def random_avatar
-    if self.avatar_url.nil? || !self.avatar_url.start_with?("http")
-      suckr = ImageSuckr::GoogleSuckr.new
-      self.avatar_url = suckr.get_image_url("q" => "#{self.avatar_url}".strip, "imgsz" => "small|medium")
-    end
-  end
+  has_attached_file :image, styles: { small: "64x64", med: "288x192", large: "1440x960" }
+  validates_attachment :image,
+    :size => { :in => 0..10.megabytes },
+    :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 end

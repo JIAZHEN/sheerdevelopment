@@ -1,50 +1,58 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                     :integer          not null, primary key
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
-#  current_sign_in_at     :datetime
-#  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
-#  created_at             :datetime
-#  updated_at             :datetime
-#
-
-require 'spec_helper'
+require "spec_helper"
 
 describe User do
-  before { @user = User.new(email: "jxie@example.com", password: "password", password_confirmation: "password") }
+  before do
+    @user = User.new(username: "joe", email: "jxie@example.com",
+                     password: "foobar", password_confirmation: "foobar")
+  end
+
   subject { @user }
 
-  it { should respond_to(:email) }
-  it { should respond_to(:password) }
-  it { should respond_to(:password_confirmation) }
-  it { should be_valid }
+  it { is_expected.to respond_to(:username) }
+  it { is_expected.to respond_to(:email) }
+  it { is_expected.to respond_to(:admin) }
+  it { is_expected.to respond_to(:password_digest) }
+  it { is_expected.to respond_to(:password) }
+  it { is_expected.to respond_to(:password_confirmation) }
+  it { is_expected.to respond_to(:authenticate) }
+  it { is_expected.to respond_to(:remember_token) }
+  it { is_expected.not_to be_admin }
+
+  describe "with admin attribute set to 'true'" do
+    before do
+      @user.save!
+      @user.toggle!(:admin)
+    end
+    it { should be_admin }
+  end
+
+  describe "remember token" do
+    before { @user.save }
+
+    it "must generate the token" do
+      expect(@user.remember_token).not_to be_blank
+    end
+  end
 
   describe "#email" do
-    describe "is not present" do
+    describe "not present" do
       before { @user.email = " " }
-      it { should be_invalid }
+      it { is_expected.not_to be_valid }
     end
 
-    describe "is taken" do
+    describe "has been used" do
       before do
-        another_user = @user.dup
-        another_user.save
+        user_with_same_email = @user.dup
+        user_with_same_email.email.upcase!
+        user_with_same_email.save
       end
-      it { should be_invalid }
+      it { is_expected.not_to be_valid }
     end
 
     describe "format is incorrect" do
       it "should not be valid" do
-        addresses = %w[user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com]
+        addresses = %w[user@foo,com user_at_foo.org example.user@foo.
+                       foo@bar_baz.com foo@bar+baz.com]
         addresses.each do |invalid_address|
           @user.email = invalid_address
           expect(@user).not_to be_valid
@@ -63,25 +71,37 @@ describe User do
     end
   end
 
-  describe "#password" do
-    describe "is not present" do
-      before { @user.password = " " }
-      it { should be_invalid }
-    end
+  describe "when name is not present" do
+    before { @user.username = " " }
+    it { is_expected.not_to be_valid }
+  end
 
-    describe "is shorter than 8" do
-      before { @user.password = "a" }
-      it { should be_invalid }
+  describe "#password&password_confirmation" do
+    before do
+      @user = User.new(username: "joe", email: "jxie@example.com",
+                       password: " ", password_confirmation: " ")
+    end
+    it { is_expected.not_to be_valid }
+
+    describe "do not match" do
+      before { @user.password_confirmation = "do not match" }
+      it { is_expected.not_to be_valid }
     end
   end
 
-  describe "when password confirmation is blank" do
-    before { @user.password_confirmation = " " }
-    it { should be_invalid }
-  end
+  describe "#authenticate" do
+    describe "return value" do
+      before { @user.save }
+      let(:found_user) { User.find_by_email(@user.email) }
 
-  describe "when password confirmation doesn't match password" do
-    before { @user.password_confirmation = "NOT MATCH" }
-    it { should be_invalid }
+      describe "with a valid password" do
+        it { should eq found_user.authenticate(@user.password) }
+      end
+
+      describe "with an invalid password" do
+        let(:user_for_invalid_password) { found_user.authenticate("invalid") }
+        specify { expect(user_for_invalid_password).to eq false }
+      end
+    end
   end
 end

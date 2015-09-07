@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :signed_in_admin, only: [:new, :create, :update, :edit, :destroy]
   before_action :a_post_by_url, only: [:show, :update, :edit, :destroy]
 
   def new
@@ -47,6 +47,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :subtitle, :avatar_url, :url)
+    params.require(:post).permit(:content, :title, :subtitle, :url, :image)
   end
 end
