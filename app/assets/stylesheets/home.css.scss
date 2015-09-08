@@ -222,7 +222,7 @@ $font_1: serif;
 $contact: #23175D;
 
 #contact {
-  background: #E7D275;
+  background: #4A76B1;
 
   h1 {
     color: white;
@@ -240,6 +240,7 @@ $contact: #23175D;
     z-index: 99;
     border-top: 5px solid $contact;
     border-bottom: 5px solid $contact;
+    box-shadow: 5px 5px 5px 0 #3C526F;
 
     .row {
       margin: 1% 0;
