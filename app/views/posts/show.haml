@@ -21,9 +21,5 @@
           %h2.subheading= @post.subtitle
 
       .row
-        .author.col-lg-9.col-lg-offset-2
-          %h2.subheading= @post.subtitle
-
-      .row
         .col-lg-7.col-lg-offset-2
           = markdown.render(@post.content).html_safe
