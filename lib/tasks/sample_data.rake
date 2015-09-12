@@ -9,6 +9,7 @@ namespace :db do
 
     100.times do
       Post.create!(title: Faker::Name.title,
+                   subtitle: Faker::Lorem.sentence,
                    content: Faker::Lorem.paragraph(10))
     end
   end

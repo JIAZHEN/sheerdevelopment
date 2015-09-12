@@ -12,7 +12,7 @@
                   = image_tag post.image.url(:med)
                   %h4= post.title
                 .text-wrap
-                  %a{:href => post_path(post)}= post.content
+                  %a{:href => post_path(post)}= post.subtitle
                 .info-stats-warp
                   .row
                     .cell.col-lg-6
