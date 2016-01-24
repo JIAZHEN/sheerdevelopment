@@ -1,40 +1,32 @@
 source "https://rubygems.org"
 
-gem "rails",                "4.1.0"
-gem "sass-rails",           "~> 4.0.3"
-gem "haml"
-gem "turbolinks",           "~> 2.2.2"
-gem "jbuilder",             "~> 2.0.6"
-gem "redcarpet",            "~> 3.1.1"
-gem "bcrypt-ruby",          "~> 3.1.5"
-gem "faker",                "~> 1.3.0"
-gem "friendly_id",          "~> 5.0.3"
-gem "rb-readline",          "~> 0.5.1"
-gem "jquery-rails",         "~> 3.1.0"
-gem "coffee-rails",         "~> 4.0.1"
-gem "uglifier",             "~> 2.5.0"
-gem "paper_trail",          "~> 3.0.5"
-gem "font-awesome-rails",   "~> 4.1.0.0"
-gem "animate-rails"
-gem "stripe",         :git => "https://github.com/stripe/stripe-ruby"
-gem "paperclip"
+gem "rails"
+gem "sass-rails"
+gem "uglifier"
+gem "coffee-rails"
+gem "jquery-rails"
+gem "turbolinks"
+gem "jbuilder"
+gem "haml-rails"
+gem "octokit"
 gem "kaminari"
-
-gem "actionpack-action_caching",    "~> 1.1.1"
-gem "activerecord-session_store",   "~> 0.1.0"
-gem "rails-observers",              "~> 0.1.2"
-gem "actionpack-page_caching",      "~> 1.0.2"
-gem "google-webfonts",              "~> 0.2.0"
-
+gem "font-awesome-sass"
+gem "faker"
+gem "nprogress-rails"
+gem "redcarpet"
+gem "therubyracer"
 gem "pg"
+gem "paperclip"
+gem "friendly_id"
+gem "bcrypt-ruby"
 
-group :test do
-  gem "sqlite3"
-  gem "capybara"
+group :development, :test do
+  gem "byebug"
+  gem "spring"
+  gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "selenium-webdriver"
 end
 
-group :test, :development do
-  gem "rspec-rails"
+group :test do
+  gem "webmock"
 end
