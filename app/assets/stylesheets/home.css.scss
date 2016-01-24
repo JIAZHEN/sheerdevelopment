@@ -6,265 +6,30 @@ html, body {
   height:100%;
 }
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+nav.navbar {
+  background: #ffffff;
+  .navbar-right {
+    margin-right: 0px;
+  }
+
+  .rounded-btn {
+    @include border-radius(30px);
+  }
+}
+
 #mainContainer {
   height:100%;
 }
 
-@mixin vendor-config($inset: 5s) {
-  -webkit-animation-duration: $inset;
-  -webkit-animation-delay: 0s;
-  -moz-animation-duration: $inset;
-  -moz-animation-delay: 0s;
-  -o-animation-duration: $inset;
-  -o-animation-delay: 0s;
-  -ms-animation-duration: $inset;
-  -ms-animation-delay: 0s;
-}
-
 section {
   min-height:100%;
-}
-
-@mixin dot-hover {
-  &:hover {
-    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -ms-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -webkit-transform: scale(1.4);
-    -moz-transform: scale(1.4);
-    -o-transform: scale(1.4);
-    -ms-transform: scale(1.4);
-    transform: scale(1.4);
-    border: 1px solid white;
-    background-color: #23175D;
-  }
-}
-
-/* dot nav */
-#dotNav {
-  top: 50%;
-  z-index: 5;
-  right: 2%;
-  padding: 7px;
-  padding-top: 12px;
-
-  ul {
-    list-style: none;
-    margin:0;
-  }
-
-  li {
-    position: relative;
-    background: none repeat scroll 0 0 #fff;
-    border-radius: 15px 15px 15px 15px;
-    cursor: pointer;
-    width: 14px;
-    height: 14px;
-    margin: 10px 10px 0px 0px;
-    vertical-align:bottom;
-    color: #fff;
-
-    @include dot-hover;
-  }
-
-  li.active {
-    background-color: #23175D;
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
-    background-repeat: repeat-x;
-    @include dot-hover;
-  }
-
-  a {
-    outline: 0;
-    vertical-align:top;
-    margin: 0px 0px 0px 25px;
-    position: relative;
-    top:-5px;
-  }
-}
-
-/* changing the navbar to transparent */
-.navbar {
-  color: #6E6E6E;
-  text-transform: uppercase;
-  transition: background-color 1s ease 0s;
-  background-color: transparent;
-  background: transparent;
-  border: none;
-  color: white;
-  z-index: 100;
-  margin-bottom: 0;
-  border-radius: 0;
-}
-
-.navbar.opaque {
-  background-color: #FAF5ED;
-  background: #FAF5ED;
-  transition: background-color 1s ease 0s; /* Transition effect to make it fade in (optional) */
-  box-shadow: 0px 0px 4px #969696;
-}
-
-ul {
-  &.nav {
-    margin-left: 37%;
-  }
-  li a {
-    font-size: x-large;
-  }
-}
-
-/* Navbar hover and highlight */
-
-@mixin transparent-bg {
-  background-color: transparent;
-  background: transparent;
-  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -ms-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.navbar-default .navbar-nav li {
-  a {
-    font-weight: bolder;
-    color: #23175D;
-
-    &:hover, &:focus {
-      border-bottom: 0.2em solid;
-      color: #F16828;
-      @include transparent-bg;
-    }
-  }
-
-  &.active a {
-    color: #23175D;
-    border-bottom: 0.4em solid;
-    @include transparent-bg;
-
-    &:hover, &:focus {
-      border-bottom: 0.4em solid;
-      color: #F16828;
-      @include transparent-bg;
-    }
-  }
-}
-
-/* Home page */
-
-//colors
-$color_gravel_59_approx: rgba(71, 71, 71, 0.59);
-$white: #fff;
-$black: #000;
-
-//fonts
-$font_0: Buenard;
-$font_1: serif;
-
-.video-section {
-  .pattern-overlay {
-    background-color: $color_gravel_59_approx;
-    padding: 15% 0 25%;
-  }
-  h1 {
-    text-align: center;
-    color: $white;
-    font-size: 110px;
-    font-family: $font_0, $font_1;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 40px auto 0;
-    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    text-shadow: 1px 1px 1px $black;
-  }
-  h3 {
-    text-align: center;
-    color: $white;
-    font-size: 25px;
-    font-weight: lighter;
-    margin: 0 auto 15px;
-  }
-  .buttonBar {
-    display: none;
-  }
-}
-.player {
-  font-size: 1px;
-}
-
-#about {
-  background: #FAF5ED;
-  color: #23175D;
-
-  .about-image, .about-text {
-    @include vendor-config(2s);
-  }
-
-  h2 {
-    margin-bottom: 5%;
-    font-weight: 700;
-  }
-
-  .desc {
-    margin-left: 2em;
-    padding: 0 4em;
-    p {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 25px;
-    }
-  }
-}
-
-$contact: #23175D;
-
-#contact {
-  background: #4A76B1;
-
-  h1 {
-    color: white;
-    margin-bottom: 10%;
-  }
-
-  h2 {
-    color: #23175D;
-  }
-
-  .media-container {
-    margin: 0 auto;
-    padding: 1%;
-    text-align: center;
-    z-index: 99;
-    border-top: 5px solid $contact;
-    border-bottom: 5px solid $contact;
-    box-shadow: 5px 5px 5px 0 #3C526F;
-
-    .row {
-      margin: 1% 0;
-    }
-
-    a.btn.btn-default {
-      width: 100%;
-      height: 6em;
-      border: 2px solid $contact;
-      @include transparent-bg;
-      text-align: center;
-      padding: 1.5em;
-
-      &:hover, :focus {
-        transition: background-color 1s ease 0s;
-        background-color: $contact;
-        background: $contact;
-      }
-    }
-  }
-
-  .cartable {
-    @include vendor-config;
-  }
 }
 
 footer {
