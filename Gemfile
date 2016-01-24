@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails",                "4.1.0"
 gem "sass-rails",           "~> 4.0.3"
-gem "haml",                 "~> 4.0.5"
+gem "haml"
 gem "turbolinks",           "~> 2.2.2"
 gem "jbuilder",             "~> 2.0.6"
 gem "redcarpet",            "~> 3.1.1"
@@ -26,6 +26,8 @@ gem "rails-observers",              "~> 0.1.2"
 gem "actionpack-page_caching",      "~> 1.0.2"
 gem "google-webfonts",              "~> 0.2.0"
 
+gem "pg"
+
 group :test do
   gem "sqlite3"
   gem "capybara"
@@ -35,12 +37,4 @@ end
 
 group :test, :development do
   gem "rspec-rails"
-end
-
-group :production, :development do
-  gem "mysql2", "~> 0.3.16"
-end
-
-group :development do
-  gem "annotate"
 end
