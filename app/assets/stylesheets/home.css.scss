@@ -22,6 +22,10 @@ nav.navbar {
   .rounded-btn {
     @include border-radius(30px);
   }
+
+  .brand-logo {
+    padding: 0;
+  }
 }
 
 #mainContainer {
