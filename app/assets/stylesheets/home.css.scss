@@ -1,5 +1,17 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src: font-url(asset-path('Inconsolata.otf'));
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   font-family: Inconsolata;
+  a:hover {
+    text-decoration: none;
+  }
+  letter-spacing: 0;
+  word-spacing: 0;
 }
 
 html, body {
@@ -12,6 +24,8 @@ html, body {
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
+
+/* nav */
 
 nav.navbar {
   background: #ffffff;
@@ -28,9 +42,136 @@ nav.navbar {
   }
 }
 
+.navbar-text.brand-text {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.btn-active {
+    color: #00AB6B;
+    background-color: #ffffff;
+    border-color: #00AB6B;
+    &:hover {
+      color: #00AB6B;
+      background-color: #ffffff;
+      border-color: #00AB6B;
+    }
+}
+
+.dim-text {
+  color: rgba(0,0,0,0.44);
+}
+
+.description-color {
+  color: rgba(0,0,0,0.6);
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.link-darker {
+  color: rgba(0,0,0,0.8);
+}
+
+.link-accent {
+  color: #00ab6b;
+}
+
+.link-light-accent {
+  color: #45b29a;
+}
+
+.link-dark {
+  color: #2A2A2A;
+}
+
+p.hero-description {
+  font-size: 16px;
+  word-spacing: -5px;
+}
+
+.media-set {
+  font-size: 16px;
+  margin: 0 3px;
+}
+
+/* posts */
+.post-avatar {
+  display: table-cell;
+}
+
+.post-summary {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 15px;
+}
+
+.post-meta {
+  word-spacing: -3px;
+}
+
+.middotDivider {
+  padding-right: .1em;
+  padding-left: .1em;
+  &::after {
+    content: "·";
+  }
+}
+
+/* footer */
+
 footer {
   background: #191f21;
   padding: 50px 0px;
   text-align: center;
 }
 
+/* home */
+
+#intro-header {
+  padding-top: 48px;
+  background: url(asset-path("about-background.jpg")) no-repeat center center;
+  background-size: 100%;
+}
+
+#head-slider {
+  padding: 4em 0;
+}
+
+.intro-header-desc {
+  font-size: 20px;
+}
+
+.intro-text-center {
+  text-align: center;
+}
+
+#hello {
+  padding: 48px 0;
+}
+
+.intro-padding {
+  padding: .5em 0;
+}
+
+p.intro-detail {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+p.intro-detail-color {
+  color: #545454;
+}
+
+.breaker .line {
+  margin: 50px auto;
+  background-image: url(asset-path("line.png"));
+  background-size: auto 6px;
+  height: 6px;
+  width: 5%;
+}

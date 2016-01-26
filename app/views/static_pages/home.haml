@@ -1,76 +1,63 @@
-#mainContainer
-  = render "welcome"
-  = render "about"
-  = render "contact"
-  %footer
+%section#intro-header
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        #head-slider
+          %h2
+            %figure.intro-text-center= image_tag("im-jiazhen.png")
+          %p.intro-text-center.intro-header-desc.link-accent a software engineer
+
+%section#hello
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %article
+          %figure.intro-text-center
+            %img.img-circle{:src => image_path("profile.jpg"), :width => "150", :height => "150"}
+          %h3.intro-text-center.link-accent.intro-padding Hi.
+          %p.intro-text-center.intro-detail.intro-detail-color
+            I'm a web designer / developer based in Toronto, Canada. I have a passion for web design and love to create for web and mobile devices.
+
+.breaker
+  .container
     .row
       .col-md-12
-        %h4 Copyright 2015 - Jiazhen Xie
+        .line.intro-text-center
 
-#dotNav.pull-right{"data-spy" => "affix"}
-  %ul
-    %li.awesome-tooltip.active{:title => "Home"}
-      %a{:href => "#home"}
-    %li.awesome-tooltip{:title => "About"}
-      %a{:href => "#about"}
-    %li.awesome-tooltip{:title => "Contact"}
-      %a{:href => "#contact"}
+%section#what-i-do
+  .container
+    .row
+      .col-md-12
+        %article
+          %header
+            %h2.intro-text-center.link-accent What I can do
+          #design.row
+            .col-md-4.col-md-offset-3
+              %img.img-circle{:src => image_path("profile.jpg"), :width => "150", :height => "150"}
+            .col-md-4
+              .deets
+                %h3.intro-text-center.link-light-accent.intro-padding Develop what you need.
+                %p.intro-text-center.intro-detail-color
+                  I like to keep it simple. My goals are to focus on typography, content and conveying the message that you want to send.
+          #develop.row
+            .col-md-6
+              hello
+            .col-md-4.col-md-offset-1
+              %img.img-circle{:src => image_path("profile.jpg"), :width => "150", :height => "150"}
 
-:javascript
-  $(document).ready(function(){
-    new WOW().init();
+.breaker
+  .container
+    .row
+      .col-md-12
+        .line.intro-text-center
 
-    $('.awesome-tooltip').tooltip({
-      placement: 'left'
-    });
-
-    $(".player").mb_YTPlayer();
-
-    $(window).bind('scroll',function(e){
-      redrawDotNav();
-    });
-
-    function redrawDotNav(){
-
-      var topNavHeight = 100;
-      var numDivs = $('section').length;
-
-      $('#dotNav li a').removeClass('active').parent('li').removeClass('active');
-      $('section').each(function(i,item){
-        var ele = $(item), nextTop;
-
-        if (typeof ele.next().offset() != "undefined") {
-          nextTop = ele.next().offset().top;
-        } else {
-          nextTop = $(document).height();
-        }
-
-        if (ele.offset() !== null) {
-          thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numDivs);
-        } else {
-          thisTop = 0;
-        }
-
-        var docTop = $(document).scrollTop()+topNavHeight;
-
-        if(docTop >= thisTop && (docTop < nextTop)){
-          $('#dotNav li').eq(i).addClass('active');
-        }
-      });
-    }
-
-    $('#dotNav li').click(function(){
-      var id = $(this).find('a').attr("href"),
-      posi,
-      ele,
-      padding = $('.navbar-fixed-top').height();
-
-      ele = $(id);
-      posi = ($(ele).offset()||0).top - padding;
-
-      $('html, body').animate({scrollTop:posi}, 'slow');
-
-      return false;
-    });
-
-  });
+%section#contact
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %article
+          %h2 Contact
+          %h3 Hi.
+          %p I'm a web designer / developer based in Toronto, Canada. I have a passion for web design and love to create for web and mobile devices.
+          %p
+            icons

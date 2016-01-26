@@ -10,11 +10,11 @@
         = image_tag("panda.png", size: "51x51")
 
     .collapse.navbar-collapse{:role => "navigation"}
-      .navbar-text
-        Jiazhen Xie
+      .navbar-text.brand-text
+        %b Jiazhen Xie
       .navbar-right
-        %a.btn.btn-default.navbar-btn.rounded-btn{:href => root_path} Blog
-        %a.btn.btn-default.navbar-btn.rounded-btn{:href => about_path} About
+        %a.btn.navbar-btn.rounded-btn{:href => root_path, :class => current_page?("/") ? "btn-active" : "btn-default"} Blog
+        %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-active" : "btn-default"} About
         - if signed_in? && current_user.admin?
           %li{:class => action_name == "new" ? "active" : "" }
             %a{:href => new_post_path} New post
