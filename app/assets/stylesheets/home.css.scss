@@ -126,9 +126,10 @@ p.hero-description {
 /* footer */
 
 footer {
-  background: #191f21;
+  background: #C5DED7;
   padding: 50px 0px;
   text-align: center;
+  color: #1A443B;
 }
 
 /* home */
@@ -174,4 +175,17 @@ p.intro-detail-color {
   background-size: auto 6px;
   height: 6px;
   width: 5%;
+}
+
+.deets p {
+  font-size: 1.25em;
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+#design {
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
