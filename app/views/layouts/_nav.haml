@@ -11,14 +11,14 @@
 
     .collapse.navbar-collapse{:role => "navigation"}
       .navbar-text.brand-text
-        %b Jiazhen Xie
+        %a.link.link-darker{:href => root_path}
+          %b Jiazhen Xie
       .navbar-right
         %a.btn.navbar-btn.rounded-btn{:href => root_path, :class => current_page?("/") ? "btn-active" : "btn-default"} Blog
         %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-active" : "btn-default"} About
         - if signed_in? && current_user.admin?
-          %li{:class => action_name == "new" ? "active" : "" }
-            %a{:href => new_post_path} New post
-          %li= link_to "Sign out", signout_path, method: "delete"
+          %a.btn-default.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
+          %a.btn-default.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
 
       %form.navbar-form.navbar-right{:role => "search"}
         .form-group

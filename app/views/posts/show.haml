@@ -1,25 +1,27 @@
 - provide(:title, @post.title)
 
-#post-cotainer
-  %header{:style => "background: url(#{@post.image.url}) no-repeat center center; background-size: cover;"}
-  %section
-    .container
-      .row
-        .title.col-lg-9.col-lg-offset-2
-          %h1= @post.title
+%section#post-body
+  .container
+    .row
+      .col-md-10.col-md-offset-2
+        .post-avatar
+          %img.img-circle{:src => image_path("profile.jpg"), :width => "36", :height => "36"}
 
-      .row
-        .time.col-lg-9.col-lg-offset-2
-          %i.fa.fa-calendar
-          posted at
-          = @post.created_at.to_s(:db)
-          - if signed_in_admin?
-            =link_to raw('<i class="fa fa-pencil"></i> edit'), edit_post_path(@post)
+        .post-summary
+          %a.link.link-accent Jiazhen Xie
+          in
+          %a.link.link-accent UK
+          %span.post-meta.dim-text
+            = time_ago_in_words(@post.created_at)
+            ago
+            %span.middotDivider
+            Read
 
-      .row
-        .title.col-lg-9.col-lg-offset-2
-          %h2.subheading= @post.subtitle
+    .row
+      .col-md-9.col-md-offset-2
+        %h1.post-title= @post.title
 
-      .row
-        .col-lg-7.col-lg-offset-2
+    .row
+      .col-md-9.col-md-offset-2
+        .post-content
           = markdown.render(@post.content).html_safe
