@@ -1,76 +1,87 @@
-#mainContainer
-  = render "welcome"
-  = render "about"
-  = render "contact"
-  %footer
+%section#intro-header
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        #head-slider
+          %h2
+            %figure.intro-text-center= image_tag("im-jiazhen.png")
+          %p.intro-text-center.intro-header-desc.link-accent a software engineer
+
+%section#hello
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %article
+          %figure.intro-text-center
+            %img.img-circle{:src => image_path("profile.jpg"), :width => "150", :height => "150"}
+          %h3.intro-text-center.link-accent.intro-padding Hi.
+          %p.intro-text-center.intro-detail.intro-detail-color
+            I'm a software engineer / rubyist based in Windsor, United Kingdom. I'm passionate about web application and backend processes.
+
+.breaker
+  .container
     .row
       .col-md-12
-        %h4 Copyright 2015 - Jiazhen Xie
+        .line.intro-text-center
 
-#dotNav.pull-right{"data-spy" => "affix"}
-  %ul
-    %li.awesome-tooltip.active{:title => "Home"}
-      %a{:href => "#home"}
-    %li.awesome-tooltip{:title => "About"}
-      %a{:href => "#about"}
-    %li.awesome-tooltip{:title => "Contact"}
-      %a{:href => "#contact"}
+%section#what-i-do
+  .container
+    .row
+      .col-md-12
+        %article
+          %header
+            %h2.intro-text-center.link-accent What I do
 
-:javascript
-  $(document).ready(function(){
-    new WOW().init();
+          #design.row
+            .col-md-3.col-md-offset-3
+              %img.img-circle{:src => image_path("attack-on-titan.png"), :width => "150", :height => "150"}
+            .col-md-4
+              .deets
+                %h3.no-top-margin.link-light-accent Develop the need.
+                %p.intro-detail-color
+                  I'm a business-focus developer. Focusing on improving apps performance and developing the apps that are needed in the right techniques.
 
-    $('.awesome-tooltip').tooltip({
-      placement: 'left'
-    });
+          #develop.row
+            .col-md-4.col-md-offset-2
+              .deets
+                %h3.no-top-margin.link-light-accent Explore the world.
+                %p.intro-detail-color
+                  I like the new technologies. I'm regularly on the lookout for ways to improve my skills.
+            .col-md-4.intro-text-center
+              %img.img-circle{:src => image_path("sao.png"), :width => "150", :height => "150"}
 
-    $(".player").mb_YTPlayer();
+.breaker
+  .container
+    .row
+      .col-md-12
+        .line.intro-text-center
 
-    $(window).bind('scroll',function(e){
-      redrawDotNav();
-    });
+%section#contact
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %article
+          %h2.intro-text-center.link-accent Projects
+          .deets
+            %p.intro-text-center.intro-detail.intro-detail-color
+              I always like to make contributions to the dev community. So far I have
+              = link_to "ab_test", "https://github.com/JIAZHEN/ab_test", :class => "link link-accent"
+              and
+              = link_to "releasehub. ", "https://github.com/JIAZHEN/releasehub", :class => "link link-accent"
+              I can be reached at
+              %a.link.description-color.media-set{:href => "https://github.com/JIAZHEN"}
+                %i.fa.fa-github
+              %a.link.description-color.media-set{:href => "https://uk.linkedin.com/in/jiazhen-xie-25663763"}
+                %i.fa.fa-linkedin
+              %a.link.description-color.media-set{:alt => "jiazhenjoe"}
+                %i.fa.fa-weixin
+              %a.link.description-color.media-set{:href => "https://twitter.com/JIAZHENXIE"}
+                %i.fa.fa-twitter
+              %a.link.description-color.media-set{:href => "#"}
+                %i.fa.fa-weibo
 
-    function redrawDotNav(){
+%footer
+  .row
+    .col-md-12
+      %h4 Copyright 2016 - Jiazhen Xie. All rights reserved.
 
-      var topNavHeight = 100;
-      var numDivs = $('section').length;
-
-      $('#dotNav li a').removeClass('active').parent('li').removeClass('active');
-      $('section').each(function(i,item){
-        var ele = $(item), nextTop;
-
-        if (typeof ele.next().offset() != "undefined") {
-          nextTop = ele.next().offset().top;
-        } else {
-          nextTop = $(document).height();
-        }
-
-        if (ele.offset() !== null) {
-          thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numDivs);
-        } else {
-          thisTop = 0;
-        }
-
-        var docTop = $(document).scrollTop()+topNavHeight;
-
-        if(docTop >= thisTop && (docTop < nextTop)){
-          $('#dotNav li').eq(i).addClass('active');
-        }
-      });
-    }
-
-    $('#dotNav li').click(function(){
-      var id = $(this).find('a').attr("href"),
-      posi,
-      ele,
-      padding = $('.navbar-fixed-top').height();
-
-      ele = $(id);
-      posi = ($(ele).offset()||0).top - padding;
-
-      $('html, body').animate({scrollTop:posi}, 'slow');
-
-      return false;
-    });
-
-  });

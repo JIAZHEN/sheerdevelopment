@@ -1,17 +1,25 @@
-%nav.navbar.navbar-default.transparent.navbar-fixed-top{:role => "banner"}
-  .navbar-header
-    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-      %span.sr-only Toggle navigation
-      %span.icon-bar
-      %span.icon-bar
+%nav.navbar.navbar-default.navbar-fixed-top{:role => "banner"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.brand-logo{:href => root_path}
+        = image_tag("panda.png", size: "51x51")
 
-  %nav.collapse.navbar-collapse{:role => "navigation"}
-    %ul.nav.navbar-nav
-      %li{:class => action_name == "blog" ? "active" : "" }
-        %a{:href => root_path} Blog
-      %li{:class => action_name == "home" ? "active" : "" }
-        %a{:href => about_path} About
-      - if signed_in? && current_user.admin?
-        %li{:class => action_name == "new" ? "active" : "" }
-          %a{:href => new_post_path} New post
-        %li= link_to "Sign out", signout_path, method: "delete"
+    .collapse.navbar-collapse{:role => "navigation"}
+      .navbar-text.brand-text
+        %a.link.link-darker{:href => root_path}
+          %b Jiazhen Xie
+      .navbar-right
+        %a.btn.navbar-btn.rounded-btn{:href => root_path, :class => current_page?("/") ? "btn-active" : "btn-default"} Blog
+        %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-active" : "btn-default"} About
+        - if signed_in? && current_user.admin?
+          %a.btn-default.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
+          %a.btn-default.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
+
+      %form.navbar-form.navbar-right{:role => "search"}
+        .form-group
+          %input.form-control.rounded-btn{:placeholder => "Search Posts", :type => "text"}/

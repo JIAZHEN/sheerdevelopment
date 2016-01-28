@@ -1,31 +1,67 @@
 - provide(:title, "Blog")
 
-#mainContainer
-  %section.blog-wrap
-    .container
-      .row
-        .blog-container.grid
-          - @posts.each do |post|
-            .items.grid-item.col-xs-5.col-sm-5.col-md-4.col-lg-4
-              %label.btn.btn-default
-                %a{:href => post_path(post)}
-                  = image_tag post.image.url(:med)
-                  %h4= post.title
-                .text-wrap
-                  %a{:href => post_path(post)}= post.subtitle
-                .info-stats-warp
-                  .row
-                    .cell.col-lg-6
-                      %i.fa.fa-clock-o.fa-inverse
-                      = time_ago_in_words(post.created_at)
-                      ago
-                    .cell.col-lg-6
-                      %i.fa.fa-share.fa-inverse
-                      share
+%section.profile.jumbotron
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %header
+          %img.img-circle.pull-right{:src => image_path("profile.jpg"), :width => "120", :height => "120"}
+          %h1
+            %a.link.link-darker Jiazhen Xie
+          %p.hero-description.description-color
+            Software Engineer. Tech Enthusiasm. Traveler. Rubyist.
+            %a.link.description-color{:href => "https://twitter.com/JIAZHENXIE"}
+              @JiazhenXie
 
-      .row
-        .col-lg-12
-          = paginate @posts
+        %div
+          %a.link.description-color.media-set{:href => "https://github.com/JIAZHEN"}
+            %i.fa.fa-github
+          %a.link.description-color.media-set{:href => "https://uk.linkedin.com/in/jiazhen-xie-25663763"}
+            %i.fa.fa-linkedin
+          %a.link.description-color.media-set{:alt => "jiazhenjoe"}
+            %i.fa.fa-weixin
+          %a.link.description-color.media-set{:href => "https://twitter.com/JIAZHENXIE"}
+            %i.fa.fa-twitter
+          %a.link.description-color.media-set{:href => "#"}
+            %i.fa.fa-weibo
+
+%section
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %h3
+          %b Latest
+        %hr
+
+        .grid
+          - @posts.each do |post|
+            .post-item
+              .post-avatar
+                %img.img-circle{:src => image_path("profile.jpg"), :width => "36", :height => "36"}
+
+              .post-summary
+                %a.link.link-accent Jiazhen Xie
+                in
+                %a.link.link-accent UK
+                %span.post-meta.dim-text
+                  = time_ago_in_words(post.created_at)
+                  ago
+                  %span.middotDivider
+                  Read
+
+              .post-content
+                %h3
+                  %a.link.link-darker{:href => post_path(post)}
+                    %b= post.title
+                %h4
+                  %a.link.link-dark{:href => post_path(post)}= post.subtitle
+
+              .post-footer
+                %a.link.dim-text{:href => post_path(post)} Read more...
+              %hr
+    .row
+      .col-lg-12
+        = paginate @posts
 
 
 :javascript
@@ -34,14 +70,14 @@
     var $container = $('.grid');
     $container.imagesLoaded(function(){
       $container.masonry({
-        itemSelector: '.grid-item'
+        itemSelector: '.post-item'
       });
     });
 
     $container.infinitescroll({
       navSelector  : '.pagination',    // selector for the paged navigation
       nextSelector : '.pagination .next a',  // selector for the NEXT link (to page 2)
-      itemSelector : '.grid-item',     // selector for all items you'll retrieve
+      itemSelector : '.post-item',     // selector for all items you'll retrieve
       loading: {
           finishedMsg: 'No more pages to load.'
         }
