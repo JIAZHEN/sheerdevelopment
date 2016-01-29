@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   	if @post.save
   		redirect_to @post
   	else
-  		render 'new'
+  		render "new"
   	end
   end
 
@@ -30,8 +30,13 @@ class PostsController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @post
     else
-      render 'edit'
+      render "edit"
     end
+  end
+
+  def search
+    @posts = Post.search_by_keyword(params["keyword"]).page(params[:page]).per(9)
+    render "index"
   end
 
   def destroy

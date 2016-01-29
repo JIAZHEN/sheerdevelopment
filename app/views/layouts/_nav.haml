@@ -20,6 +20,15 @@
           %a.btn-default.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
           %a.btn-default.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
 
-      %form.navbar-form.navbar-right{:role => "search"}
+      %form#search.navbar-form.navbar-right{:role => "search", :action => search_path, :method => "get"}
         .form-group
-          %input.form-control.rounded-btn{:placeholder => "Search Posts", :type => "text"}/
+          %input.form-control.rounded-btn{:placeholder => "Search Posts", :type => "text", :name => "keyword"}/
+
+:javascript
+  $(document).ready(function(){
+    $("#search").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#search").submit();
+        }
+    });
+  });

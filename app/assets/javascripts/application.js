@@ -13,9 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
-//= require jquery.mb.YTPlayer.min
-//= require wow.min
-//= require masonry.pkgd.min
 //= require jquery.infinitescroll.min
 //= require imagesloaded.pkgd.min
 //= require home

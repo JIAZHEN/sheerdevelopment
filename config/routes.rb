@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   match "/sitemap" => "static_pages#sitemap", via: "get"
   match "/about" => "static_pages#home", via: "get"
+  match "/search" => "posts#search", via: "get"
 
   match "/signin" => "sessions#new", via: "get"
   match "/signout" => "sessions#destroy", via: "delete"

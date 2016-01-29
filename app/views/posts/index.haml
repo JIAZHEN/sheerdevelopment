@@ -68,11 +68,6 @@
   $(document).ready(function(){
 
     var $container = $('.grid');
-    $container.imagesLoaded(function(){
-      $container.masonry({
-        itemSelector: '.post-item'
-      });
-    });
 
     $container.infinitescroll({
       navSelector  : '.pagination',    // selector for the paged navigation

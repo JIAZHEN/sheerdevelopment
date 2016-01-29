@@ -11,6 +11,7 @@
 #
 
 class Post < ActiveRecord::Base
+  include PgSearch
   extend FriendlyId
 
   friendly_id :title, use: :slugged
@@ -24,4 +25,6 @@ class Post < ActiveRecord::Base
   validates_attachment :image,
     :size => { :in => 0..10.megabytes },
     :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
+
+  pg_search_scope :search_by_keyword, :against => [:title, :content, :subtitle]
 end

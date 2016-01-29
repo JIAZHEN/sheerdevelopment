@@ -19,6 +19,7 @@ gem "pg"
 gem "paperclip"
 gem "friendly_id"
 gem "bcrypt-ruby"
+gem "pg_search"
 
 group :development, :test do
   gem "byebug"
