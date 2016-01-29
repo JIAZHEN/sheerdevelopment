@@ -3,7 +3,7 @@
 %section.profile.jumbotron
   .container
     .row
-      .col-md-6.col-md-offset-3
+      .col-md-6.col-md-offset-3.col-sm-12
         %header
           %img.img-circle.pull-right{:src => image_path("profile.jpg"), :width => "120", :height => "120"}
           %h1
@@ -28,7 +28,7 @@
 %section
   .container
     .row
-      .col-md-6.col-md-offset-3
+      .col-md-6.col-md-offset-3.col-sm-12
         %h3
           %b Latest
         %hr
@@ -60,7 +60,7 @@
                 %a.link.dim-text{:href => post_path(post)} Read more...
               %hr
     .row
-      .col-lg-12
+      .col-md-12
         = paginate @posts
 
 
