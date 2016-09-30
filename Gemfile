@@ -5,13 +5,10 @@ gem "sass-rails"
 gem "uglifier"
 gem "coffee-rails"
 gem "jquery-rails"
-gem "turbolinks"
 gem "jbuilder"
 gem "haml-rails"
-gem "octokit"
 gem "kaminari"
 gem "font-awesome-sass"
-gem "faker"
 gem "nprogress-rails"
 gem "redcarpet"
 gem "therubyracer"
@@ -22,6 +19,7 @@ gem "bcrypt-ruby"
 gem "pg_search"
 
 group :development, :test do
+  gem "faker"
   gem "byebug"
   gem "spring"
   gem "rspec-rails"
@@ -29,6 +27,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "sqlite3"
   gem "webmock"
 end
 

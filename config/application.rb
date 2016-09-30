@@ -21,8 +21,9 @@ module Blog
     # config.i18n.default_locale = :de
     config.encoding = "utf-8"
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
-      "#{html_tag}".html_safe 
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      "#{html_tag}".html_safe
     }
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
