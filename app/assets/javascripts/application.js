@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require bootstrap.min
 //= require jquery.infinitescroll.min
 //= require imagesloaded.pkgd.min
 //= require home
