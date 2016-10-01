@@ -69,16 +69,14 @@
 
 :javascript
   $(document).ready(function(){
-
-    var $container = $('.grid');
-
-    $container.infinitescroll({
+    $('.grid').infinitescroll({
       navSelector  : '.pagination',    // selector for the paged navigation
       nextSelector : '.pagination .next a',  // selector for the NEXT link (to page 2)
       itemSelector : '.post-item',     // selector for all items you'll retrieve
+      animate      : true,
       loading: {
-          finishedMsg: 'No more pages to load.'
-        }
+        finishedMsg: "<em>Congratulations, you've reached the end.</em>",
+        img: "#{asset_path('loading.gif')}"
       },
       // trigger Masonry as a callback
       function( newElements ) {
@@ -90,6 +88,5 @@
           $newElems.animate({ opacity: 1 });
         });
       }
-    );
-
+    });
   });
