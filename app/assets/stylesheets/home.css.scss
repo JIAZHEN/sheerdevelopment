@@ -84,7 +84,6 @@ nav.navbar {
 
 p.hero-description {
   font-size: 16px;
-  word-spacing: -5px;
 }
 
 .media-set {
@@ -104,7 +103,7 @@ p.hero-description {
 }
 
 .post-meta {
-  word-spacing: -3px;
+  display: block;
 }
 
 .middotDivider {
@@ -132,6 +131,9 @@ footer {
 }
 
 /* home */
+.padding-top-108 {
+  padding-top: 108px;
+}
 
 #intro-header {
   padding-top: 48px;
@@ -141,6 +143,13 @@ footer {
 
 #head-slider {
   padding: 4em 0;
+}
+
+nav {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .intro-header-desc {
@@ -153,6 +162,10 @@ footer {
 
 #hello {
   padding: 48px 0;
+}
+
+.padding-15 {
+  padding: 20px 0px;
 }
 
 .intro-padding {

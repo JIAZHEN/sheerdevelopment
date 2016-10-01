@@ -1,10 +1,8 @@
 $(document).ready ->
   $(window).scroll ->
     if $(this).scrollTop() > 100
-      $('.navbar').addClass 'opaque'
-      # adding the opaque class
+      $('.navbar').removeClass 'padding-15'
     else
-      $('.navbar').removeClass 'opaque'
-      # removing the opaque class
+      $('.navbar').addClass 'padding-15'
     return
   return
