@@ -49,12 +49,11 @@
                   %span.middotDivider
                   Read
 
-              .post-content
-                %h3
-                  %a.link.link-darker{:href => post_path(post)}
-                    %b= post.title
-                %h4
-                  %a.link.link-dark{:href => post_path(post)}= post.subtitle
+              %h3
+                %a.link.link-darker{:href => post_path(post)}
+                  %b= post.title
+              %h4
+                %a.link.link-dark{:href => post_path(post)}= post.subtitle
 
               .post-footer
                 %a.link.dim-text{:href => post_path(post)} Read more...
@@ -85,7 +84,6 @@
         $newElems.imagesLoaded(function(){
           // show elems now they're ready
           $newElems.animate({ opacity: 1 });
-          $container.masonry( 'appended', $newElems, true );
         });
       }
     );

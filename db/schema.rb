@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -27,9 +26,8 @@ ActiveRecord::Schema.define(version: 20150906204309) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["slug"], name: "index_posts_on_slug", using: :btree
   end
-
-  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -41,10 +39,9 @@ ActiveRecord::Schema.define(version: 20150906204309) do
     t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.index ["password_digest"], name: "index_users_on_password_digest", using: :btree
+    t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
-  add_index "users", ["password_digest"], name: "index_users_on_password_digest", using: :btree
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

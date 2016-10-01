@@ -9,7 +9,9 @@ module ApplicationHelper
     underline: true,
     highlight: true,
     quote: true,
-    no_intra_emphasis: true
+    no_intra_emphasis: true,
+    strikethrough: true,
+    superscript: true
   }
   MARKDOWN = Redcarpet::Markdown.new(Redcarpet::Render::HTML, MARKDOWN_OPTIONS)
 

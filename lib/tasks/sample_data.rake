@@ -12,9 +12,9 @@ namespace :db do
     100.times do
       Post.create!(title: Faker::Name.title,
                    subtitle: Faker::Lorem.sentence,
-                   content: Faker::Lorem.paragraph(10))
+                   content: Faker::Lorem.paragraphs(10).join("\n\n"))
     end
   end
 
-  task initialise: ["db:drop", "db:create", "db:migrate", "db:admin", "db:populate"]
+  task initialise: ["db:drop", "db:create", "db:migrate", "db:admin"]
 end

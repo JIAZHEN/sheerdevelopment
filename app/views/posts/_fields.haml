@@ -3,7 +3,7 @@
     .row
       .col-md-10.col-md-offset-2
         .well.well-sm
-          = form_for(@post, :html => {:class => "form-area form-horizontal", :multipart => true}) do |f|
+          = form_for(@post, :html => {:class => "form-horizontal", :multipart => true}) do |f|
             %fieldset
               = render "shared/error_messages", object: f.object
               .form-group
