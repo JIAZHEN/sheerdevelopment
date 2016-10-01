@@ -114,12 +114,13 @@ p.hero-description {
   }
 }
 
-#contact {
-  h2 {
-    margin-bottom: 40px;
-  }
+.margin-btm-40 {
+  margin-bottom: 40px;
 }
 
+.padding-btm-20 {
+  padding-bottom: 20px;
+}
 /* footer */
 
 footer {
@@ -199,5 +200,5 @@ p.intro-detail-color {
 
 #design {
   margin-top: 60px;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
 }
