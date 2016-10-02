@@ -15,8 +15,11 @@
           %span.post-meta.dim-text
             = time_ago_in_words(@post.created_at)
             ago
-            %span.middotDivider
-            Read
+            - if signed_in_admin?
+              %span.middotDivider
+              %a.link.link-accent{:href => edit_post_path(@post)}
+                %i.fa.fa-pencil-square-o
+                Edit
 
     .row
       .col-md-8.col-md-offset-2.col-sm-12

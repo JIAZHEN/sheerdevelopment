@@ -4,7 +4,6 @@ module ApplicationHelper
     fenced_code_blocks: true,
     autolink: true,
     tables: true,
-    disable_indented_code_blocks: true,
     lax_spacing: true,
     underline: true,
     highlight: true,

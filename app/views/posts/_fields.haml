@@ -1,7 +1,11 @@
+= javascript_include_tag "codemirror"
+= stylesheet_link_tag "codemirror"
+= javascript_include_tag "mode_ruby"
+
 %section#post-body
   .container
     .row
-      .col-md-8.col-md-offset-2
+      .col-md-12
         = form_for(@post, :html => {:class => "form-horizontal", :multipart => true}) do |f|
           %fieldset
             = render "shared/error_messages", object: f.object
@@ -23,8 +27,19 @@
             .form-group
               %label.col-md-2.control-label{:for => "content"} Content
               .col-md-9
-                %textarea#content.form-control{:name => "post[content]", :placeholder => "Content", :rows => "20"}= @post.content
+                %textarea#content.form-control{:name => "post[content]", :placeholder => "Content", :rows => "20", :autofocus => ""}= @post.content
 
             .form-group
               .col-md-11.text-right
                 %button.btn.btn-primary.btn-sm{:type => "submit"}= btn_name
+
+:javascript
+  $(document).ready(function(){
+    var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("content"), {
+      mode: "ruby",
+      tabSize: 2,
+      lineNumbers: true,
+      lineWrapping: true,
+      smartIndent: false
+    });
+  });
