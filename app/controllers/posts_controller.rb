@@ -27,7 +27,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      flash[:success] = "Profile updated"
       redirect_to @post
     else
       render "edit"
@@ -41,7 +40,6 @@ class PostsController < ApplicationController
 
   def destroy
     Post.friendly.find(params[:id]).destroy
-    flash[:success] = "Post destroyed."
     redirect_to posts_path
   end
 
