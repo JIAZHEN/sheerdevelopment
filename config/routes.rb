@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :posts
-  resources :sessions
 
   root  to: "posts#index"
 
@@ -10,5 +9,6 @@ Rails.application.routes.draw do
   match "/search" => "posts#search", via: "get"
 
   match "/signin" => "sessions#new", via: "get"
+  match "/signin" => "sessions#create", via: "post"
   match "/signout" => "sessions#destroy", via: "delete"
 end

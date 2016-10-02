@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to(root_path) if signed_in?
   end
 
   def create
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to posts_path
     else
-      flash.now[:danger] = "Invalid email/password combination"
+      flash.now[:danger] = "Incorrect Username or Password!"
       render "new"
     end
   end

@@ -9,6 +9,6 @@
     = render "layouts/shim"
 
   %body
-    = render "layouts/nav"
+    = render "layouts/nav" unless controller_name == "sessions".freeze
     = yield
     = render "layouts/footer"
