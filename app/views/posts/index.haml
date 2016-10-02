@@ -52,6 +52,11 @@
                 %span.post-meta.dim-text
                   = time_ago_in_words(post.created_at)
                   ago
+                  - if signed_in_admin?
+                    %span.middotDivider
+                    %a.link.link-accent{:href => edit_post_path(post)}
+                      %i.fa.fa-pencil-square-o
+                      Edit
 
               %h3
                 %a.link.link-darker{:href => post_path(post)}
