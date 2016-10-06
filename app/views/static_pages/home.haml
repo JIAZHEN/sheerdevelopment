@@ -1,3 +1,5 @@
+= render "shared/static_meta_tags"
+
 %section#intro-header
   .container
     .row
@@ -5,7 +7,7 @@
         #head-slider
           %h2
             %figure.intro-text-center= image_tag("im-jiazhen.png")
-          %p.intro-text-center.intro-header-desc.link-accent a software engineer
+          %p.intro-text-center.intro-header-desc.link-accent a Software Engineer
 
 %section#hello
   .container
@@ -16,7 +18,7 @@
             %img.img-circle{:src => image_path("profile.jpg"), :width => "150", :height => "150"}
           %h3.intro-text-center.link-accent.intro-padding Hi.
           %p.intro-text-center.intro-detail.intro-detail-color
-            I'm a software engineer / rubyist based in London, United Kingdom. I'm passionate about web application and backend processes.
+            I'm a Software Engineer / Rubyist based in London, United Kingdom. I'm passionate about web application and backend processes.
 
 .breaker
   .container
@@ -65,7 +67,7 @@
           .deets
             %p.intro-text-center.intro-detail.intro-detail-color
               I always like to make contributions to the dev community. So far I have
-              = link_to "ab_test", "https://github.com/JIAZHEN/ab_test", :class => "link link-accent"
+              = link_to "ab-rules", "https://github.com/JIAZHEN/ab-rules", :class => "link link-accent"
               and
               = link_to "releasehub. ", "https://github.com/JIAZHEN/releasehub", :class => "link link-accent"
               I can be reached at

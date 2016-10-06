@@ -1,4 +1,7 @@
 - provide(:title, @post.title)
+- content_for :head do
+  %meta{:content => @post.subtitle, :name => "description"}/
+
 = stylesheet_link_tag "github-markdown"
 
 %section#post-body
