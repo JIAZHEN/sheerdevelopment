@@ -19,7 +19,13 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.includes(:tags).order("created_at DESC").page(params[:page]).per(9)
+    scope = if params[:tag].blank?
+      Post
+    else
+      Post.tagged_with(params[:tag].downcase.strip)
+    end
+
+  	@posts = scope.order("created_at DESC").page(params[:page]).per(9)
   end
 
   def edit
