@@ -1,5 +1,5 @@
 - provide(:title, "Blog")
-= render "shared/static_meta_tags"
+= render "shared/meta_data", post: nil
 
 %section.profile.jumbotron.padding-top-108
   .container
@@ -58,6 +58,10 @@
                     %a.link.link-accent{:href => edit_post_path(post)}
                       %i.fa.fa-pencil-square-o
                       Edit
+                %span.post-meta
+                  - post.tags.each do |tag|
+                    %a.link.link-accent
+                      %span.label.label-success= tag.try(:name)
 
               %h3
                 %a.link.link-darker{:href => post_path(post)}

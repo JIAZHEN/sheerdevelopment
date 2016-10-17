@@ -20,9 +20,9 @@
                 %input#subtitle.form-control{:name => "post[subtitle]", :placeholder => "Summary", :type => "text", :value => @post.subtitle}/
 
             .form-group
-              %label.col-md-2.control-label{:for => "image"} Image
+              %label.col-md-2.control-label{:for => "tags"} tags
               .col-md-9
-                %input#post_image{:name => "post[image]", :type => "file"}/
+                %input#post_tag_list.form-control{:name => "post[tag_list]", :type => "text", :value => @post.tag_list.to_s}/
 
             .form-group
               %label.col-md-2.control-label{:for => "content"} Content

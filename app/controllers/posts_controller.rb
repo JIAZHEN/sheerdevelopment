@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def index
-  	@posts = Post.order("created_at DESC").page(params[:page]).per(9)
+  	@posts = Post.includes(:tags).order("created_at DESC").page(params[:page]).per(9)
   end
 
   def edit
@@ -50,6 +50,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :subtitle, :url, :image)
+    params.require(:post).permit(:content, :title, :subtitle, :url, :image, :tag_list)
   end
 end

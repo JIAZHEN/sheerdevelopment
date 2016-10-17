@@ -1,6 +1,6 @@
 - provide(:title, @post.title)
-- content_for :head do
-  %meta{:content => @post.subtitle, :name => "description"}/
+
+= render "shared/meta_data", post: @post
 
 = stylesheet_link_tag "github-markdown"
 
@@ -23,6 +23,10 @@
               %a.link.link-accent{:href => edit_post_path(@post)}
                 %i.fa.fa-pencil-square-o
                 Edit
+            %span.post-meta
+              - @post.tags.each do |tag|
+                %a.link.link-accent
+                  %span.label.label-success= tag.try(:name)
 
     .row
       .col-md-8.col-md-offset-2.col-sm-12

@@ -19,6 +19,7 @@ gem "paperclip"
 gem "friendly_id"
 gem "bcrypt-ruby"
 gem "pg_search"
+gem "acts-as-taggable-on"
 
 group :development, :test do
   gem "faker"

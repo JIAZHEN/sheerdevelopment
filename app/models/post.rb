@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
   include PgSearch
   extend FriendlyId
 
+  acts_as_ordered_taggable
+
   friendly_id :title, use: :slugged
 
   validates :content, 	:presence => true,
