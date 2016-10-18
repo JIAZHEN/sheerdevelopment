@@ -20,6 +20,7 @@ gem "friendly_id"
 gem "bcrypt-ruby"
 gem "pg_search"
 gem "acts-as-taggable-on"
+gem "sitemap_generator"
 
 group :development, :test do
   gem "faker"
