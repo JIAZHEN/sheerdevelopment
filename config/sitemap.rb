@@ -1,10 +1,10 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://sheerdevelopment.com/"
+SitemapGenerator::Sitemap.default_host = "http://www.sheerdevelopment.com/"
 
-SitemapGenerator::Sitemap.public_path = "public/sitemaps/"
+SitemapGenerator::Sitemap.public_path = "public/"
 
 SitemapGenerator::Sitemap.create do
-  add posts_path, changefreq: 'weekly'
+  add posts_path, changefreq: "weekly"
   add root_path
   add about_path
   add signin_path, priority: 0.0

@@ -16,8 +16,10 @@
 
 # Ignore db config
 /config/database.yml
+
+# Ignore public folders
 /public/system/*
 /public/assets/*
+/public/sitemap.xml.gz
 
 .DS_Store
-/public
