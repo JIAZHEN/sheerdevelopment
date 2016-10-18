@@ -29,4 +29,8 @@ class Post < ActiveRecord::Base
     :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 
   pg_search_scope :search_by_keyword, :against => [:title, :content, :subtitle]
+
+  def disqus_identifier
+    Digest::SHA1.hexdigest("#{Rails.env}-#{id}")
+  end
 end
