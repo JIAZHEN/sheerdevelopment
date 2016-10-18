@@ -18,12 +18,12 @@ module ApplicationHelper
     MARKDOWN
   end
 
-	BASE_TITLE = "Jiazhen Xie | Software Engineer"
+	BASE_TITLE = "Jiazhen Xie | Ruby Software Engineer"
   def full_title(page_title)
 		if page_title.empty?
 			BASE_TITLE
 		else
-			"#{BASE_TITLE} | #{page_title}"
+			"#{page_title} | #{BASE_TITLE}"
 		end
 	end
 
