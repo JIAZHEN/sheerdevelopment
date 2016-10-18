@@ -30,7 +30,8 @@ class Post < ActiveRecord::Base
 
   pg_search_scope :search_by_keyword, :against => [:title, :content, :subtitle]
 
+  DISQUS_KEY = ENV.fetch("DISQUS_KEY")
   def disqus_identifier
-    Digest::SHA1.hexdigest("#{Rails.env}-#{id}")
+    Digest::SHA1.hexdigest("#{Rails.env}-#{id}-#{DISQUS_KEY}")
   end
 end
