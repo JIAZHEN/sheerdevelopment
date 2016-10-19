@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
   include PgSearch
   extend FriendlyId
 
+  scope :published, -> { where(:published => true) }
+
   acts_as_ordered_taggable
 
   friendly_id :title, use: :slugged
@@ -22,6 +24,8 @@ class Post < ActiveRecord::Base
   					  	        :length   => { :minimum => 5 }
   validates :title,		  :presence => true,
   						          :length	  => { :minimum => 5 }
+
+  alias_attribute :published?, :published
 
   pg_search_scope :search_by_keyword, :against => [:title, :content, :subtitle]
 

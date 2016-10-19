@@ -16,7 +16,7 @@
       .navbar-right
         %a.btn.navbar-btn.rounded-btn{:href => root_path, :class => current_page?("/") ? "btn-active" : "btn-default"} Blog
         %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-active" : "btn-default"} About
-        - if signed_in? && current_user.admin?
+        - if signed_in_admin?
           %a.btn-default.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
           %a.btn-default.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
 

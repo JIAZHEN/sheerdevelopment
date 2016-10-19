@@ -16,6 +16,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    if !@post.published? && !signed_in_admin?
+      redirect_to root_path
+    end
   end
 
   def index
@@ -24,6 +27,8 @@ class PostsController < ApplicationController
     else
       Post.tagged_with(params[:tag].downcase.strip)
     end
+
+    scope = scope.published unless signed_in_admin?
 
   	@posts = scope.order("created_at DESC").page(params[:page]).per(9)
   end
@@ -35,13 +40,14 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       redirect_to @post
     else
-      render "edit"
+      render :edit
     end
   end
 
   def search
-    @posts = Post.search_by_keyword(params["keyword"]).page(params[:page]).per(9)
-    render "index"
+    scope = signed_in_admin? ? Post : Post.published
+    @posts = scope.search_by_keyword(params["keyword"]).page(params[:page]).per(9)
+    render :index
   end
 
   def destroy
@@ -56,6 +62,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :subtitle, :url, :image, :tag_list)
+    params.require(:post).permit(:content, :title, :subtitle, :url, :published, :tag_list)
   end
 end
