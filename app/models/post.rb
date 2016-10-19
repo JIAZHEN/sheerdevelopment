@@ -23,11 +23,6 @@ class Post < ActiveRecord::Base
   validates :title,		  :presence => true,
   						          :length	  => { :minimum => 5 }
 
-  has_attached_file :image, styles: { small: "64x64", med: "288x192", large: "1440x960" }
-  validates_attachment :image,
-    :size => { :in => 0..10.megabytes },
-    :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
-
   pg_search_scope :search_by_keyword, :against => [:title, :content, :subtitle]
 
   def disqus_identifier
