@@ -30,6 +30,11 @@
                 %textarea#content.form-control{:name => "post[content]", :placeholder => "Content", :rows => "20", :autofocus => ""}= @post.content
 
             .form-group
+              %label.col-md-2.control-label{:for => "published"} Published
+              .col-md-3
+                = f.check_box :published
+
+            .form-group
               .col-md-11.text-right
                 %button.btn.btn-primary.btn-sm{:type => "submit"}= btn_name
 

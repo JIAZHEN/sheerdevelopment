@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20161019230916) do
     t.string   "slug"
     t.string   "subtitle"
     t.boolean  "published"
+    t.index ["published"], name: "index_posts_on_published", using: :btree
     t.index ["slug"], name: "index_posts_on_slug", using: :btree
   end
 
