@@ -13,3 +13,4 @@
     = render "layouts/nav" unless controller_name == "sessions".freeze
     = yield
     = render "layouts/footer"
+    = render "shared/tracking" if Rails.env.production?
