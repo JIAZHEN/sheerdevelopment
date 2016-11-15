@@ -29,16 +29,16 @@
                   %span.label.label-success= tag.try(:name)
 
     .row
-      .col-md-8.col-md-offset-2.col-sm-12
+      .col-md-8.col-md-offset-2.col-xs-12
         %h1.post-title.grey-header= @post.title
 
     .row
-      .col-md-8.col-md-offset-2.col-sm-12
+      .col-md-8.col-md-offset-2.col-xs-12
         %article.markdown-body
           = markdown.render(@post.content).html_safe
 
     .row
-      .col-md-8.col-md-offset-2.col-sm-12
+      .col-md-8.col-md-offset-2.col-xs-12
         %br
         #disqus_thread
 
