@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "5.2.1"
+gem "rails"
 gem "puma"
 gem "sass-rails"
 gem "uglifier"
@@ -22,8 +22,6 @@ gem "acts-as-taggable-on"
 gem "sitemap_generator"
 
 group :development, :test do
-  gem "faker"
-  gem "byebug"
   gem "spring"
   gem "rspec-rails"
   gem "factory_bot_rails"
@@ -31,7 +29,6 @@ end
 
 group :test do
   gem "sqlite3"
-  gem "webmock"
 end
 
 group :production do

@@ -1,4 +1,4 @@
-class RemoveUrlFromPosts < ActiveRecord::Migration
+class RemoveUrlFromPosts < ActiveRecord::Migration[5.0]
   def change
     remove_column :posts, :url
   end
