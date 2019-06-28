@@ -20,6 +20,7 @@ gem "bcrypt-ruby"
 gem "pg_search"
 gem "acts-as-taggable-on"
 gem "sitemap_generator"
+gem "webpacker", "~> 4.x"
 
 group :development, :test do
   gem "spring"
