@@ -16,8 +16,6 @@ class Post < ActiveRecord::Base
 
   scope :published, -> { where(:published => true) }
 
-  acts_as_ordered_taggable
-
   friendly_id :title, use: :slugged
 
   validates :content, 	:presence => true,
