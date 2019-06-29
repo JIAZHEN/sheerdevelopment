@@ -22,15 +22,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    scope = if params[:tag].blank?
-      Post
-    else
-      Post.tagged_with(params[:tag].downcase.strip)
-    end
-
-    scope = scope.published unless signed_in_admin?
-
-  	@posts = scope.order("created_at DESC").page(params[:page]).per(9)
+    render json: Posts.all
   end
 
   def edit

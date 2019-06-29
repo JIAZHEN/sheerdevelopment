@@ -5,9 +5,9 @@ gem "puma"
 gem "pg"
 gem "active_model_serializers"
 gem "friendly_id"
-gem "bcrypt-ruby"
+gem "bcrypt"
 gem "pg_search"
-gem "acts-as-taggable-on"
+gem "rack-attack"
 gem "sitemap_generator"
 
 group :development, :test do
