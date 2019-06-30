@@ -11,5 +11,10 @@ module Blog
     config.middleware.use Rack::Attack
     config.encoding = "utf-8"
     config.api_only = true
+    # Middleware for ActiveAdmin
+    config.middleware.use Rack::MethodOverride
+    config.middleware.use ActionDispatch::Flash
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
   end
 end

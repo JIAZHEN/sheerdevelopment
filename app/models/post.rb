@@ -10,7 +10,7 @@
 #  slug       :string(255)
 #
 
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   include PgSearch
   extend FriendlyId
 

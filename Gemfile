@@ -9,10 +9,16 @@ gem "bcrypt"
 gem "pg_search"
 gem "rack-attack"
 gem "sitemap_generator"
+gem "bootsnap", require: false
+
+# ActiveAdmin
+gem "devise"
+gem "activeadmin"
 
 group :development, :test do
   gem "spring"
   gem "rspec-rails"
+  gem "byebug"
   gem "factory_bot_rails"
 end
 

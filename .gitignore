@@ -23,3 +23,6 @@
 /public/sitemap.xml.gz
 
 .DS_Store
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
