@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Nav from './components/nav/nav'
+import Posts from './components/posts/posts'
 
 class App extends Component {
-  componentDidMount() {
-    window.fetch('/v1/posts')
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(error => console.log(error));
-  }
-
   render() {
     return (
       <div className="App">
         <Nav />
-        <p>hello</p>
+        <Posts />
       </div>
     );
   }
