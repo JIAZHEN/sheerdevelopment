@@ -35,6 +35,7 @@ class Posts extends PureComponent {
     return posts.map((post) => (
       <PostList
         post={post}
+        key={post.slug}
       />
     ))
   }

@@ -8,31 +8,31 @@ class PostList extends PureComponent {
 
   render() {
     return (
-      <div class="post-item">
-        <div class="post-avatar">
-          <img class="img-circle" height="36" src="" width="36"/>
+      <div className="post-item">
+        <div className="post-avatar">
+          <img className="img-circle" height="36" src="" width="36"/>
         </div>
-        <div class="post-summary">
-          <a class="link link-accent">Jiazhen Xie</a>
+        <div className="post-summary">
+          <a className="link link-accent">Jiazhen Xie</a>
           in
-          <a class="link link-accent">UK</a>
-          <span class="post-meta dim-text">
+          <a className="link link-accent">UK</a>
+          <span className="post-meta dim-text">
             time_ago_in_words(this.post.created_at)
             ago
           </span>
         </div>
         <h3>
-          <a class="link link-darker" href="<%= post_path(post) %>">
+          <a className="link link-darker" href="<%= post_path(post) %>">
             <b>{ this.post.title }</b>
           </a>
         </h3>
         <p>
-          <a class="link link-dark" href="<%= post_path(post) %>">
+          <a className="link link-dark" href="<%= post_path(post) %>">
             { this.post.subtitle }
           </a>
         </p>
-        <div class="post-footer">
-          <a class="link dim-text" href="<%= post_path(post) %>">Read more...</a>
+        <div className="post-footer">
+          <a className="link dim-text" href="<%= post_path(post) %>">Read more...</a>
         </div>
         <hr/>
       </div>
