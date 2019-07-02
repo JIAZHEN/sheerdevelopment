@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import profileImage from '../hero-profile/profile.jpg';
 
 class PostList extends PureComponent {
   constructor (props) {
@@ -10,7 +11,7 @@ class PostList extends PureComponent {
     return (
       <div className="post-item">
         <div className="post-avatar">
-          <img className="img-circle" height="36" src="" width="36"/>
+          <img className="img-circle" height="36" src={profileImage} width="36"/>
         </div>
         <div className="post-summary">
           <a className="link link-accent">Jiazhen Xie</a>

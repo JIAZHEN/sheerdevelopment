@@ -43,10 +43,16 @@ class Posts extends PureComponent {
   render() {
     let {posts} = this.state
     return (
-      <div>
-        {posts &&
-          this.renderPostLists(posts)}
-      </div>
+      <section>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-8 offset-md-2'>
+              {posts &&
+                this.renderPostLists(posts)}
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 }

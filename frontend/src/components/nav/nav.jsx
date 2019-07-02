@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import pandaSvg from './panda.png';
+import pandaImage from './panda.png';
 
 class Nav extends PureComponent {
 
@@ -7,7 +7,7 @@ class Nav extends PureComponent {
     return (
       <nav className="navbar navbar-light bg-light justify-content-between fixed-top">
         <a className="navbar-brand" href="#">
-          <img src={pandaSvg} width="45px" />
+          <img src={pandaImage} width="45px" />
           Jiazhen Xie
         </a>
 
