@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import profile from './profile.jpg';
+import './hero-profile.scss'
 
 class HeroProfile extends PureComponent {
   render() {
@@ -9,7 +10,7 @@ class HeroProfile extends PureComponent {
           <div className="row">
             <div className="col-md-8 col-md-offset-2 col-sm-12">
               <header>
-                <img src={profile} className="img-circle pull-right" height="120" width="120"/>
+                <img src={profile} className="rounded-circle float-right" height="120" width="120"/>
                 <h1>
                   <a className="link link-darker">Jiazhen Xie</a>
                 </h1>

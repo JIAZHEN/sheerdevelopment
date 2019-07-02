@@ -1,5 +1,6 @@
 const path = require('path')
 const HWP = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: path.join(__dirname, '/src/index.jsx'),
@@ -11,8 +12,12 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.html$/,
@@ -42,6 +47,9 @@ module.exports = {
     new HWP({
       template: path.join(__dirname, "./src/index.html"),
       filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
     })
   ],
   watch: true
