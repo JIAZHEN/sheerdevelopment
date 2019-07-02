@@ -1,33 +1,23 @@
 import React, { PureComponent } from 'react';
+import pandaSvg from './panda.png';
 
 class Nav extends PureComponent {
+
   render() {
     return (
-      <nav className="navbar navbar-default navbar-fixed-top padding-15" role="banner">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button className="navbar-toggle">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span></button>
-            <a className="navbar-brand brand-logo"></a>
-          </div>
-          <div className="collapse navbar-collapse">
-            <div className="navbar-text brand-text">
-              <a className="link link-darker">
-                <b>Jiazhen Xie</b></a>
-            </div>
-            <div className="navbar-right">
-              <a className="btn navbar-btn rounded-btn">Blog</a>
-              <a className="btn navbar-btn rounded-btn">About</a>
-            </div>
-            <form id="search" className="navbar-form navbar-right">
-              <div className="form-group">
-                <input className="form-control rounded-btn" />xxx</div></form></div>
-        </div>
-      </nav>
+      <nav className="navbar navbar-light bg-light justify-content-between fixed-top">
+        <a className="navbar-brand" href="#">
+          <img src={pandaSvg} width="45px" />
+          Jiazhen Xie
+        </a>
 
+        <form className="form-inline">
+          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+          <button className="btn btn-outline-success my-2 mr-sm-2" type="submit">Search</button>
+          <a className="btn btn-outline-success my-2 mr-sm-2">Blog</a>
+          <a className="btn btn-outline-success my-2 my-sm-0">About</a>
+        </form>
+      </nav>
     );
   }
 }
