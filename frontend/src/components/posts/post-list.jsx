@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import profileImage from '../hero-profile/profile.jpg';
+import './post-list.scss';
 
 class PostList extends PureComponent {
   constructor (props) {
@@ -14,26 +15,25 @@ class PostList extends PureComponent {
           <img className="rounded-circle" height="36" src={profileImage} width="36"/>
         </div>
         <div className="post-summary">
-          <a className="link link-accent">Jiazhen Xie</a>
+          <a className="text-success">Jiazhen Xie </a>
           in
-          <a className="link link-accent">UK</a>
+          <a className="text-success"> UK </a>
           <span className="post-meta dim-text">
-            time_ago_in_words(this.post.created_at)
-            ago
+            {this.post.created_at}
           </span>
         </div>
-        <h3>
-          <a className="link link-darker" href="<%= post_path(post) %>">
+        <h4>
+          <a className="text-dark" href="<%= post_path(post) %>">
             <b>{ this.post.title }</b>
           </a>
-        </h3>
+        </h4>
         <p>
-          <a className="link link-dark" href="<%= post_path(post) %>">
+          <a className="text-dark" href="<%= post_path(post) %>">
             { this.post.subtitle }
           </a>
         </p>
         <div className="post-footer">
-          <a className="link dim-text" href="<%= post_path(post) %>">Read more...</a>
+          <a className="text-secondary" href="<%= post_path(post) %>">Read more...</a>
         </div>
         <hr/>
       </div>

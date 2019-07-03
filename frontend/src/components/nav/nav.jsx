@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import pandaImage from './panda.png';
+import './nav.scss'
 
 class Nav extends PureComponent {
   render() {

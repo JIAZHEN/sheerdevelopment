@@ -50,6 +50,8 @@ class Posts extends PureComponent {
           <div className='container'>
             <div className='row'>
               <div className='col-md-8 offset-md-2'>
+                <h3><b>Latest</b></h3>
+                <hr />
                 {posts &&
                   this.renderPostLists(posts)}
               </div>
