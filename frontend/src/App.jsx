@@ -1,15 +1,24 @@
-import React, { Component, Fragment } from 'react'
-import Nav from './components/nav/nav'
-import HeroProfile from './components/hero-profile/hero-profile'
-import Posts from './components/posts/posts'
+import React, { Component, Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import Nav from './components/nav/nav';
+import Posts from './components/posts/posts';
+import About from './components/about/about';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faCheckSquare, faCoffee)
 
 class App extends Component {
   render() {
     return (
       <Fragment>
         <Nav />
-        <HeroProfile />
-        <Posts />
+        <Switch>
+          <Route exact path="/" component={Posts} />
+          <Route exact path="/about" component={About} />
+        </Switch>
       </Fragment>
     );
   }

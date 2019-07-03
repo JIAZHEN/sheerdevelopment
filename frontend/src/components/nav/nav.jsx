@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import pandaImage from './panda.png';
 
 class Nav extends PureComponent {
-
   render() {
     return (
       <nav className="navbar navbar-light bg-light justify-content-between fixed-top">
@@ -14,8 +14,9 @@ class Nav extends PureComponent {
         <form className="form-inline">
           <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
           <button className="btn btn-outline-success my-2 mr-sm-2" type="submit">Search</button>
-          <a className="btn btn-outline-success my-2 mr-sm-2">Blog</a>
-          <a className="btn btn-outline-success my-2 my-sm-0">About</a>
+
+          <Link to={'/'} className="btn btn-outline-success my-2 mr-sm-2"> Blog</Link>
+          <Link to={'/about'} className="btn btn-outline-success my-2 mr-sm-0"> About</Link>
         </form>
       </nav>
     );

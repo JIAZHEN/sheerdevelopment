@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import profile from './profile.jpg';
 import './hero-profile.scss'
 
@@ -8,8 +9,8 @@ class HeroProfile extends PureComponent {
       <section className="profile jumbotron">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 col-md-offset-2 col-sm-12">
-              <header>
+            <div className="col-md-8 offset-md-2">
+              <div>
                 <img src={profile} className="rounded-circle float-right" height="120" width="120"/>
                 <h1>
                   <a className="link link-darker">Jiazhen Xie</a>
@@ -20,32 +21,32 @@ class HeroProfile extends PureComponent {
                     @JiazhenXie
                   </a>
                 </p>
-              </header>
+              </div>
               <div>
                 <ul className="list-inline">
                   <li>
                     <a className="link description-color media-set" href="https://github.com/JIAZHEN">
-                      <i className="fa fa-github fa-lg"></i>
+                      <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
                     </a>
                   </li>
                   <li>
                     <a className="link description-color media-set" href="https://uk.linkedin.com/in/jiazhen-xie-25663763">
-                      <i className="fa fa-linkedin fa-lg"></i>
+                      <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" />
                     </a>
                   </li>
                   <li>
                     <a alt="wechat - jiazhenjoe" className="link description-color media-set" href="https://www.wechat.com/en/">
-                      <i className="fa fa-weixin fa-lg"></i>
+                      <FontAwesomeIcon icon={["fab", "weixin"]} size="lg" />
                     </a>
                   </li>
                   <li>
                     <a className="link description-color media-set" href="https://twitter.com/JIAZHENXIE">
-                      <i className="fa fa-twitter fa-lg"></i>
+                      <FontAwesomeIcon icon={["fab", "twitter"]} size="lg" />
                     </a>
                   </li>
                   <li>
                     <a className="link description-color media-set" href="http://www.weibo.com/jiazhenxie">
-                      <i className="fa fa-weibo fa-lg"></i>
+                      <FontAwesomeIcon icon={["fab", "weibo"]} size="lg" />
                     </a>
                   </li>
                 </ul>

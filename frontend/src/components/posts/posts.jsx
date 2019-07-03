@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PostList from './post-list'
+import HeroProfile from '../hero-profile/hero-profile';
 
 class Posts extends PureComponent {
   constructor () {
@@ -43,16 +44,19 @@ class Posts extends PureComponent {
   render() {
     let {posts} = this.state
     return (
-      <section>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-8 offset-md-2'>
-              {posts &&
-                this.renderPostLists(posts)}
+      <Fragment>
+        <HeroProfile />
+        <section>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-md-8 offset-md-2'>
+                {posts &&
+                  this.renderPostLists(posts)}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Fragment>
     );
   }
 }

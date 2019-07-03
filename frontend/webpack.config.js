@@ -41,7 +41,8 @@ module.exports = {
     proxy: [{
       context: ['/v1', '/api'],
       target: 'http://localhost:3001',
-    }]
+    }],
+    historyApiFallback: true
   },
   plugins:[
     new HWP({
