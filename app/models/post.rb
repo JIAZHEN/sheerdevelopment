@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   include PgSearch
   extend FriendlyId
 
+  acts_as_ordered_taggable
+
   scope :published, -> { where(:published => true) }
 
   friendly_id :title, use: :slugged

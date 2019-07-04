@@ -10,6 +10,7 @@ gem "pg_search"
 gem "rack-attack"
 gem "sitemap_generator"
 gem "bootsnap", require: false
+gem "acts-as-taggable-on"
 
 # ActiveAdmin
 gem "devise"

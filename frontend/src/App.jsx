@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Nav from './components/nav/nav';
 import Posts from './components/posts/posts';
+import Post from './components/posts/post';
 import About from './components/about/about';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -17,6 +18,7 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Posts} />
+          <Route path="/posts/:slug" component={Post} />
           <Route exact path="/about" component={About} />
         </Switch>
       </Fragment>

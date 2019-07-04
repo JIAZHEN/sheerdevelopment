@@ -39,7 +39,7 @@ class PostList extends PureComponent {
           </a>
         </p>
         <div className="post-footer">
-          <a className="text-secondary" href="<%= post_path(post) %>">Read more...</a>
+          <a className="text-secondary" href={'/post/' + this.post.slug}>Read more...</a>
         </div>
         <hr/>
       </div>
