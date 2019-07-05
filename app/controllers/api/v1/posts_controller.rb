@@ -3,10 +3,10 @@ module Api::V1
     def index
       scope = default_scope
 
-      if (params[:tag])
+      if params[:tag].present?
         scope = scope.tagged_with(params[:tag].downcase.strip)
-      elsif params[:keyword]
-        scope = scope.search_by_keyword
+      elsif params[:keyword].present?
+        scope = scope.search_by_keyword(params["keyword"])
       end
 
       render json: scope.order(created_at: :desc).all

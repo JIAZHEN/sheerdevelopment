@@ -12,8 +12,8 @@ class Nav extends PureComponent {
           Jiazhen Xie
         </a>
 
-        <form className="form-inline">
-          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <form className="form-inline" action="/posts" method="get">
+          <input required={true} className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword" />
           <button className="btn btn-outline-success my-2 mr-sm-2" type="submit">Search</button>
 
           <Link to={'/'} className="btn btn-outline-success my-2 mr-sm-2"> Blog</Link>
