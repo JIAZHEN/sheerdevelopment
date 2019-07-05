@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Nav from './components/nav/nav';
+import Footer from './components/footer/footer';
 import Posts from './components/posts/posts';
 import Post from './components/posts/post';
 import About from './components/about/about';
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route path="/posts/:slug" component={Post} />
         </Switch>
+        <Footer />
       </Fragment>
     );
   }

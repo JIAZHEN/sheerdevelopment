@@ -7,7 +7,7 @@ class Nav extends PureComponent {
   render() {
     return (
       <nav className="navbar navbar-light bg-light justify-content-between fixed-top">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img src={pandaImage} width="45px" />
           Jiazhen Xie
         </a>
