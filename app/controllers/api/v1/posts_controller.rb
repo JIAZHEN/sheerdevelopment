@@ -1,12 +1,26 @@
 module Api::V1
   class PostsController < ApiController
     def index
-      render json: Post.published.includes(:tags).order(created_at: :desc).all
+      scope = default_scope
+
+      if (params[:tag])
+        scope = scope.tagged_with(params[:tag].downcase.strip)
+      elsif params[:keyword]
+        scope = scope.search_by_keyword
+      end
+
+      render json: scope.order(created_at: :desc).all
     end
 
     def show
-      @post = Post.published.includes(:tags).friendly.find(params[:id])
+      @post = default_scope.friendly.find(params[:id])
       render json: @post
+    end
+
+    private
+
+    def default_scope
+      Post.includes(:tags).published
     end
   end
 end

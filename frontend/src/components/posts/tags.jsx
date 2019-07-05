@@ -31,7 +31,7 @@ class Tags extends PureComponent {
 
           <span className="post-meta">
             {this.post.tag_list.map((tag_name, idx) => (
-              <a key={idx} className="text-success" href={'/posts?tags=' + tag_name}>
+              <a key={idx} className="text-success" href={'/posts?tag=' + tag_name}>
                 <span className="badge badge-success">{tag_name}</span>
               </a>
             ))}

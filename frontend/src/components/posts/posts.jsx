@@ -3,8 +3,9 @@ import PostList from './post-list'
 import HeroProfile from '../hero-profile/hero-profile';
 
 class Posts extends PureComponent {
-  constructor () {
+  constructor ({ location }) {
     super()
+    this.params = new URLSearchParams(location.search);
     this.state = { posts: [] }
     this.getPosts = this.getPosts.bind(this)
   }
@@ -16,7 +17,7 @@ class Posts extends PureComponent {
   }
 
   getPosts () {
-    this.fetch('/v1/posts')
+    this.fetch(`/v1/posts?${this.params.toString()}`)
       .then(posts => {
         if (posts.length) {
           this.setState({posts: posts})
