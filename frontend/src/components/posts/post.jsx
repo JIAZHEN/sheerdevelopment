@@ -3,6 +3,11 @@ import profileImage from '../hero-profile/profile.jpg';
 import Tags from './tags';
 import './post.scss';
 
+const ReactMarkdown = require('react-markdown');
+function Image(props) {
+  return <img {...props} style={{maxWidth: '100%'}} />
+}
+
 class Post extends PureComponent {
   constructor (props) {
     super(props)
@@ -42,7 +47,10 @@ class Post extends PureComponent {
           </div>
           <div className="row">
             <div className="col-md-8 offset-md-2">
-              <article className="markdown-body">{post.content}</article>
+              <ReactMarkdown
+                source={post.content}
+                renderers={{image: Image}}
+              />
             </div>
           </div>
           <div className="row">
