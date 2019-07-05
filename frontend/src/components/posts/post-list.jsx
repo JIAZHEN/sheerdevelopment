@@ -29,17 +29,17 @@ class PostList extends PureComponent {
           </span>
         </div>
         <h4>
-          <a className="text-dark" href={'/post/' + this.post.slug}>
+          <a className="text-dark" href={`/posts/${this.post.slug}`}>
             <b>{ this.post.title }</b>
           </a>
         </h4>
         <p>
-          <a className="text-dark" href={'/post/' + this.post.slug}>
+          <a className="text-dark" href={`/posts/${this.post.slug}`}>
             { this.post.subtitle }
           </a>
         </p>
         <div className="post-footer">
-          <a className="text-secondary" href={'/post/' + this.post.slug}>Read more...</a>
+          <a className="text-secondary" href={`/posts/${this.post.slug}`}>Read more...</a>
         </div>
         <hr/>
       </div>

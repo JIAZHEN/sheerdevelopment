@@ -1,66 +1,78 @@
 import React, { PureComponent, Fragment } from 'react';
 import profileImage from '../hero-profile/profile.jpg';
+import './post.scss';
 
 class Post extends PureComponent {
-
   constructor (props) {
     super(props)
-    this.post = this.getPost(props.match.params.slug)
-    console.log(this.post)
+    this.getPost = this.getPost.bind(this)
+    this.state = {}
+    this.slug = props.match.params.slug
   }
 
-  getPost(slug) {
-    return window.fetch(`v1/posts/${slug}`)
+  fetch (endpoint) {
+    return window.fetch(endpoint)
       .then(response => response.json())
       .catch(error => console.log(error))
   }
 
-  render() {
-    <section id="post-body">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-2">
-            <div class="post-avatar">
-              <img class="rounded-circle" height="36" src={profileImage} width="36"/>
-            </div>
-            <div class="post-summary">
-              <a class="link link-accent">Jiazhen Xie</a>
-              in
-              <a class="link link-accent">UK</a>
-              <span class="post-meta dim-text">
-                {this.post.created_at}
-                <span class="post-meta">
-                  <a class="link link-accent" href="<%= posts_path) %>">
-                    <span class="label label-success">
-                    </span>
-                  </a>
+  getPost (slug) {
+    this.fetch(`/v1/posts/${slug}`)
+      .then(post => this.setState({post: post}))
+  }
+
+  componentWillMount () {
+    this.getPost(this.slug);
+  }
+
+  postMarkup(post) {
+    return (
+      <section id="post-body">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              <div className="post-avatar">
+                <img className="rounded-circle" height="36" src={profileImage} width="36"/>
+              </div>
+              <div className="post-summary">
+                <a className="link link-accent">Jiazhen Xie</a>
+                in
+                <a className="link link-accent">UK</a>
+                <span className="post-meta dim-text">
+                  <span className="post-meta">
+                    <a className="link link-accent" href="<%= posts_path) %>">
+                      <span className="label label-success">{post.tag_list}
+                      </span>
+                    </a>
+                  </span>
                 </span>
-              </span>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              <h1 className="post-title grey-header">{post.title}</h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              <article className="markdown-body">{post.content}</article>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              <br/>
+              <div id="disqus_thread"></div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12">
-            <h1 class="post-title grey-header">
-              {this.post.title}
-            </h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12">
-            <article class="markdown-body">
-              {this.post.content}
-            </article>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12">
-            <br/>
-            <div id="disqus_thread"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    )
+  }
+
+  render() {
+    let { post } = this.state
+    return post ? this.postMarkup(post) : <section><p>Loading</p></section>
   }
 }
 

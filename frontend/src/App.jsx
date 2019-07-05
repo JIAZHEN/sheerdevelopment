@@ -18,8 +18,8 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Posts} />
-          <Route path="/posts/:slug" component={Post} />
           <Route exact path="/about" component={About} />
+          <Route path="/posts/:slug" component={Post} />
         </Switch>
       </Fragment>
     );

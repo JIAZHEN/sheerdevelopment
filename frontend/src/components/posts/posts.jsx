@@ -7,7 +7,6 @@ class Posts extends PureComponent {
     super()
     this.state = { posts: [] }
     this.getPosts = this.getPosts.bind(this)
-    // this.getPost = this.getPost.bind(this)
   }
 
   fetch (endpoint) {
@@ -21,7 +20,6 @@ class Posts extends PureComponent {
       .then(posts => {
         if (posts.length) {
           this.setState({posts: posts})
-          // this.getPost(posts[0].id)
         } else {
           this.setState({posts: []})
         }
