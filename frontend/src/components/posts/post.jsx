@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import profileImage from '../hero-profile/profile.jpg';
+import Tags from './tags';
 import './post.scss';
 
 class Post extends PureComponent {
@@ -31,22 +32,7 @@ class Post extends PureComponent {
         <div className="container">
           <div className="row">
             <div className="col-md-8 offset-md-2">
-              <div className="post-avatar">
-                <img className="rounded-circle" height="36" src={profileImage} width="36"/>
-              </div>
-              <div className="post-summary">
-                <a className="link link-accent">Jiazhen Xie</a>
-                in
-                <a className="link link-accent">UK</a>
-                <span className="post-meta dim-text">
-                  <span className="post-meta">
-                    <a className="link link-accent" href="<%= posts_path) %>">
-                      <span className="label label-success">{post.tag_list}
-                      </span>
-                    </a>
-                  </span>
-                </span>
-              </div>
+              <Tags post={post} />
             </div>
           </div>
           <div className="row">

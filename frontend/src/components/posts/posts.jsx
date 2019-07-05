@@ -40,7 +40,7 @@ class Posts extends PureComponent {
   }
 
   render() {
-    let {posts} = this.state
+    let { posts } = this.state
     return (
       <Fragment>
         <HeroProfile />
