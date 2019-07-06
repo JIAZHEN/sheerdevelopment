@@ -1,2 +1,0 @@
-heroku buildpacks:clear
-heroku buildpacks:set https://github.com/negativetwelve/heroku-buildpack-subdir
