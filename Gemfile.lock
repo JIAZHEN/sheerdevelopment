@@ -265,6 +265,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   friendly_id
+  kaminari
   listen
   pg
   pg_search

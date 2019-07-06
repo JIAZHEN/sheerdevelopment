@@ -1,12 +1,13 @@
 import React, { PureComponent, Fragment } from 'react';
 import PostList from './post-list'
 import HeroProfile from '../hero-profile/hero-profile';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 class Posts extends PureComponent {
   constructor ({ location }) {
     super()
     this.params = new URLSearchParams(location.search);
-    this.state = { posts: [] }
+    this.state = { posts: [], pagination: { next_page: 1 } }
     this.getPosts = this.getPosts.bind(this)
   }
 
@@ -17,12 +18,14 @@ class Posts extends PureComponent {
   }
 
   getPosts () {
+    this.params.set("page", this.state.pagination.next_page);
     this.fetch(`/v1/posts?${this.params.toString()}`)
-      .then(posts => {
-        if (posts.length) {
-          this.setState({posts: posts})
+      .then(({ posts, pagination }) => {
+        if (posts) {
+          let newPosts = this.state.posts.concat(posts)
+          this.setState({ posts: newPosts, pagination: pagination })
         } else {
-          this.setState({posts: []})
+          this.setState({ posts: [], pagination: { next_page: 1 } })
         }
       })
   }
@@ -41,7 +44,7 @@ class Posts extends PureComponent {
   }
 
   render() {
-    let { posts } = this.state
+    let { posts, pagination } = this.state
     return (
       <Fragment>
         <HeroProfile />
@@ -51,8 +54,20 @@ class Posts extends PureComponent {
               <div className='col-md-8 offset-md-2'>
                 <h3><b>Latest</b></h3>
                 <hr />
-                {posts &&
-                  this.renderPostLists(posts)}
+                <InfiniteScroll
+                  dataLength={posts.length}
+                  next={this.getPosts}
+                  hasMore={!!pagination.next_page}
+                  loader={<h4>Loading...</h4>}
+                  endMessage={
+                    <p style={{textAlign: 'center'}}>
+                      <b>Yay! You have seen it all</b>
+                    </p>
+                  }
+                >
+                  {posts &&
+                    this.renderPostLists(posts)}
+                </InfiniteScroll>
               </div>
             </div>
           </div>

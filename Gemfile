@@ -11,6 +11,7 @@ gem "rack-attack"
 gem "sitemap_generator"
 gem "bootsnap", require: false
 gem "acts-as-taggable-on"
+gem "kaminari"
 
 # ActiveAdmin
 gem "devise"
