@@ -1,5 +1,2 @@
 heroku buildpacks:clear
-heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
-heroku buildpacks:add heroku/nodejs --index 2
-heroku buildpacks:add heroku/ruby --index 3
-heroku config:set PROJECT_PATH=frontend
+heroku buildpacks:set https://github.com/negativetwelve/heroku-buildpack-subdir
