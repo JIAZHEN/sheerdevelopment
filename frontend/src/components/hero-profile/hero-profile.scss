@@ -1,3 +1,5 @@
+@import './../../media-queries.scss';
+
 .profile {
   .twitter-link {
     margin-left: 8px;
@@ -7,6 +9,10 @@
   &.jumbotron {
     padding-top: 110px;
     padding-bottom: 20px;
+
+    @include mobile {
+      padding-top: 190px;
+    }
   }
 }
 
