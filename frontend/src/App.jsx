@@ -6,6 +6,7 @@ import Footer from './components/footer/footer';
 import Posts from './components/posts/posts';
 import Post from './components/posts/post';
 import About from './components/about/about';
+import NotFound from './components/not-found/not-found';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path="/posts" component={Posts} />
           <Route exact path="/about" component={About} />
           <Route path="/posts/:slug" component={Post} />
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </Fragment>
