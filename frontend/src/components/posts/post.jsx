@@ -35,9 +35,9 @@ class Post extends PureComponent {
   postMarkup(post) {
     const disqusShortname = 'sheerdevelopment';
     const disqusConfig = {
-        url: post.url,
-        identifier: post.disqus_identifier,
-        title: post.title,
+      url: window.location.href,
+      identifier: post.disqus_identifier,
+      title: post.title
     };
 
     return (
@@ -67,10 +67,7 @@ class Post extends PureComponent {
               <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
                 Comments
               </Disqus.CommentCount>
-              <Disqus.CommentEmbed
-                  showMedia={true}
-                  height={160}
-              />
+
               <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
             </div>
           </div>
