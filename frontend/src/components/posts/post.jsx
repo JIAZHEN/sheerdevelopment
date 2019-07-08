@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import Disqus from 'disqus-react';
 import profileImage from '../hero-profile/profile.jpg';
 import Tags from './tags';
 import './post.scss';
@@ -32,6 +33,13 @@ class Post extends PureComponent {
   }
 
   postMarkup(post) {
+    const disqusShortname = 'sheerdevelopment';
+    const disqusConfig = {
+        url: post.url,
+        identifier: post.disqus_identifier,
+        title: post.title,
+    };
+
     return (
       <section id="post-body">
         <div className="container">
@@ -56,7 +64,14 @@ class Post extends PureComponent {
           <div className="row">
             <div className="col-md-8 offset-md-2">
               <br/>
-              <div id="disqus_thread"></div>
+              <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
+                Comments
+              </Disqus.CommentCount>
+              <Disqus.CommentEmbed
+                  showMedia={true}
+                  height={160}
+              />
+              <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
             </div>
           </div>
         </div>
