@@ -1,7 +1,13 @@
+@import './../../media-queries.scss';
+
 #intro-header {
   padding-top: 48px;
   background: url('./about-background.jpg') no-repeat center center;
   background-size: 100%;
+
+  @include mobile {
+    padding-top: 140px;
+  }
 }
 
 #head-slider {
