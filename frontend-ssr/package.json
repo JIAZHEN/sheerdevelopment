@@ -9,10 +9,19 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.21",
+    "@fortawesome/free-brands-svg-icons": "^5.10.1",
+    "@fortawesome/free-solid-svg-icons": "^5.10.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "disqus-react": "^1.0.6",
     "express": "^4.17.1",
+    "javascript-time-ago": "^2.0.1",
     "razzle": "^3.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-ga": "^2.6.0",
+    "react-infinite-scroll-component": "^4.5.3",
+    "react-markdown": "^4.1.0",
     "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
