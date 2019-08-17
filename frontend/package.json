@@ -16,13 +16,17 @@
     "disqus-react": "^1.0.6",
     "express": "^4.17.1",
     "javascript-time-ago": "^2.0.1",
+    "qs": "^6.8.0",
     "razzle": "^3.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-ga": "^2.6.0",
     "react-infinite-scroll-component": "^4.5.3",
     "react-markdown": "^4.1.0",
-    "react-router-dom": "^5.0.1"
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux-thunk": "^2.3.0",
+    "serialize-javascript": "^1.7.0"
   },
   "devDependencies": {
     "razzle-plugin-scss": "^3.0.0",

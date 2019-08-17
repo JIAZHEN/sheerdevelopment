@@ -1,26 +1,22 @@
-import React, { Component, Fragment } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { Component, Fragment } from 'react'
+import { Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-// import ReactGA from 'react-ga';
-import Nav from './components/nav/nav';
-import Footer from './components/footer/footer';
-import Posts from './components/posts/posts';
-import Post from './components/posts/post';
-import About from './components/about/about';
-import NotFound from './components/not-found/not-found';
+// import ReactGA from 'react-ga'
+import Nav from './components/nav/nav'
+import Footer from './components/footer/footer'
+import Posts from './components/posts/posts'
+import Post from './components/posts/post'
+import About from './components/about/about'
+import NotFound from './components/not-found/not-found'
+import './utils/icons'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faCheckSquare, faCoffee)
+// ReactGA.initialize('UA-50154241-2')
 
-// ReactGA.initialize('UA-50154241-2');
-
-// const history = createBrowserHistory();
+// const history = createBrowserHistory()
 // history.listen((location, action) => {
-//   ReactGA.set({ page: location.pathname });
-//   ReactGA.pageview(location.pathname);
-// });
+//   ReactGA.set({ page: location.pathname })
+//   ReactGA.pageview(location.pathname)
+// })
 
 class App extends Component {
   render() {
@@ -37,8 +33,8 @@ class App extends Component {
         </Switch>
         <Footer />
       </Fragment>
-    );
+    )
   }
 }
 
-export default App;
+export default App
