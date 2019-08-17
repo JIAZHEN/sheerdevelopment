@@ -4,34 +4,12 @@ import HeroProfile from '../hero-profile/hero-profile';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 class Posts extends PureComponent {
-  constructor ({ location }) {
-    super()
-    this.params = new URLSearchParams(location.search);
-    this.state = { posts: [], pagination: { next_page: 1 } }
-    this.getPosts = this.getPosts.bind(this)
-  }
-
-  fetch (endpoint) {
-    return window.fetch(endpoint)
-      .then(response => response.json())
-      .catch(error => console.log(error))
-  }
-
-  getPosts () {
-    this.params.set("page", this.state.pagination.next_page);
-    this.fetch(`/v1/posts?${this.params.toString()}`)
-      .then(({ posts, pagination }) => {
-        if (posts) {
-          let newPosts = this.state.posts.concat(posts)
-          this.setState({ posts: newPosts, pagination: pagination })
-        } else {
-          this.setState({ posts: [], pagination: { next_page: 1 } })
-        }
-      })
-  }
-
-  componentDidMount() {
-    this.getPosts();
+  constructor (props, context) {
+    super(props, context)
+    this.state = {
+      posts: props.posts,
+      pagination: { next_page: 1 }
+    }
   }
 
   renderPostLists(posts) {
@@ -54,7 +32,7 @@ class Posts extends PureComponent {
               <div className='col-md-8 offset-md-2'>
                 <h3><b>Latest</b></h3>
                 <hr />
-                <InfiniteScroll
+                {/*<InfiniteScroll
                   dataLength={posts.length}
                   next={this.getPosts}
                   hasMore={!!pagination.next_page}
@@ -67,7 +45,7 @@ class Posts extends PureComponent {
                 >
                   {posts &&
                     this.renderPostLists(posts)}
-                </InfiniteScroll>
+                </InfiniteScroll>*/}
               </div>
             </div>
           </div>
