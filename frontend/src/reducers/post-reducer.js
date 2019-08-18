@@ -5,6 +5,9 @@ const postReducer = (state = initialState, action) => {
     case 'LOAD_POSTS_SUCCESS':
       state.posts = action.posts
       return state
+    case 'LOAD_POST_SUCCESS':
+      state.post = action.post
+      return state
     default:
       return state
   }

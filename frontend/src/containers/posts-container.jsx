@@ -4,8 +4,10 @@ import Posts from '../components/posts/posts'
 import * as postActions from '../actions/post-actions'
 
 const mapStateToProps = state => {
-  return {posts: state.posts.posts,
-  pagination: state.posts.pagination}
+  return {
+    posts: state.posts.posts,
+    pagination: state.posts.pagination
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

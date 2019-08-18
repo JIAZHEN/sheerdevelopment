@@ -10,6 +10,11 @@ function Image(props) {
 }
 
 class Post extends PureComponent {
+  constructor (props) {
+    super(props)
+    this.post = props.post
+  }
+
   postMarkup(post) {
     const disqusShortname = 'sheerdevelopment';
     const disqusConfig = {

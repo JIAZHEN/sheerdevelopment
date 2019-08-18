@@ -7,7 +7,7 @@ import express from 'express'
 import { renderToString } from 'react-dom/server'
 import serialize from 'serialize-javascript'
 import qs from 'qs'
-import { loadPosts } from './actions/post-actions'
+import { actionFor } from './actions/post-actions'
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 
@@ -17,6 +17,7 @@ server
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
     const store = configureStore()
+    store.dispatch(actionFor(req))
 
     const context = {}
     const Root = () => (
