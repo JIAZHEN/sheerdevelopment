@@ -10,28 +10,6 @@ function Image(props) {
 }
 
 class Post extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.getPost = this.getPost.bind(this)
-    this.state = {}
-    this.slug = props.match.params.slug
-  }
-
-  fetch (endpoint) {
-    return window.fetch(endpoint)
-      .then(response => response.json())
-      .catch(error => console.log(error))
-  }
-
-  getPost (slug) {
-    this.fetch(`/v1/posts/${slug}`)
-      .then(post => this.setState({post: post}))
-  }
-
-  componentWillMount () {
-    this.getPost(this.slug);
-  }
-
   postMarkup(post) {
     const disqusShortname = 'sheerdevelopment';
     const disqusConfig = {
