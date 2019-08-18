@@ -1,10 +1,10 @@
-import React, { PureComponent, Fragment } from 'react';
-import Disqus from 'disqus-react';
-import profileImage from '../hero-profile/profile.jpg';
-import Tags from './tags';
-import './post.scss';
+import React, { PureComponent, Fragment } from 'react'
+import Disqus from 'disqus-react'
+import profileImage from '../hero-profile/profile.jpg'
+import Tags from './tags'
+import './post.scss'
 
-const ReactMarkdown = require('react-markdown');
+const ReactMarkdown = require('react-markdown')
 function Image(props) {
   return <img {...props} style={{maxWidth: '100%'}} />
 }
@@ -28,17 +28,17 @@ class Post extends PureComponent {
       .then(post => this.setState({post: post}))
   }
 
-  componentWillMount () {
-    this.getPost(this.slug);
+  componentDidMount () {
+    this.getPost(this.slug)
   }
 
   postMarkup(post) {
-    const disqusShortname = 'sheerdevelopment';
+    const disqusShortname = 'sheerdevelopment'
     const disqusConfig = {
       url: window.location.href,
       identifier: post.disqus_identifier,
       title: post.title
-    };
+    }
 
     return (
       <section id="post-body">
@@ -82,4 +82,4 @@ class Post extends PureComponent {
   }
 }
 
-export default Post;
+export default Post

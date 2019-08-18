@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "disqus-react": "^1.0.6",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1",
     "javascript-time-ago": "^2.0.1",
     "qs": "^6.8.0",
     "razzle": "^3.0.0",
