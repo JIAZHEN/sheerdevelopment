@@ -4,10 +4,6 @@ import HeroProfile from '../hero-profile/hero-profile'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 class Posts extends PureComponent {
-  constructor (props) {
-    super(props)
-  }
-
   renderPostLists(posts) {
     return posts.map((post) => (
       <PostList

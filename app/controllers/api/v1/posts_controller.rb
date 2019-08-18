@@ -9,7 +9,7 @@ module Api::V1
         scope = scope.search_by_keyword(params["keyword"])
       end
 
-      posts = scope.order(created_at: :desc).page(params[:page]).per(9)
+      posts = scope.order(created_at: :desc).page(params[:page]).per(30)
       render json: posts, serializer: PostsSerializer, each_serializer: PostSerializer
     end
 
