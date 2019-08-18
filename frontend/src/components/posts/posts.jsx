@@ -1,15 +1,11 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react'
 import PostList from './post-list'
-import HeroProfile from '../hero-profile/hero-profile';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import HeroProfile from '../hero-profile/hero-profile'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 class Posts extends PureComponent {
-  constructor (props, context) {
-    super(props, context)
-    this.state = {
-      posts: props.posts,
-      pagination: { next_page: 1 }
-    }
+  constructor (props) {
+    super(props)
   }
 
   renderPostLists(posts) {
@@ -22,7 +18,7 @@ class Posts extends PureComponent {
   }
 
   render() {
-    let { posts, pagination } = this.state
+    let { posts, pagination } = this.props
     return (
       <Fragment>
         <HeroProfile />
@@ -32,6 +28,8 @@ class Posts extends PureComponent {
               <div className='col-md-8 offset-md-2'>
                 <h3><b>Latest</b></h3>
                 <hr />
+                {posts &&
+                  this.renderPostLists(posts)}
                 {/*<InfiniteScroll
                   dataLength={posts.length}
                   next={this.getPosts}
@@ -51,8 +49,8 @@ class Posts extends PureComponent {
           </div>
         </section>
       </Fragment>
-    );
+    )
   }
 }
 
-export default Posts;
+export default Posts

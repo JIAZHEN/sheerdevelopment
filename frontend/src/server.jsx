@@ -1,7 +1,7 @@
+import React from 'react'
 import App from './app'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
-import React from 'react'
 import { StaticRouter } from 'react-router-dom'
 import express from 'express'
 import { renderToString } from 'react-dom/server'
