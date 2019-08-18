@@ -1,5 +1,5 @@
 import App from './app'
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga'
 import React from 'react'
@@ -18,9 +18,9 @@ const store = configureStore(window.__PRELOADED_STATE__)
 
 hydrate(
   <Provider store={store}>
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <App />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 )

@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react';
-import profileImage from '../hero-profile/profile.jpg';
-import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en';
-import './tags.scss';
+import React, { PureComponent, Fragment } from 'react'
+import profileImage from '../hero-profile/profile.jpg'
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+import './tags.scss'
 
 TimeAgo.addLocale(en)
 const timeAgo = new TimeAgo('en-GB')
@@ -11,7 +11,6 @@ class Tags extends PureComponent {
   constructor (props) {
     super(props)
     this.post = props.post
-    this.post.created_at = Date.parse(this.post.created_at)
   }
 
   render() {
@@ -26,7 +25,7 @@ class Tags extends PureComponent {
           in
           <a className="text-success"> UK </a>
           <span className="post-meta text-secondary">
-            {timeAgo.format(this.post.created_at)}
+            {timeAgo.format(Date.parse(this.post.created_at))}
           </span>
 
           <span className="post-meta">
@@ -42,4 +41,4 @@ class Tags extends PureComponent {
   }
 }
 
-export default Tags;
+export default Tags
