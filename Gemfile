@@ -21,6 +21,7 @@ gem "bcrypt-ruby"
 gem "pg_search"
 gem "acts-as-taggable-on"
 gem "sitemap_generator"
+gem "listen"
 
 group :development, :test do
   gem "spring"
