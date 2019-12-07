@@ -16,8 +16,8 @@
         .input-group-append
           %button.btn.btn-outline-success{:type => "submit"} Search
 
-    %a.btn.navbar-btn.rounded-btn.ml-sm-2.mr-md-2{:href => root_path, :class => current_page?("/") ? "btn-outline-success" : "btn-outline-secondary"} Blog
-    %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-outline-success" : "btn-outline-secondary"} About
+    %a.btn.navbar-btn.btn-md.rounded-btn.ml-sm-2.mr-md-2{:href => root_path, :class => current_page?("/") ? "btn-outline-success" : "btn-outline-secondary"} Blog
+    %a.btn.navbar-btn.btn-md.rounded-btn.mr-md-2{:href => about_path, :class => current_page?("/about") ? "btn-outline-success" : "btn-outline-secondary"} About
     - if signed_in_admin?
-      %a.btn-outline-secondary.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
-      %a.btn-outline-secondary.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
+      %a.btn-outline-secondary.btn.navbar-btn.btn-md.rounded-btn.mr-md-2{:href => new_post_path} New post
+      %a.btn-outline-secondary.btn.navbar-btn.btn-md.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
