@@ -6,7 +6,7 @@
     .row
       .col-md-8.col-md-offset-2.col-sm-12
         %header
-          %img.img-circle.pull-right{:src => image_path("profile.jpg"), :width => "120", :height => "120"}
+          %img.img-circle.pull-right{:src => asset_pack_path("media/images/profile.jpg"), :width => "120", :height => "120"}
           %h1
             %a.link.link-darker Jiazhen Xie
           %p.hero-description.description-color
@@ -44,7 +44,7 @@
           - @posts.each do |post|
             .post-item
               .post-avatar
-                %img.img-circle{:src => image_path("profile.jpg"), :width => "36", :height => "36"}
+                %img.img-circle{:src => asset_pack_path("media/images/profile.jpg"), :width => "36", :height => "36"}
 
               .post-summary
                 %a.link.link-accent Jiazhen Xie
@@ -86,7 +86,7 @@
       animate      : true,
       loading: {
         finishedMsg: "<em>Congratulations, you've reached the end.</em>",
-        img: "#{asset_path('loading.gif')}"
+        img: "#{asset_pack_path('media/images/loading.gif')}"
       },
       // trigger Masonry as a callback
       function( newElements ) {
