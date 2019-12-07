@@ -1,12 +1,4 @@
 $(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.navbar').removeClass('padding-15');
-    } else {
-      $('.navbar').addClass('padding-15');
-    }
-  });
-
   $("#search").keyup(function(event){
       if(event.keyCode == 13){
           $("#search").submit();

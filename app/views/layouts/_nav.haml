@@ -1,25 +1,23 @@
-%nav.navbar.navbar-default.navbar-fixed-top.padding-15{:role => "banner"}
-  .container-fluid
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand.brand-logo{:href => root_path}
-        %img{src: asset_pack_path("media/images/panda.png"), width: "51"}
-
-    .collapse.navbar-collapse{:role => "navigation"}
-      .navbar-text.brand-text
-        %a.link.link-darker{:href => root_path}
+%nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light
+  %button.navbar-toggler{"aria-controls" => "navbartoggle", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbartoggle", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  %a.navbar-brand.brand-logo{:href => root_path}
+    %img{src: asset_pack_path("media/images/panda.png"), width: "51"}
+  #navbartoggle.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      %li.nav-item.active
+        %a.nav-link.link-darker{:href => root_path}
           %b Jiazhen Xie
-      .navbar-right
-        %a.btn.navbar-btn.rounded-btn{:href => root_path, :class => current_page?("/") ? "btn-active" : "btn-default"} Blog
-        %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-active" : "btn-default"} About
-        - if signed_in_admin?
-          %a.btn-default.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
-          %a.btn-default.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
+          %span.sr-only (current)
 
-      %form#search.navbar-form.navbar-right{:role => "search", :action => search_path, :method => "get"}
-        .form-group
-          %input.form-control.rounded-btn{:placeholder => "Search Posts", :type => "text", :name => "keyword"}/
+    %form.form-inline.my-2.my-sm-0{:role => "search", :action => search_path, :method => "get"}
+      .input-group
+        %input.form-control{:placeholder => "Search Posts", :type => "text", :name => "keyword"}/
+        .input-group-append
+          %button.btn.btn-outline-success{:type => "submit"} Search
+
+    %a.btn.navbar-btn.rounded-btn.ml-sm-2.mr-md-2{:href => root_path, :class => current_page?("/") ? "btn-outline-success" : "btn-outline-secondary"} Blog
+    %a.btn.navbar-btn.rounded-btn{:href => about_path, :class => current_page?("/about") ? "btn-outline-success" : "btn-outline-secondary"} About
+    - if signed_in_admin?
+      %a.btn-outline-secondary.btn.navbar-btn.rounded-btn{:href => new_post_path} New post
+      %a.btn-outline-secondary.btn.navbar-btn.rounded-btn{:href => signout_path, "data-method" => "delete"} Sign out
