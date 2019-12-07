@@ -11,7 +11,7 @@
 #
 
 class Post < ActiveRecord::Base
-  include PgSearch
+  include PgSearch::Model
   extend FriendlyId
 
   scope :published, -> { where(:published => true) }

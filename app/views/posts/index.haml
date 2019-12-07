@@ -75,28 +75,3 @@
     .row
       .col-md-12
         = paginate @posts
-
-
-:javascript
-  $(document).ready(function(){
-    $('.grid').infinitescroll({
-      navSelector  : '.pagination',    // selector for the paged navigation
-      nextSelector : '.pagination .next a',  // selector for the NEXT link (to page 2)
-      itemSelector : '.post-item',     // selector for all items you'll retrieve
-      animate      : true,
-      loading: {
-        finishedMsg: "<em>Congratulations, you've reached the end.</em>",
-        img: "#{asset_pack_path('media/images/loading.gif')}"
-      },
-      // trigger Masonry as a callback
-      function( newElements ) {
-        // hide new items while they are loading
-        var $newElems = $( newElements ).css({ opacity: 0 });
-        // ensure that images load before adding to masonry layout
-        $newElems.imagesLoaded(function(){
-          // show elems now they're ready
-          $newElems.animate({ opacity: 1 });
-        });
-      }
-    });
-  });
