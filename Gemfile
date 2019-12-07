@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails"
+gem "webpacker"
 gem "puma"
 gem "sass-rails"
 gem "uglifier"
