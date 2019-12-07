@@ -1,7 +1,3 @@
-= javascript_include_tag "codemirror"
-= stylesheet_link_tag "codemirror"
-= javascript_include_tag "mode_ruby"
-
 %section#post-body
   .container
     .row
@@ -37,13 +33,3 @@
             .form-group
               .col-md-11.text-right
                 %button.btn.btn-primary.btn-sm{:type => "submit"}= btn_name
-
-:javascript
-  $(document).ready(function(){
-    var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("content"), {
-      mode: "ruby",
-      tabSize: 2,
-      lineWrapping: true,
-      smartIndent: false
-    });
-  });

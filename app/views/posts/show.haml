@@ -2,14 +2,12 @@
 
 = render "shared/meta_data", post: @post
 
-= stylesheet_link_tag "github-markdown"
-
-%section#post-body
+%section#post-body.display-disqus
   .container
     .row
       .col-md-10.col-md-offset-2
         .post-avatar
-          %img.img-circle{:src => image_path("profile.jpg"), :width => "36", :height => "36"}
+          %img.rounded-circle{:src => asset_pack_path("media/images/profile.jpg"), :width => "36", :height => "36"}
 
         .post-summary
           %a.link.link-accent Jiazhen Xie
@@ -41,19 +39,6 @@
       .col-md-8.col-md-offset-2.col-xs-12
         %br
         #disqus_thread
-
-:javascript
-  var disqus_config = function () {
-    this.page.url = "#{request.original_url}";
-    this.page.identifier = "#{@post.disqus_identifier}";
-  };
-
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = '//sheerdevelopment.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
 
 %noscript
   Please enable JavaScript to view the

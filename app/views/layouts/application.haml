@@ -3,15 +3,14 @@
   %head
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %title= full_title(yield(:title))
-    = stylesheet_link_tag "application", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_pack_tag "application", media: "all"
+    = javascript_pack_tag "application"
     = csrf_meta_tags
     = yield(:head) if content_for?(:head)
-    = favicon_link_tag
+    %link{:href => asset_pack_path("media/images/favicon.ico"), :rel => "shortcut icon", :type => "image/x-icon"}/
     = render "layouts/shim"
 
   %body
     = render "layouts/nav" unless controller_name == "sessions".freeze
     = yield
     = render "layouts/footer"
-    = render "shared/tracking" if Rails.env.production?
