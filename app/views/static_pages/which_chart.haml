@@ -1,98 +1,62 @@
-%main.mt-5.py-5.wizard-bg
+%main.d-flex.align-items-center
   .container
     #wizard
-      %h3
-        .media
-          .bd-wizard-step-icon
-            %i.mdi.mdi-account-outline
-          .media-body
-            .bd-wizard-step-title Personal Details
-            .bd-wizard-step-subtitle Step 1
+      %h3 Step 1 Title
       %section
-        .content-wrapper
-          %h4.section-heading Enter your Personal details
-          .row
-            .form-group.col-md-6
-              %label.sr-only{:for => "firstName"} First Name
-              %input#firstName.form-control{:name => "firstName", :placeholder => "First Name", :type => "text"}/
-            .form-group.col-md-6
-              %label.sr-only{:for => "lastName"} Last Name
-              %input#lastName.form-control{:name => "lastName", :placeholder => "Last Name", :type => "text"}/
-          .row
-            .form-group.col-md-6
-              %label.sr-only{:for => "phoneNumber"} Phone Number
-              %input#phoneNumber.form-control{:name => "phoneNumber", :placeholder => "Phone Number", :type => "text"}/
-            .form-group.col-md-6
-              %label.sr-only{:for => "emailAddress"} Email Address
-              %input#emailAddress.form-control{:name => "emailAddress", :placeholder => "Email Address", :type => "email"}/
-      %h3
-        .media
-          .bd-wizard-step-icon
-            %i.mdi.mdi-bank
-          .media-body
-            .bd-wizard-step-title Employ Details
-            .bd-wizard-step-subtitle Step 2
+        %h5.bd-wizard-step-title Step 1
+        %h2.section-heading Select business type
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+        .purpose-radios-wrapper
+          .purpose-radio
+            %input#branding.purpose-radio-input{:checked => "checked", :name => "purpose", :type => "radio", :value => "Branding"}/
+            %label.purpose-radio-label{:for => "branding"}
+              %span.label-icon
+                %img.label-icon-default{:alt => "branding", :src => "assets/images/icon_branding.svg"}/
+                %img.label-icon-active{:alt => "branding", :src => "assets/images/icon_branding_green.svg"}/
+              %span.label-text Branding
+          .purpose-radio
+            %input#mobile-design.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Moile Design"}/
+            %label.purpose-radio-label{:for => "mobile-design"}
+              %span.label-icon
+                %img.label-icon-default{:alt => "branding", :src => "assets/images/icon_mobile_design.svg"}/
+                %img.label-icon-active{:alt => "branding", :src => "assets/images/icon_mobile_design_green.svg"}/
+              %span.label-text Moile Design
+          .purpose-radio
+            %input#web-design.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Web Design"}/
+            %label.purpose-radio-label{:for => "web-design"}
+              %span.label-icon
+                %img.label-icon-default{:alt => "branding", :src => "assets/images/icon_web_design.svg"}/
+                %img.label-icon-active{:alt => "branding", :src => "assets/images/icon_web_design_green.svg"}/
+              %span.label-text Web Design
+      %h3 Step 2 Title
       %section
-        .content-wrapper
-          %h4.section-heading Enter your Employment details
-          .row
-            .form-group.col-md-6
-              %label.sr-only{:for => "designation"} Designation
-              %input#designation.form-control{:name => "designation", :placeholder => "Designation", :type => "text"}/
-            .form-group.col-md-6
-              %label.sr-only{:for => "department"} Department
-              %input#department.form-control{:name => "department", :placeholder => "Department", :type => "text"}/
-          .row
-            .form-group.col-md-6
-              %label.sr-only{:for => "employeeNumber"} Employee Number
-              %input#employeeNumber.form-control{:name => "employeeNumber", :placeholder => "Employee Number", :type => "text"}/
-            .form-group.col-md-6
-              %label.sr-only{:for => "workEmailAddress"} Work Email Address
-              %input#workEmailAddress.form-control{:name => "workEmailAddress", :placeholder => "Work Email Address", :type => "email"}/
-      %h3
-        .media
-          .bd-wizard-step-icon
-            %i.mdi.mdi-account-check-outline
-          .media-body
-            .bd-wizard-step-title Review
-            .bd-wizard-step-subtitle Step 3
+        %h5.bd-wizard-step-title Step 2
+        %h2.section-heading Enter your Account Details
+        .form-group
+          %label.sr-only{:for => "firstName"} First Name
+          %input#firstName.form-control{:name => "firstName", :placeholder => "First Name", :type => "text"}/
+        .form-group
+          %label.sr-only{:for => "lastName"} Last Name
+          %input#lastName.form-control{:name => "lastName", :placeholder => "Last Name", :type => "text"}/
+        .form-group
+          %label.sr-only{:for => "phoneNumber"} Phone Number
+          %input#phoneNumber.form-control{:name => "phoneNumber", :placeholder => "Phone Number", :type => "text"}/
+        .form-group
+          %label.sr-only{:for => "emailAddress"} Email Address
+          %input#emailAddress.form-control{:name => "emailAddress", :placeholder => "Email Address", :type => "email"}/
+      %h3 Step 3 Title
       %section
-        .content-wrapper
-          %h4.section-heading.mb-5 Review your Details
-          %h6.font-weight-bold Personal Details
-          %p.mb-4
-            %span#enteredFirstName Cha
-            %span#enteredLastName Ji-Hun C
-            %br/
-            Phone:
-            %span#enteredPhoneNumber +230-582-6609
-            %br/
-            Email:
-            %span#enteredEmailAddress willms_abby@gmail.com
-          %h6.font-weight-bold Employment Details
-          %p.mb-0
-            %span#enteredDesignation Junior Developer
-            \-
-            %span#enteredDepartment UI Development
-            %br/
-            Phone:
-            %span#enteredEmployeeNumber JDUI36849
-            %br/
-            Email:
-            %span#enteredWorkEmailAddress willms_abby@company.com
-      %h3
-        .media
-          .bd-wizard-step-icon
-            %i.mdi.mdi-emoticon-outline
-          .media-body
-            .bd-wizard-step-title Submit
-            .bd-wizard-step-subtitle Step 4
-      %section
-        .content-wrapper
-          %h4.section-heading.mb-5 Accept agreement and Submit
-          .form-check
-            %label.form-check-label
-              %input.form-check-input{:checked => "checked", :id => "", :name => "", :type => "checkbox", :value => "checkedValue"}/
-              I hereby declare that I had read all the
-              %a{:href => "#!"} terms and conditions
-              and all the details provided my me in this form are true.
+        %h5.bd-wizard-step-title Step 3
+        %h2.section-heading.mb-5 Review your Details and Submit
+        %h6.font-weight-bold Select business type
+        %p#business-type.mb-4 Branding
+        %h6.font-weight-bold Enter your Account Details
+        %p.mb-4
+          %span#enteredFirstName Cha
+          %span#enteredLastName Ji-Hun C
+          %br/
+          Phone:
+          %span#enteredPhoneNumber +230-582-6609
+          %br/
+          Email:
+          %span#enteredEmailAddress willms_abby@gmail.com
