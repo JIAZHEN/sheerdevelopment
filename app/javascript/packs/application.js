@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("newlook/styles/styles")
 require("bootstrap/dist/js/bootstrap")
 require("newlook/jquery.infinitescroll.min")
+require("jquery-steps/build/jquery.steps.min")
+require("newlook/bd-wizard")
 require("imagesloaded")
 require("newlook/home")
 

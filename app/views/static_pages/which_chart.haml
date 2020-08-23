@@ -1,116 +1,98 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
-    %title BootstrapDash Wizard
-    %link{:href => "https://fonts.googleapis.com/css?family=Karla:400,700&display=swap", :rel => "stylesheet"}/
-    %link{:href => "https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css", :rel => "stylesheet"}/
-    %link{:href => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", :rel => "stylesheet"}/
-    %link{:href => "assets/css/bd-wizard.css", :rel => "stylesheet"}/
-  %body
-    %main.my-5
-      .container
-        #wizard
-          %h3
-            .media
-              .bd-wizard-step-icon
-                %i.mdi.mdi-account-outline
-              .media-body
-                .bd-wizard-step-title Personal Details
-                .bd-wizard-step-subtitle Step 1
-          %section
-            .content-wrapper
-              %h4.section-heading Enter your Personal details
-              .row
-                .form-group.col-md-6
-                  %label.sr-only{:for => "firstName"} First Name
-                  %input#firstName.form-control{:name => "firstName", :placeholder => "First Name", :type => "text"}/
-                .form-group.col-md-6
-                  %label.sr-only{:for => "lastName"} Last Name
-                  %input#lastName.form-control{:name => "lastName", :placeholder => "Last Name", :type => "text"}/
-              .row
-                .form-group.col-md-6
-                  %label.sr-only{:for => "phoneNumber"} Phone Number
-                  %input#phoneNumber.form-control{:name => "phoneNumber", :placeholder => "Phone Number", :type => "text"}/
-                .form-group.col-md-6
-                  %label.sr-only{:for => "emailAddress"} Email Address
-                  %input#emailAddress.form-control{:name => "emailAddress", :placeholder => "Email Address", :type => "email"}/
-          %h3
-            .media
-              .bd-wizard-step-icon
-                %i.mdi.mdi-bank
-              .media-body
-                .bd-wizard-step-title Employ Details
-                .bd-wizard-step-subtitle Step 2
-          %section
-            .content-wrapper
-              %h4.section-heading Enter your Employment details
-              .row
-                .form-group.col-md-6
-                  %label.sr-only{:for => "designation"} Designation
-                  %input#designation.form-control{:name => "designation", :placeholder => "Designation", :type => "text"}/
-                .form-group.col-md-6
-                  %label.sr-only{:for => "department"} Department
-                  %input#department.form-control{:name => "department", :placeholder => "Department", :type => "text"}/
-              .row
-                .form-group.col-md-6
-                  %label.sr-only{:for => "employeeNumber"} Employee Number
-                  %input#employeeNumber.form-control{:name => "employeeNumber", :placeholder => "Employee Number", :type => "text"}/
-                .form-group.col-md-6
-                  %label.sr-only{:for => "workEmailAddress"} Work Email Address
-                  %input#workEmailAddress.form-control{:name => "workEmailAddress", :placeholder => "Work Email Address", :type => "email"}/
-          %h3
-            .media
-              .bd-wizard-step-icon
-                %i.mdi.mdi-account-check-outline
-              .media-body
-                .bd-wizard-step-title Review
-                .bd-wizard-step-subtitle Step 3
-          %section
-            .content-wrapper
-              %h4.section-heading.mb-5 Review your Details
-              %h6.font-weight-bold Personal Details
-              %p.mb-4
-                %span#enteredFirstName Cha
-                %span#enteredLastName Ji-Hun C
-                %br/
-                Phone:
-                %span#enteredPhoneNumber +230-582-6609
-                %br/
-                Email:
-                %span#enteredEmailAddress willms_abby@gmail.com
-              %h6.font-weight-bold Employment Details
-              %p.mb-0
-                %span#enteredDesignation Junior Developer
-                \-
-                %span#enteredDepartment UI Development
-                %br/
-                Phone:
-                %span#enteredEmployeeNumber JDUI36849
-                %br/
-                Email:
-                %span#enteredWorkEmailAddress willms_abby@company.com
-          %h3
-            .media
-              .bd-wizard-step-icon
-                %i.mdi.mdi-emoticon-outline
-              .media-body
-                .bd-wizard-step-title Submit
-                .bd-wizard-step-subtitle Step 4
-          %section
-            .content-wrapper
-              %h4.section-heading.mb-5 Accept agreement and Submit
-              .form-check
-                %label.form-check-label
-                  %input.form-check-input{:checked => "checked", :id => "", :name => "", :type => "checkbox", :value => "checkedValue"}/
-                  I hereby declare that I had read all the
-                  %a{:href => "#!"} terms and conditions
-                  and all the details provided my me in this form are true.
-    %script{:src => "https://code.jquery.com/jquery-3.4.1.min.js"}
-    %script{:src => "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"}
-    %script{:src => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"}
-    %script{:src => "assets/js/jquery.steps.min.js"}
-    %script{:src => "assets/js/bd-wizard.js"}
+%main.mt-5.py-5.wizard-bg
+  .container
+    #wizard
+      %h3
+        .media
+          .bd-wizard-step-icon
+            %i.mdi.mdi-account-outline
+          .media-body
+            .bd-wizard-step-title Personal Details
+            .bd-wizard-step-subtitle Step 1
+      %section
+        .content-wrapper
+          %h4.section-heading Enter your Personal details
+          .row
+            .form-group.col-md-6
+              %label.sr-only{:for => "firstName"} First Name
+              %input#firstName.form-control{:name => "firstName", :placeholder => "First Name", :type => "text"}/
+            .form-group.col-md-6
+              %label.sr-only{:for => "lastName"} Last Name
+              %input#lastName.form-control{:name => "lastName", :placeholder => "Last Name", :type => "text"}/
+          .row
+            .form-group.col-md-6
+              %label.sr-only{:for => "phoneNumber"} Phone Number
+              %input#phoneNumber.form-control{:name => "phoneNumber", :placeholder => "Phone Number", :type => "text"}/
+            .form-group.col-md-6
+              %label.sr-only{:for => "emailAddress"} Email Address
+              %input#emailAddress.form-control{:name => "emailAddress", :placeholder => "Email Address", :type => "email"}/
+      %h3
+        .media
+          .bd-wizard-step-icon
+            %i.mdi.mdi-bank
+          .media-body
+            .bd-wizard-step-title Employ Details
+            .bd-wizard-step-subtitle Step 2
+      %section
+        .content-wrapper
+          %h4.section-heading Enter your Employment details
+          .row
+            .form-group.col-md-6
+              %label.sr-only{:for => "designation"} Designation
+              %input#designation.form-control{:name => "designation", :placeholder => "Designation", :type => "text"}/
+            .form-group.col-md-6
+              %label.sr-only{:for => "department"} Department
+              %input#department.form-control{:name => "department", :placeholder => "Department", :type => "text"}/
+          .row
+            .form-group.col-md-6
+              %label.sr-only{:for => "employeeNumber"} Employee Number
+              %input#employeeNumber.form-control{:name => "employeeNumber", :placeholder => "Employee Number", :type => "text"}/
+            .form-group.col-md-6
+              %label.sr-only{:for => "workEmailAddress"} Work Email Address
+              %input#workEmailAddress.form-control{:name => "workEmailAddress", :placeholder => "Work Email Address", :type => "email"}/
+      %h3
+        .media
+          .bd-wizard-step-icon
+            %i.mdi.mdi-account-check-outline
+          .media-body
+            .bd-wizard-step-title Review
+            .bd-wizard-step-subtitle Step 3
+      %section
+        .content-wrapper
+          %h4.section-heading.mb-5 Review your Details
+          %h6.font-weight-bold Personal Details
+          %p.mb-4
+            %span#enteredFirstName Cha
+            %span#enteredLastName Ji-Hun C
+            %br/
+            Phone:
+            %span#enteredPhoneNumber +230-582-6609
+            %br/
+            Email:
+            %span#enteredEmailAddress willms_abby@gmail.com
+          %h6.font-weight-bold Employment Details
+          %p.mb-0
+            %span#enteredDesignation Junior Developer
+            \-
+            %span#enteredDepartment UI Development
+            %br/
+            Phone:
+            %span#enteredEmployeeNumber JDUI36849
+            %br/
+            Email:
+            %span#enteredWorkEmailAddress willms_abby@company.com
+      %h3
+        .media
+          .bd-wizard-step-icon
+            %i.mdi.mdi-emoticon-outline
+          .media-body
+            .bd-wizard-step-title Submit
+            .bd-wizard-step-subtitle Step 4
+      %section
+        .content-wrapper
+          %h4.section-heading.mb-5 Accept agreement and Submit
+          .form-check
+            %label.form-check-label
+              %input.form-check-input{:checked => "checked", :id => "", :name => "", :type => "checkbox", :value => "checkedValue"}/
+              I hereby declare that I had read all the
+              %a{:href => "#!"} terms and conditions
+              and all the details provided my me in this form are true.
