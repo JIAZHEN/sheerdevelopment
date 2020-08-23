@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   root  to: "posts#index"
 
-  match "/about" => "static_pages#about", via: "get"
-  match "/search" => "posts#search", via: "get"
+  get "/about", to: "static_pages#about"
+  get "/which-chart", to: "static_pages#which_chart"
 
-  match "/signin" => "sessions#new", via: "get"
-  match "/signin" => "sessions#create", via: "post"
-  match "/signout" => "sessions#destroy", via: "delete"
+  get "/search", to: "posts#search"
+  get "/signin", to: "sessions#new"
+
+  post "/signin", to: "sessions#create"
+  delete "/signout", to: "sessions#destroy"
 end
