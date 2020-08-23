@@ -1,33 +1,43 @@
+- provide(:title, "Chart Chooser")
+
 %main.d-flex.align-items-center
   .container
     #wizard
-      %h3 Step 1 Title
+      %h3 Step 1 - What would you like to show?
       %section
         %h5.bd-wizard-step-title Step 1
-        %h2.section-heading Select business type
+        %h2.section-heading Select the purpose
         %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
         .purpose-radios-wrapper
           .purpose-radio
-            %input#branding.purpose-radio-input{:checked => "checked", :name => "purpose", :type => "radio", :value => "Branding"}/
-            %label.purpose-radio-label{:for => "branding"}
+            %input#comparison.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Comparison", required: true}/
+            %label.purpose-radio-label{:for => "comparison"}
               %span.label-icon
-                %img.label-icon-default{:alt => "branding", :src => "assets/images/icon_branding.svg"}/
-                %img.label-icon-active{:alt => "branding", :src => "assets/images/icon_branding_green.svg"}/
-              %span.label-text Branding
+                %img.label-icon-default{:alt => "comparison", :src => asset_pack_path("media/images/data-visual/comparison.png")}/
+                %img.label-icon-active{:alt => "comparison", :src => asset_pack_path("media/images/data-visual/comparison_green.png")}/
+              %span.label-text Comparison
           .purpose-radio
-            %input#mobile-design.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Moile Design"}/
-            %label.purpose-radio-label{:for => "mobile-design"}
+            %input#relationship.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Relationship"}/
+            %label.purpose-radio-label{:for => "relationship"}
               %span.label-icon
-                %img.label-icon-default{:alt => "branding", :src => "assets/images/icon_mobile_design.svg"}/
-                %img.label-icon-active{:alt => "branding", :src => "assets/images/icon_mobile_design_green.svg"}/
-              %span.label-text Moile Design
+                %img.label-icon-default{:alt => "relationship", :src => asset_pack_path("media/images/data-visual/relationship.png")}/
+                %img.label-icon-active{:alt => "relationship", :src => asset_pack_path("media/images/data-visual/relationship_green.png")}/
+              %span.label-text Relationship
           .purpose-radio
-            %input#web-design.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Web Design"}/
-            %label.purpose-radio-label{:for => "web-design"}
+            %input#composition.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Composition"}/
+            %label.purpose-radio-label{:for => "composition"}
               %span.label-icon
-                %img.label-icon-default{:alt => "branding", :src => "assets/images/icon_web_design.svg"}/
-                %img.label-icon-active{:alt => "branding", :src => "assets/images/icon_web_design_green.svg"}/
-              %span.label-text Web Design
+                %img.label-icon-default{:alt => "composition", :src => asset_pack_path("media/images/data-visual/composition.png")}/
+                %img.label-icon-active{:alt => "composition", :src => asset_pack_path("media/images/data-visual/composition_green.png")}/
+              %span.label-text Composition
+          .purpose-radio
+            %input#distribution.purpose-radio-input{:name => "purpose", :type => "radio", :value => "Distribution"}/
+            %label.purpose-radio-label{:for => "distribution"}
+              %span.label-icon
+                %img.label-icon-default{:alt => "distribution", :src => asset_pack_path("media/images/data-visual/distribution.png")}/
+                %img.label-icon-active{:alt => "distribution", :src => asset_pack_path("media/images/data-visual/distribution_green.png")}/
+              %span.label-text Distribution
+
       %h3 Step 2 Title
       %section
         %h5.bd-wizard-step-title Step 2

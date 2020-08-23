@@ -2,7 +2,8 @@ $(document).ready(function () {
     $("#wizard").steps({
         headerTag: "h3",
         bodyTag: "section",
-        transitionEffect: "none",
+        transitionEffect: "fade",
+        transitionEffectSpeed: 500,
         stepsOrientation: "vertical",
         titleTemplate: '<span class="number">#index#</span>'
     });
