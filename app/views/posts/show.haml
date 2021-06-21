@@ -24,7 +24,7 @@
             %span.post-meta
               - @post.tags.each do |tag|
                 %a.link.link-accent{:href => posts_path(tag: tag.try(:name))}
-                  %span.label.label-success= tag.try(:name)
+                  %span.badge.badge-success= tag.try(:name)
 
     .row
       .col-md-8.col-md-offset-2.col-xs-12
