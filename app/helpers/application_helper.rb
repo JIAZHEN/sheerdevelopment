@@ -18,7 +18,7 @@ module ApplicationHelper
     MARKDOWN
   end
 
-	BASE_TITLE = "Senior Software Engineer | Jiazhen Xie"
+	BASE_TITLE = "Lead Software Engineer | Jiazhen Xie"
   def full_title(page_title)
 		if page_title.empty?
 			BASE_TITLE
