@@ -10,8 +10,8 @@ require("newlook/styles/styles")
 require("bootstrap/dist/js/bootstrap")
 require("newlook/jquery.infinitescroll.min")
 require("jquery-steps/build/jquery.steps.min")
-require("newlook/bd-wizard")
 require("imagesloaded")
+require("newlook/ga")
 require("newlook/home")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
