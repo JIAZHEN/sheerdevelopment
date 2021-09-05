@@ -1,30 +1,34 @@
-const { environment } = require('@rails/webpacker')
-const webpack = require('webpack')
+const { environment } = require("@rails/webpacker");
 
-environment.loaders.get('sass').use.splice(-1, 0, {
-  loader: 'resolve-url-loader'
-})
+const webpack = require("webpack");
+
+environment.loaders.get("sass").use.splice(-1, 0, {
+  loader: "resolve-url-loader"
+});
 
 environment.plugins.prepend(
-  'Provide',
+  "Provide",
   new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    jquery: 'jquery',
-    Popper: ['popper.js', 'default'],
-    ActionCable: 'actioncable'
+    $: "jquery",
+    jQuery: "jquery",
+    jquery: "jquery",
+    Popper: ["popper.js", "default"],
+    ActionCable: "actioncable"
   })
-)
+);
 
-environment.loaders.append('expose-loader', {
-  test: require.resolve('jquery'),
-  use: [{
-      loader: 'expose-loader',
-      options: 'jQuery'
-  }, {
-      loader: 'expose-loader',
-      options: '$'
-  }]
-})
+environment.loaders.append("expose-loader", {
+  test: require.resolve("jquery"),
+  use: [
+    {
+      loader: "expose-loader",
+      options: "jQuery"
+    },
+    {
+      loader: "expose-loader",
+      options: "$"
+    }
+  ]
+});
 
-module.exports = environment
+module.exports = environment;

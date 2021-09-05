@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-ruby "2.6.3"
 
 gem "rails"
 gem "webpacker"
@@ -8,7 +7,6 @@ gem "jbuilder"
 gem "haml-rails"
 gem "kaminari"
 gem "redcarpet"
-gem "therubyracer"
 gem "pg"
 gem "friendly_id"
 gem "bcrypt-ruby"
