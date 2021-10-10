@@ -14,9 +14,6 @@
 /log/*.log
 /tmp
 
-# Ignore db config
-/config/database.yml
-
 # Ignore public folders
 /public/system/*
 /public/assets/*
@@ -32,3 +29,5 @@ yarn-debug.log*
 .yarn-integrity
 
 .byebug_history
+
+/config/master.key
