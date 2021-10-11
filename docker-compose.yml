@@ -14,6 +14,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    args:
+      - RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
     command: bundle exec puma -C config/puma.rb -p 3000
     environment:
       DATABASE_URL: "postgres://postgres:password@db:5432/sheerdevelopment_production"

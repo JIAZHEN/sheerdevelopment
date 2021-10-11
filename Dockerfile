@@ -1,5 +1,7 @@
 FROM ruby:3.0.2
 
+# RAILS_MASTER_KEY is provided by docker build arg
+ENV RAILS_MASTER_KEY $RAILS_MASTER_KEY
 ENV RAILS_ROOT /var/www/application
 ENV RAILS_SERVE_STATIC_FILES enabled
 ENV RAILS_ENV production

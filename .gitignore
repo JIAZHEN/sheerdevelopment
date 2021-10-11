@@ -31,3 +31,4 @@ yarn-debug.log*
 .byebug_history
 
 /config/master.key
+.env
