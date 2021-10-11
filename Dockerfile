@@ -22,8 +22,12 @@ WORKDIR $RAILS_ROOT
 
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
+COPY package.json package.json
+COPY yarn.lock yarn.lock
+
 RUN gem install bundler
 RUN bundle install --jobs 20 --retry 5 --without development test
+RUN yarn install
 COPY . .
 
 EXPOSE 3000
