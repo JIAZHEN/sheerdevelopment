@@ -29,6 +29,7 @@ RUN gem install bundler
 RUN bundle install --jobs 20 --retry 5 --without development test
 RUN yarn install
 COPY . .
+RUN mkdir -p tmp/pids
 
 EXPOSE 3000
 
