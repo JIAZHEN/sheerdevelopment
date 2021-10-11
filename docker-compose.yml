@@ -1,0 +1,45 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+
+  app:
+    container_name: app
+    image: fdf515/sheerdevelopment:0.1.0
+    command: bundle exec puma -C config/puma.rb -p 3000
+    environment:
+      DATABASE_URL: "postgres://postgres:password@db:5432/sheerdevelopment_production"
+      RAILS_ENV: production
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./DockerfileNginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
+    driver: bridge
