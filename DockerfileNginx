@@ -1,8 +1,5 @@
 FROM nginx:mainline
 
-ARG DOMAIN_EMAIL=info@domain.com
-ARG DOMAIN_LIST
-
 ENV RAILS_ROOT /var/www/application
 
 RUN apt-get update -yqq && apt-get -y install apache2-utils
