@@ -16,6 +16,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - CERTBOT_EMAIL=
+        - DOMAIN_LIST=yourcompany.com,api.yourcompany.com,www.yourcompany.com
     command: bundle exec puma -C config/puma.rb -p 3000
     environment:
       DATABASE_URL: "postgres://postgres:password@db:5432/sheerdevelopment_production"
