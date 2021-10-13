@@ -20,8 +20,8 @@ services:
       DATABASE_URL: "postgres://postgres:password@db:5432/sheerdevelopment_production"
       RAILS_ENV: production
       HTTP_PORT: 3000
-      VIRTUAL_HOST: sheerdevelopment.com
-      LETSENCRYPT_HOST: sheerdevelopment.com
+      VIRTUAL_HOST: "sheerdevelopment.com,www.sheerdevelopment.com"
+      LETSENCRYPT_HOST: "sheerdevelopment.com,www.sheerdevelopment.com"
       LETSENCRYPT_EMAIL: "jiazhenxie515@gmail.com"
     ports:
       - "3000:3000"
@@ -34,8 +34,8 @@ services:
   web-redirect:
     image: adamkdean/redirect
     environment:
-      VIRTUAL_HOST: sheerdevelopment.com
-      LETSENCRYPT_HOST: sheerdevelopment.com
+      VIRTUAL_HOST: "sheerdevelopment.com,www.sheerdevelopment.com"
+      LETSENCRYPT_HOST: "sheerdevelopment.com,www.sheerdevelopment.com"
       LETSENCRYPT_EMAIL: "jiazhenxie515@gmail.com"
       REDIRECT_LOCATION: "https://www.sheerdevelopment.com"
     networks:
