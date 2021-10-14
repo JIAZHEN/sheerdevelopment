@@ -4,6 +4,6 @@ module PostsHelper
   end
 
   def meta_description(post = nil)
-    (post && post.subtitle) || "Jiazhen Xie (Joe) is a Lead Software Engineer / Rubyist based in London, United Kingdom. He is passionate about web application and backend processes.".freeze
+    (post && post.subtitle) || "Jiazhen Xie is a Lead Software Engineer / Applied Machine Learning Engineer based in London, United Kingdom. He is passionate about AI, backend processes and team performance.".freeze
   end
 end
