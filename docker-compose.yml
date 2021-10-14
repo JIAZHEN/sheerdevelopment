@@ -30,18 +30,6 @@ services:
     depends_on:
       - db
 
-  web-redirect:
-    image: adamkdean/redirect
-    environment:
-      VIRTUAL_HOST: "sheerdevelopment.com,www.sheerdevelopment.com"
-      LETSENCRYPT_HOST: "sheerdevelopment.com,www.sheerdevelopment.com"
-      LETSENCRYPT_EMAIL: "jiazhenxie515@gmail.com"
-      REDIRECT_LOCATION: "https://www.sheerdevelopment.com"
-      REDIRECT_STATUS_CODE: 301
-      PRESERVE_URL: "true"
-    networks:
-      - app-network
-
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
