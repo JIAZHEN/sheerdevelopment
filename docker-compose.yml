@@ -43,6 +43,8 @@ services:
       - nginx-certs:/etc/nginx/certs
       - nginx-vhost:/etc/nginx/vhost.d
       - nginx-html:/usr/share/nginx/html
+    depends_on:
+      - app
 
   nginx-proxy-letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -55,6 +57,9 @@ services:
       - nginx-certs:/etc/nginx/certs
       - nginx-vhost:/etc/nginx/vhost.d
       - nginx-html:/usr/share/nginx/html
+    depends_on:
+      - app
+      - nginx-proxy
 
 volumes:
   pgdata:
