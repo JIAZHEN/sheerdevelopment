@@ -1,0 +1,7 @@
+- provide(:title, "Checkout")
+
+%section#post-body.display-disqus
+  .container
+    .row
+      .col-md-10.col-md-offset-2
+        = render "pay/stripe/checkout_button", session: @checkout_session, title: "Subscribe"

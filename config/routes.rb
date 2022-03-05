@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'checkout/new'
+  get 'checkout/create'
+
   resources :posts
 
   root  to: "posts#index"

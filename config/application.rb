@@ -22,5 +22,7 @@ module Blog
       'X-Permitted-Cross-Domain-Policies' => 'none',
       'Referrer-Policy' => 'strict-origin-when-cross-origin'
     }
+
+    config.action_mailer.default_url_options = { host: "sheerdevelopment.com" }
   end
 end
