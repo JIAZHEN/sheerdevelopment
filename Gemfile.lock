@@ -127,6 +127,8 @@ GEM
     nokogiri (1.12.4)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    pay (3.0.24)
+      rails (>= 6.0.0)
     pg (1.2.3)
     pg_search (2.3.5)
       activerecord (>= 5.2)
@@ -202,6 +204,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    stripe (5.45.0)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
@@ -230,6 +233,7 @@ DEPENDENCIES
   jbuilder
   kaminari
   listen
+  pay (~> 3.0)
   pg
   pg_search
   puma
@@ -239,6 +243,7 @@ DEPENDENCIES
   sitemap_generator
   spring
   sqlite3
+  stripe (>= 2.8, < 6.0)
   webpacker
 
 BUNDLED WITH

@@ -15,6 +15,11 @@ gem "acts-as-taggable-on"
 gem "sitemap_generator"
 gem "listen"
 
+gem 'pay', '~> 3.0'
+
+# To use Stripe, also include:
+gem 'stripe', '>= 2.8', '< 6.0'
+
 group :development, :test do
   gem "spring"
   gem "rspec-rails"

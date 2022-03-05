@@ -7,10 +7,12 @@
 Rails.application.config.content_security_policy do |policy|
   policy.default_src :self, :https
   policy.font_src    :self, :https, :data
-  policy.img_src     :self, :https, :data
+  policy.img_src     :self, "https://*.stripe.com"
   policy.object_src  :none
-  policy.script_src  :self, :https, "bentodev.myshopify.com"
-  policy.style_src   :self, :https
+  policy.style_src   :self, :unsafe_inline
+  policy.script_src  :self, :unsafe_inline, "https://bentodev.myshopify.com", "https://cdn.jsdelivr.net", "https://js.stripe.com"
+  policy.frame_src   :self, "https://google-analytics.com/", "https://js.stripe.com", "https://hooks.stripe.com"
+  policy.connect_src :self, "https://api.stripe.com"
 end
 
 # If you are using UJS then enable automatic nonce generation
