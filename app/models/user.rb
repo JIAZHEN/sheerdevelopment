@@ -1,4 +1,6 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
+  pay_customer
+
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 
