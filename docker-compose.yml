@@ -19,8 +19,8 @@ services:
       DATABASE_URL: "postgres://postgres:password@db:5432/sheerdevelopment_production"
       RAILS_ENV: production
       VIRTUAL_PORT: 3000
-      VIRTUAL_HOST: "jiazhen.net,www.jiazhen.net"
-      LETSENCRYPT_HOST: "jiazhen.net,www.jiazhen.net"
+      VIRTUAL_HOST: "jiazhenxie.net,www.jiazhenxie.net"
+      LETSENCRYPT_HOST: "jiazhenxie.net,www.jiazhenxie.net"
       LETSENCRYPT_EMAIL: "jiazhenxie515@gmail.com"
     ports:
       - "3000:3000"
